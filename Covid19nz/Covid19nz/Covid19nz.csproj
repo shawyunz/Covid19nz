@@ -13,6 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AlertPage.xaml.cs">
+      <DependentUpon>AlertPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\MapPage.xaml.cs">
       <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>

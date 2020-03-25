@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Covid19nz.Views.AboutPage"
+    x:Class="Covid19nz.Views.AlertPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:vm="clr-namespace:Covid19nz.ViewModels"
-    Title="{Binding Title}">
+    Title="Alert">
 
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
@@ -47,32 +47,15 @@
                 Padding="16,40,16,40"
                 Spacing="10"
                 Orientation="Vertical">
-                <!--<Label
-                    Text="&#xf10d5;"
-                    FontFamily="{StaticResource MDFont}"
-                    FontSize="30" />
-                <Label
-                    Text="&#xf0352;"
-                    FontFamily="{StaticResource MDFont}"
-                    FontSize="30" />
-                <Label
-                    Text="\uf0352"
-                    FontFamily="{StaticResource MDFont}"
-                    FontSize="30" />
-                <Label
-                    Text="&#xf0352;"
-                    FontFamily="{StaticResource MDFont}"
-                    FontSize="30" />-->
                 <Label FontSize="22">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
                                 <Span
-                                    Text="AppName"
+                                    Text="Alert level 4"
                                     FontAttributes="Bold"
                                     FontSize="22" />
                                 <Span Text=" " />
-                                <Span ForegroundColor="{StaticResource LightTextColor}" Text="1.0" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -104,10 +87,10 @@
                 </Label>
                 <Button
                     Margin="0,10,0,0"
-                    BackgroundColor="{StaticResource Primary}"
-                    Text="Learn more"
+                    BackgroundColor="#FFCD38"
+                    Text="NZ Alert Levels"
                     TextColor="White"
-                    Command="{Binding OpenWebCommand}" />
+                    Command="{Binding OpenAlertPDFCommand}" />
             </StackLayout>
         </ScrollView>
     </Grid>

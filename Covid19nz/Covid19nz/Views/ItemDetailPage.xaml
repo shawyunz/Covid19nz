@@ -11,6 +11,7 @@
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
         <ListView
             x:Name="ItemsCollectionView"
+            HasUnevenRows="True"
             ItemsSource="{Binding DisplayCases}"
             SelectionMode="None">
             <ListView.Header>
@@ -40,7 +41,7 @@
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="CenterAndExpand"
                                 BackgroundColor="LightGray"
-                                Text="{Binding Case}"
+                                Text="{Binding CaseNumber}"
                                 FontSize="22" />
                             <Label
                                 Grid.Row="0"

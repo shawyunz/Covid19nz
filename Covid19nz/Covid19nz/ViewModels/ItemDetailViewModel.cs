@@ -21,10 +21,12 @@ namespace Covid19nz.ViewModels
             Title = item?.LocationName;
             Item = item;
             AllCases = new ObservableCollection<CovidCase>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadCasesCommand());
+            LoadItemsCommand = new Command(() => ExecuteLoadCasesCommand());
+
+            ExecuteLoadCasesCommand();
         }
 
-        async Task ExecuteLoadCasesCommand()
+        void ExecuteLoadCasesCommand()
         {
             IsBusy = true;
 
@@ -34,7 +36,7 @@ namespace Covid19nz.ViewModels
                 //var items = await LocationData.GetItemsAsync(true);
 
                 var locationJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/cases/json");
-                var items = await Task.FromResult(CovidCase.FromJson(locationJson).ToList());
+                var items = CovidCase.FromJson(locationJson).ToList();
 
                 foreach (var item in items)
                 {

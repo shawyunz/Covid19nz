@@ -7,47 +7,98 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     x:Name="BrowseItemsPage"
-    Title="{Binding Title}">
+    Title="{Binding Title}"
+    BackgroundColor="#f1f5ff">
 
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
-    </ContentPage.ToolbarItems>-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Command="{Binding LoadItemsCommand}" />
+    </ContentPage.ToolbarItems>
 
-    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
-        <ListView
-            x:Name="ItemsCollectionView"
-            ItemsSource="{Binding Items}"
-            ItemTapped="OnItemSelected"
-            SelectedItem="{Binding SelectedLocation}">
-            <ListView.Header>
-                <StackLayout Margin="10,20">
-                    <Label Text="qqq" FontSize="22" />
-                </StackLayout>
-            </ListView.Header>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout
-                            Margin="20,0"
-                            Padding="10"
-                            Orientation="Horizontal"
-                            HorizontalOptions="FillAndExpand">
-                            <Label
-                                Style="{DynamicResource ListItemTextStyle}"
-                                HorizontalOptions="StartAndExpand"
-                                VerticalOptions="End"
-                                Text="{Binding LocationName}"
-                                FontSize="16"
-                                TextDecorations="Underline" />
-                            <Label
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                HorizontalOptions="End"
-                                Text="{Binding CaseCount}"
-                                FontSize="18" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </RefreshView>
+    <StackLayout>
+        <!--<Label
+            Style="{DynamicResource ListItemTextStyle}"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="End"
+            Text="Summary"
+            FontSize="16" />-->
+        <Frame
+            HeightRequest="60"
+            Margin="20,20,20,20"
+            CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Confirmed" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="189"
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    TextColor="IndianRed" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="Recovered" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="22"
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    TextColor="ForestGreen" />
+            </Grid>
+        </Frame>
+        <Label
+            Margin="25,5"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="End"
+            Text="Locations:"
+            FontSize="16" />
+
+        <Frame Margin="20,0" CornerRadius="10">
+            <ListView
+                x:Name="ItemsCollectionView"
+                Margin="-10"
+                ItemsSource="{Binding Items}"
+                ItemTapped="OnItemSelected"
+                SelectedItem="{Binding SelectedLocation}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Margin="20,0"
+                                Padding="10"
+                                Orientation="Horizontal"
+                                HorizontalOptions="FillAndExpand">
+                                <Label
+                                    Style="{DynamicResource ListItemTextStyle}"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="End"
+                                    Text="{Binding LocationName}"
+                                    FontSize="16"
+                                    TextColor="#011223"
+                                    TextDecorations="Underline" />
+                                <Label
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    HorizontalOptions="End"
+                                    Text="{Binding CaseCount}"
+                                    FontSize="18"
+                                    TextColor="#011223" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+    </StackLayout>
 </ContentPage>

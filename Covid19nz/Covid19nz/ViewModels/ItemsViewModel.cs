@@ -19,7 +19,7 @@ namespace Covid19nz.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Covid19 Locations";
+            Title = "Covid-19 NZ";
             Items = new ObservableCollection<CovidLocation>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

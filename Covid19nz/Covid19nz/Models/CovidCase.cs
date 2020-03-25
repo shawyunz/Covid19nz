@@ -52,7 +52,7 @@ namespace Covid19nz.Models
     {
         public static List<CovidCase> FromJson(string json) => JsonConvert.DeserializeObject<List<CovidCase>>(json, Covid19nz.Models.Converter.Settings);
 
-        public string PersonalInfo => Gender + ", " + Age.YoungerOrEqualToAge + "s"; //Gender.ToString() + 
+        public string PersonalInfo => Gender + ", " + Age.OlderOrEqualToAge + "+";
 
     }
 
