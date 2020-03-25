@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Covid19nz.Views.MapPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    x:Name="BrowseItemsPage"
+    Title="{Binding Title}">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>-->
+
+    <maps:Map
+        x:Name="map"
+        IsShowingUser="False"
+        MoveToLastRegionOnLayoutChange="False"
+        ItemsSource="{Binding Items}">
+        <x:Arguments>
+            <maps:MapSpan>
+                <x:Arguments>
+                    <maps:Position>
+                        <x:Arguments>
+                            <x:Double>-40.8485</x:Double>
+                            <x:Double>172.7633</x:Double>
+                        </x:Arguments>
+                    </maps:Position>
+                    <x:Double>15</x:Double>
+                    <x:Double>15</x:Double>
+                </x:Arguments>
+            </maps:MapSpan>
+        </x:Arguments>
+
+        <maps:Map.ItemTemplate>
+            <DataTemplate>
+                <maps:Pin Address="{Binding LocationName}" Label="{Binding CaseCount}">
+
+                    <maps:Pin.Position>
+                        <maps:Position>
+                            <x:Arguments>
+                                <x:Double>-36.8485</x:Double>
+                                <x:Double>174.7633</x:Double>
+                            </x:Arguments>
+                        </maps:Position>
+                    </maps:Pin.Position>
+                </maps:Pin>
+            </DataTemplate>
+        </maps:Map.ItemTemplate>
+
+        <!--<maps:Map.Pins>
+            <maps:Pin
+                Address="Coner of the world"
+                Label="NZ"
+                Type="Generic">
+                <maps:Pin.Position>
+                    <maps:Position>
+                        <x:Arguments>
+                            <x:Double>-36.8485</x:Double>
+                            <x:Double>174.7633</x:Double>
+                        </x:Arguments>
+                    </maps:Position>
+                </maps:Pin.Position>
+
+
+            </maps:Pin>
+        </maps:Map.Pins>-->
+    </maps:Map>
+</ContentPage>

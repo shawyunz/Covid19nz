@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="Covid19nz.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <!--<ResourceDictionary>
+            <OnPlatform x:Key="MDFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="mdicon.ttf#Material Design Icons" />
+                <On Platform="iOS" Value="mdicon" />
+            </OnPlatform>
+        </ResourceDictionary>-->
+    </Application.Resources>
+</Application>
