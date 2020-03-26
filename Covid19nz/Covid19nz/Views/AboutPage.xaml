@@ -6,12 +6,17 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    xmlns:vm="clr-namespace:Covid19nz.ViewModels"
-    Title="{Binding Title}">
+    Title="https://covid19map.nz/stats">
 
-    <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
+    <Shell.TitleView>
+        <Label
+            VerticalOptions="EndAndExpand"
+            Text="https://covid19map.nz/stats"
+            VerticalTextAlignment="Center"
+            FontSize="18"
+            TextColor="White"
+            TextDecorations="Underline" />
+    </Shell.TitleView>
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -21,7 +26,9 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
+    <WebView Source="{Binding WebSourceUrl, Mode=OneWay}" />
+
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -35,10 +42,12 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <!--<Image
+    -->
+    <!--<Image
                         HeightRequest="64"
                         VerticalOptions="Center"
                         Source="xamarin_logo.png" />-->
+    <!--
                 </ContentView>
             </StackLayout>
         </StackLayout>
@@ -47,7 +56,8 @@
                 Padding="16,40,16,40"
                 Spacing="10"
                 Orientation="Vertical">
-                <!--<Label
+    -->
+    <!--<Label
                     Text="&#xf10d5;"
                     FontFamily="{StaticResource MDFont}"
                     FontSize="30" />
@@ -63,6 +73,7 @@
                     Text="&#xf0352;"
                     FontFamily="{StaticResource MDFont}"
                     FontSize="30" />-->
+    <!--
                 <Label FontSize="22">
                     <Label.FormattedText>
                         <FormattedString>
@@ -110,6 +121,6 @@
                     Command="{Binding OpenWebCommand}" />
             </StackLayout>
         </ScrollView>
-    </Grid>
+    </Grid>-->
 
 </ContentPage>

@@ -22,13 +22,6 @@ namespace Covid19nz.ViewModels
             Title = "Covid-19 NZ";
             Items = new ObservableCollection<CovidLocation>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
-            MessagingCenter.Subscribe<NewItemPage, CovidLocation>(this, "AddItem", async (obj, item) =>
-            {
-                var newItem = item as CovidLocation;
-                Items.Add(newItem);
-                await LocationData.AddItemAsync(newItem);
-            });
         }
 
         async Task ExecuteLoadItemsCommand()

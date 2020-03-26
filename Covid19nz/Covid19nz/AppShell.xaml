@@ -53,7 +53,7 @@
         <Tab Title="Alert" Icon="icn_menu_list.png">
             <ShellContent ContentTemplate="{DataTemplate local:AlertPage}" />
         </Tab>
-        <Tab Title="About" Icon="icn_menu_info.png">
+        <Tab Title="Stats" Icon="icn_menu_info.png">
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
         </Tab>
     </TabBar>

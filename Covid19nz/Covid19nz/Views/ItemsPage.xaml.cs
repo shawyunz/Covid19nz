@@ -32,11 +32,6 @@ namespace Covid19nz.Views
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(viewModel.SelectedLocation)));
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
-
         protected override void OnAppearing()
         {
             base.OnAppearing();

@@ -16,5 +16,7 @@ namespace Covid19nz.ViewModels
 
         public ICommand OpenWebCommand { get; }
         public ICommand OpenAlertPDFCommand { get; }
+        //public string WebSourceUrl => "https://covid19map.nz/stats";
+        public string WebSourceUrl => "https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-cases";
     }
 }

@@ -13,7 +13,6 @@ namespace Covid19nz
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             DependencyService.Register<LocationStore>();
             MainPage = new AppShell();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Covid19nz.ViewModels;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,6 +14,14 @@ namespace Covid19nz.Views
         public AboutPage()
         {
             InitializeComponent();
+
+            BindingContext = new AboutViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            BindingContext = new AboutViewModel();
         }
     }
 }
