@@ -35,7 +35,7 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 * Check alert level.
 * Check stats?
 
-### TODO:
+### TODO (March 25th):
 
 #### General:
 
@@ -58,7 +58,7 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 #### Map page:
 
-- [ ] pins on the map
+- [x] pins on the map
 - [ ] overlay on the map
 - [ ] personal location need or not? (the only difference from web?) 
 
@@ -69,6 +69,10 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 ​	v0.1	Implemented with location list and case list.
 
 ​	v0.2	Alert page added. Listing UI updated. Detail view fixed.
+
+​	v0.3	Map pins fixed. RefreshView was back. Website added. UI updated. Readme big change.
+
+​	v0.4	...
 
 
 
