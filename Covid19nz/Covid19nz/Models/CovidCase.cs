@@ -53,6 +53,7 @@ namespace Covid19nz.Models
         public static List<CovidCase> FromJson(string json) => JsonConvert.DeserializeObject<List<CovidCase>>(json, Covid19nz.Models.Converter.Settings);
 
         public string PersonalInfo => Gender + ", " + Age.OlderOrEqualToAge + "+";
+        public string GenderChar => Gender.Substring(0, 1);
 
     }
 

@@ -40,6 +40,7 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 #### General:
 
 - [ ] move api loading to init page and app cache stored
+- [ ] Splash screen
 - [ ] Security updated
 
 #### List page
@@ -47,11 +48,11 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 - [ ] Header api implementation
 - [ ] detail info for Header
 - [ ] refresh time stated
+- [ ] Filters and sorters for the listing
 
 #### Cases page:
 
 - [ ] Detail page UI
-- [ ] Filters and sorters for the listing
 - [ ] cases full list with search
 - [ ] cases confirmed or probable
 
@@ -72,7 +73,9 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 ​	v0.3	Map pins fixed. RefreshView was back. Website added. UI updated. Readme big change.
 
-​	v0.4	...
+​	v0.4	CasePage UI updated. Menu changed to "List", "Map", "MOH" and "Info"
+
+​	v0.5	...
 
 
 

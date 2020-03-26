@@ -50,11 +50,11 @@
             </Tab.Icon>-->
             <ShellContent ContentTemplate="{DataTemplate local:MapPage}" />
         </Tab>
-        <Tab Title="Alert" Icon="icn_menu_list.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AlertPage}" />
-        </Tab>
-        <Tab Title="Stats" Icon="icn_menu_info.png">
+        <Tab Title="MOH" Icon="icn_menu_list.png">
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab>
+        <Tab Title="Info" Icon="icn_menu_info.png">
+            <ShellContent ContentTemplate="{DataTemplate local:AlertPage}" />
         </Tab>
     </TabBar>
 

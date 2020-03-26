@@ -6,57 +6,89 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Title="{Binding Title}">
+    Title="{Binding Title}"
+    BackgroundColor="#f1f5ff">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icn_menu_list.png" Command="{Binding LoadItemsCommand}" />
+    </ContentPage.ToolbarItems>
 
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
-        <ListView
-            x:Name="ItemsCollectionView"
-            HasUnevenRows="True"
-            ItemsSource="{Binding DisplayCases}"
-            SelectionMode="None">
-            <ListView.Header>
-                <StackLayout Margin="10,20">
-                    <Label Text="qqq" FontSize="22" />
-                </StackLayout>
-            </ListView.Header>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid
-                            Margin="20,0"
-                            Padding="10"
-                            HorizontalOptions="FillAndExpand">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label
-                                Grid.Row="0"
-                                Grid.RowSpan="2"
-                                Grid.Column="0"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="CenterAndExpand"
-                                BackgroundColor="LightGray"
-                                Text="{Binding CaseNumber}"
-                                FontSize="22" />
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="1"
-                                Text="{Binding PersonalInfo}"
-                                FontSize="16" />
-                            <Label
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                Text="{Binding TravelDetailsUnstructured}"
-                                FontSize="16" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout>
+            <SearchBar BackgroundColor="WhiteSmoke" Placeholder="Search here" />
+            <StackLayout Margin="20,0" Orientation="Horizontal">
+                <Button
+                    HeightRequest="35"
+                    VerticalOptions="Center"
+                    CornerRadius="15"
+                    Text="flight"
+                    FontSize="12" />
+                <Button
+                    HeightRequest="35"
+                    VerticalOptions="Center"
+                    CornerRadius="15"
+                    Text="school"
+                    FontSize="12" />
+            </StackLayout>
+            <ListView
+                x:Name="ItemsCollectionView"
+                SeparatorColor="Transparent"
+                HasUnevenRows="True"
+                ItemsSource="{Binding DisplayCases}"
+                SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="10,5" CornerRadius="5">
+                                <Grid Margin="-8,-12">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="1" />
+                                        <ColumnDefinition Width="4*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="-10,0,0,0"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding CaseNumber, StringFormat='{0:000}'}"
+                                        FontAttributes="Bold"
+                                        FontSize="20"
+                                        TextDecorations="Underline" />
+                                    <StackLayout
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Margin="0,-4,6,0"
+                                        Orientation="Horizontal"
+                                        HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding GenderChar}" FontSize="12" />
+                                        <Label Text="{Binding Age.OlderOrEqualToAge, StringFormat='{0}+'}" FontSize="12" />
+                                    </StackLayout>
+                                    <BoxView
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="1"
+                                        VerticalOptions="FillAndExpand"
+                                        BackgroundColor="LightGray" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="2"
+                                        Margin="10,0"
+                                        VerticalOptions="CenterAndExpand"
+                                        Text="{Binding TravelDetailsUnstructured}"
+                                        FontSize="14" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
     </RefreshView>
 </ContentPage>

@@ -6,12 +6,12 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Title="https://covid19map.nz/stats">
+    Title="{Binding Title}">
 
     <Shell.TitleView>
         <Label
             VerticalOptions="EndAndExpand"
-            Text="https://covid19map.nz/stats"
+            Text="health.govt.nz"
             VerticalTextAlignment="Center"
             FontSize="18"
             TextColor="White"
