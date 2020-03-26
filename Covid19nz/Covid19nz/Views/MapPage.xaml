@@ -10,14 +10,16 @@
     x:Name="BrowseItemsPage"
     Title="{Binding Title}">
 
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
-    </ContentPage.ToolbarItems>-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icn_refresh.png" Command="{Binding LoadItemsCommand}" />
+    </ContentPage.ToolbarItems>
+
     <Grid>
         <maps:Map
             x:Name="map"
             IsShowingUser="False"
-            MoveToLastRegionOnLayoutChange="False">
+            MoveToLastRegionOnLayoutChange="False"
+            ItemsSource="{Binding Items}">
             <x:Arguments>
                 <maps:MapSpan>
                     <x:Arguments>
@@ -33,23 +35,16 @@
                 </maps:MapSpan>
             </x:Arguments>
 
-            <!--<maps:Map.ItemTemplate>
-            <DataTemplate>
-                <maps:Pin Address="{Binding LocationName}" Label="{Binding CaseCount}">
+            <maps:Map.ItemTemplate>
+                <DataTemplate>
+                    <maps:Pin
+                        Address="{Binding LocationName}"
+                        Label="{Binding CaseCount}"
+                        Position="{Binding Coordinate}" />
+                </DataTemplate>
+            </maps:Map.ItemTemplate>
 
-                    <maps:Pin.Position>
-                        <maps:Position>
-                            <x:Arguments>
-                                <x:Double>-36.8485</x:Double>
-                                <x:Double>174.7633</x:Double>
-                            </x:Arguments>
-                        </maps:Position>
-                    </maps:Pin.Position>
-                </maps:Pin>
-            </DataTemplate>
-        </maps:Map.ItemTemplate>-->
-
-            <maps:Map.Pins>
+            <!--<maps:Map.Pins>
                 <maps:Pin
                     Address="Coner of the world"
                     Label="NZ"
@@ -62,13 +57,12 @@
                             </x:Arguments>
                         </maps:Position>
                     </maps:Pin.Position>
-
-
                 </maps:Pin>
-            </maps:Map.Pins>
+            </maps:Map.Pins>-->
         </maps:Map>
 
         <Frame
+            IsVisible="False"
             HeightRequest="60"
             Margin="0,0,0,10"
             VerticalOptions="End"
@@ -77,7 +71,6 @@
             <StackLayout HeightRequest="60">
                 <Label Text="aaa" />
             </StackLayout>
-
         </Frame>
     </Grid>
 </ContentPage>

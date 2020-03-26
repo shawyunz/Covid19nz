@@ -36,6 +36,7 @@ namespace Covid19nz.ViewModels
                 {
                     Items.Add(item);
                 }
+                //OnPropertyChanged(nameof(Items));
             }
             catch (Exception ex)
             {

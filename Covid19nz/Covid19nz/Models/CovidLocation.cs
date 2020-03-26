@@ -42,7 +42,7 @@ namespace Covid19nz.Models
             {
                 var coordinates = LocationCentrePoint.Coordinates;
                 if (coordinates?.Count > 1)
-                    return new Position(coordinates[0], coordinates[1]);
+                    return new Position(coordinates[1], coordinates[0]);
                 return new Position(0, 0);
             }
         }
