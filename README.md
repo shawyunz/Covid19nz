@@ -1,4 +1,6 @@
-# <img src="./assets/epidemic_512.png" alt="Icon" width="64" />  Covid-19 nz map App
+# <img src="./assets/epidemic_512.png" alt="Icon" width="64" />  Covid-19 NZ App
+
+[![Build Status](https://dev.azure.com/shawyunz/Covid19NZApp/_apis/build/status/Covid19nz%20APK?branchName=master)](https://dev.azure.com/shawyunz/Covid19NZApp/_build/latest?definitionId=2&branchName=master)
 
 A Xamarin.Forms app for checking locations and cases published by [Ministry of Health](https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-cases) in New Zealand.
 
@@ -6,9 +8,15 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 
 
+## APK releases:
+
+APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
+
+
+
 ## Screenshots:
 
-|                      Listing                      |                       Cases                       |                        Map                        |
+|                     Locations                     |                       Cases                       |                        Map                        |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
 | <img src=".\assets\screenshot1.png" width="200" > | <img src=".\assets\screenshot2.png" width="200" > | <img src=".\assets\screenshot3.png" width="200" > |
 
@@ -23,6 +31,8 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 [Google map for android](https://developers.google.com/maps/documentation/android-sdk/intro)
 
+[Azure pipeline](https://dev.azure.com/)
+
 
 
 ## Features:
@@ -32,16 +42,24 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 * Check locations and cases published by [Ministry of Health](https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-cases).
 * Check cases detail.
 * Check Covid19 map for NZ.
-* Check alert level.
-* Check stats?
+* Check alert level and links.
+* Check official website.
 
-### TODO (March 25th):
+### TODO :
 
-#### General:
+#### Refresh on March 27th:
+
+- [ ] api updated based on the new formatting from MOH
+- [ ] Geo location removed from api (no cities from MOH)
+- [ ] new header information api pending
+- [x] build a pipeline for the project releases
+
+#### General (March 25th):
 
 - [ ] move api loading to init page and app cache stored
-- [ ] Splash screen
+- [ ] Splash screen?
 - [ ] Security updated
+- [ ] file rename and code refactor
 
 #### List page
 
@@ -52,12 +70,12 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 #### Cases page:
 
-- [ ] Detail page UI
+- [x] Detail page UI
 - [ ] cases full list with search
 - [ ] cases confirmed or probable
 
 
-#### Map page:
+####  ~~Map page:~~
 
 - [x] pins on the map
 - [ ] overlay on the map
@@ -65,17 +83,20 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 
 
+
 ## Versions
 
-​	v0.1	Implemented with location list and case list.
+​	v0.1	Implemented with simeonmiteff API for locations, cases and map.
 
 ​	v0.2	Alert page added. Listing UI updated. Detail view fixed.
 
 ​	v0.3	Map pins fixed. RefreshView was back. Website added. UI updated. Readme big change.
 
-​	v0.4	CasePage UI updated. Menu changed to "List", "Map", "MOH" and "Info"
+​	v0.4	CasePage UI updated (check screenshot2 above). Menu changed to "List", "Map", "MOH" and "Info"
 
-​	v0.5	...
+​	v0.5	As official data comes with areas instead of cities, map page removed. Pipeline set up.
+
+​	v0.6	:construction:
 
 
 

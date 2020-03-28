@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.shawyustudio.covid19nz" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="5" android:versionName="1.0.5" package="com.shawyustudio.covid19nz" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
 	<application android:label="Covid19 NZ" android:icon="@drawable/icon">
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAevtmdHRqh9D3nr74cPJd6Zx5Sp36jkXE" />
