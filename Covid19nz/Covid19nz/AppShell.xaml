@@ -9,9 +9,6 @@
     xmlns:local="clr-namespace:Covid19nz.Views"
     Title="Covid19nz">
 
-    <!--
-        Styles and Resources
-    -->
     <Shell.Resources>
         <ResourceDictionary>
             <Color x:Key="NavigationPrimary">#2196F3</Color>
@@ -30,24 +27,11 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!--  Your Pages  -->
     <TabBar>
         <Tab Title="List" Icon="icn_menu_list.png">
-            <!--<Tab.Icon>
-                <FontImageSource
-                    Glyph="&#xf10d5;"
-                    Color="Accent"
-                    FontFamily="{StaticResource MDFont}" />
-            </Tab.Icon>-->
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
         <Tab Title="Map" Icon="icn_menu_map.png">
-            <!--<Tab.Icon>
-                <FontImageSource
-                    Glyph="&#xf0352;"
-                    Color="Accent"
-                    FontFamily="{StaticResource MDFont}" />
-            </Tab.Icon>-->
             <ShellContent ContentTemplate="{DataTemplate local:MapPage}" />
         </Tab>
         <Tab Title="MOH" Icon="icn_menu_list.png">

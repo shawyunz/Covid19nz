@@ -21,22 +21,20 @@ namespace Covid19nz.ViewModels
         {
             Title = "Covid-19 NZ";
             Items = new ObservableCollection<CovidLocation>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand = new Command(() => ExecuteLoadItemsCommand());
         }
 
-        async Task ExecuteLoadItemsCommand()
+        private void ExecuteLoadItemsCommand()
         {
             IsBusy = true;
 
             try
             {
+                App.Current.GetLocations();
+
                 Items.Clear();
-                var items = await LocationData.GetItemsAsync(true);
-                foreach (var item in items)
-                {
-                    Items.Add(item);
-                }
-                //OnPropertyChanged(nameof(Items));
+                Items = new ObservableCollection<CovidLocation>(App.AppLocations);
+                OnPropertyChanged(nameof(Items));
             }
             catch (Exception ex)
             {

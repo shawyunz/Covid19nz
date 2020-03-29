@@ -56,8 +56,8 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 #### General (March 25th):
 
-- [ ] move api loading to init page and app cache stored
-- [ ] Splash screen?
+- [x] move api loading to init page and app cache stored
+- [x] Splash screen?
 - [ ] Security updated
 - [ ] file rename and code refactor
 
@@ -78,6 +78,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 ####  ~~Map page:~~
 
 - [x] pins on the map
+- [x] init page no pin display
 - [ ] overlay on the map
 - [ ] personal location need or not? (the only difference from web?) 
 
@@ -86,17 +87,19 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ## Versions
 
-​	v0.1	Implemented with simeonmiteff API for locations, cases and map.
+​	v1.0.1	Implemented with simeonmiteff API for locations, cases and map.
 
-​	v0.2	Alert page added. Listing UI updated. Detail view fixed.
+​	v1.0.2	Alert page added. Listing UI updated. Detail view fixed.
 
-​	v0.3	Map pins fixed. RefreshView was back. Website added. UI updated. Readme big change.
+​	v1.0.3	Map pins fixed. RefreshView was back. Website added. UI updated. Readme big change.
 
-​	v0.4	CasePage UI updated (check screenshot2 above). Menu changed to "List", "Map", "MOH" and "Info"
+​	v1.0.4	CasePage UI updated (check screenshot2 above). Menu changed to "List", "Map", "MOH" and "Info"
 
-​	v0.5	As official data comes with areas instead of cities, map page removed. Pipeline set up.
+​	v1.0.5	(**STATIC** data version) Pipeline set up. This version displays **STATIC** data on March 25th before API updated.
 
-​	v0.6	:construction:
+​	v1.0.6	(**STATIC** data version) Loading data at beginning improve in-app experience. Splash screen added. Fixed map view init bug.
+
+​	v1.0.7	:construction:
 
 
 

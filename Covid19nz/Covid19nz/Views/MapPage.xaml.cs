@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 using Covid19nz.Models;
-using Covid19nz.Views;
 using Covid19nz.ViewModels;
+using System.Collections.ObjectModel;
 
 namespace Covid19nz.Views
 {
@@ -24,9 +19,11 @@ namespace Covid19nz.Views
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
-
-
+            viewModel = new ItemsViewModel
+            {
+                Items = new ObservableCollection<CovidLocation>(App.AppLocations)
+            };
+            BindingContext = viewModel;
         }
 
         async void OnItemSelected(object sender, EventArgs args)
@@ -34,14 +31,6 @@ namespace Covid19nz.Views
             var layout = (BindableObject)sender;
             var item = (CovidLocation)layout.BindingContext;
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.IsBusy = true;
         }
     }
 }

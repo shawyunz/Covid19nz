@@ -1,9 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-using Covid19nz.Models;
 using Covid19nz.ViewModels;
 
 namespace Covid19nz.Views
