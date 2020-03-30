@@ -26,7 +26,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <WebView Source="{Binding WebSourceUrl, Mode=OneWay}" />
+    <Grid>
+        <Image Aspect="AspectFit" Source="https://www.health.govt.nz/sites/default/files/images/our-work/diseases-conditions/covid19/hp7357_-_covid_confirmed_and_probable_cases_by_dhb-merged-300320.jpg" />
+    </Grid>
+    <!--<WebView Source="{Binding WebSourceUrl, Mode=OneWay}" />-->
 
     <!--<Grid>
         <Grid.RowDefinitions>
