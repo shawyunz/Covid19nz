@@ -12,22 +12,18 @@ namespace Covid19nz.Views
     [DesignTimeVisible(false)]
     public partial class StatsPage : ContentPage
     {
+        StatsViewModel viewModel;
+
         public StatsPage()
         {
             InitializeComponent();
 
-            BindingContext = new StatsViewModel();
-        }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            BindingContext = new StatsViewModel();
+            BindingContext = viewModel = new StatsViewModel();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var uri = new Uri("https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-situation/covid-19-current-cases");
+            var uri = new Uri(viewModel.WebSourceUrl);
 
             await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }

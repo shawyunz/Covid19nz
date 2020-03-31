@@ -18,10 +18,10 @@
     </Shell.TitleView>
 
     <Grid>
-        <Image Aspect="AspectFit" Source="{Binding ImageUrl}" />
+        <Image Aspect="AspectFill" Source="{Binding ImageUrl}" />
         <Button
             HeightRequest="35"
-            Margin="40,40,60,32"
+            Margin="40,40,20,52"
             HorizontalOptions="End"
             VerticalOptions="End"
             BackgroundColor="#FFCD38"
