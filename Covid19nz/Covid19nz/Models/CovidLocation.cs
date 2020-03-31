@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using Xamarin.Forms.Maps;
 
 namespace Covid19nz.Models
@@ -34,7 +32,7 @@ namespace Covid19nz.Models
 
     public partial class CovidLocation
     {
-        public static Dictionary<string, CovidLocation> FromJson(string json) => JsonConvert.DeserializeObject<Dictionary<string, CovidLocation>>(json, Covid19nz.Models.Converter.Settings);
+        public static Dictionary<string, CovidLocation> FromJson(string json) => JsonConvert.DeserializeObject<Dictionary<string, CovidLocation>>(json, Converter.Settings);
 
         public Position Coordinate
         {
@@ -48,24 +46,6 @@ namespace Covid19nz.Models
         }
     }
 
-    public static class Serialize
-    {
-        public static string ToJson(this Dictionary<string, CovidLocation> self) => JsonConvert.SerializeObject(self, Covid19nz.Models.Converter.Settings);
-    }
-
-    internal static class Converter
-    {
-        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-        {
-            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-            DateParseHandling = DateParseHandling.None,
-            Converters =
-            {
-                TypeEnumConverter.Singleton,
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
-        };
-    }
 
     internal class TypeEnumConverter : JsonConverter
     {

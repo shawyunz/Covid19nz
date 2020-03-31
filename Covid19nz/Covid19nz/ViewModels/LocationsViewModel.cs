@@ -14,6 +14,7 @@ namespace Covid19nz.ViewModels
         public Command LoadItemsCommand { get; set; }
 
         public CovidLocation SelectedLocation { get; set; }
+        public CovidSummary SummaryData { get; set; }
 
         public LocationsViewModel()
         {
@@ -29,6 +30,9 @@ namespace Covid19nz.ViewModels
             try
             {
                 App.Current.GetLocations();
+
+                SummaryData = App.AppSummary;
+                OnPropertyChanged(nameof(SummaryData));
 
                 Items.Clear();
                 Items = new ObservableCollection<CovidLocation>(App.AppLocations);

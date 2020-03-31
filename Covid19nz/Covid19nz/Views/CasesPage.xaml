@@ -16,7 +16,7 @@
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
         <StackLayout>
             <SearchBar BackgroundColor="WhiteSmoke" Placeholder="Search here" />
-            <StackLayout Margin="20,0" Orientation="Horizontal">
+            <!--<StackLayout Margin="20,0" Orientation="Horizontal">
                 <Button
                     HeightRequest="35"
                     VerticalOptions="Center"
@@ -29,7 +29,7 @@
                     CornerRadius="15"
                     Text="school"
                     FontSize="12" />
-            </StackLayout>
+            </StackLayout>-->
             <ListView
                 x:Name="ItemsCollectionView"
                 SeparatorColor="Transparent"
@@ -80,7 +80,7 @@
                                         Grid.Column="2"
                                         Margin="10,0"
                                         VerticalOptions="CenterAndExpand"
-                                        Text="{Binding TravelDetailsUnstructured}"
+                                        Text="{Binding FlightNumber}"
                                         FontSize="14" />
                                 </Grid>
                             </Frame>

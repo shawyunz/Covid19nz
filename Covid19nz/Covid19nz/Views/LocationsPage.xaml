@@ -62,7 +62,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
-                    Text="189"
+                    Text="{Binding SummaryData.CasesAmount}"
                     FontAttributes="Bold"
                     FontSize="24"
                     TextColor="IndianRed" />
@@ -73,7 +73,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="1"
-                    Text="22"
+                    Text="{Binding SummaryData.RecoveredCasesTotal}"
                     FontAttributes="Bold"
                     FontSize="24"
                     TextColor="ForestGreen" />
