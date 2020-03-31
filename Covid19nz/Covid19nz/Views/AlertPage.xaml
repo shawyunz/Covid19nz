@@ -10,7 +10,7 @@
     Title="Alert">
 
     <ContentPage.BindingContext>
-        <vm:AboutViewModel />
+        <vm:StatsViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>

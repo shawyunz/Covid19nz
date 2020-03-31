@@ -10,15 +10,15 @@ using Xamarin.Forms;
 
 namespace Covid19nz.ViewModels
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class CasesViewModel : BaseViewModel
     {
         public CovidLocation Item { get; set; }
         public ObservableCollection<CovidCase> AllCases { get; set; }
         public ObservableCollection<CovidCase> DisplayCases { get; set; }
         public Command LoadItemsCommand { get; set; }
-        public ItemDetailViewModel(CovidLocation item = null)
+        public CasesViewModel(CovidLocation item = null)
         {
-            Title = item?.LocationName + " (" + item?.CaseCount + ")";
+            Title = item is null ? "All Cases" : item?.LocationName + " (" + item?.CaseCount + ")";
             Item = item;
             AllCases = new ObservableCollection<CovidCase>();
             LoadItemsCommand = new Command(() => ExecuteLoadCasesCommand());
@@ -32,14 +32,15 @@ namespace Covid19nz.ViewModels
 
             try
             {
-                App.Current.GetCases();
+                //App.Current.GetCases();
 
                 AllCases.Clear();
                 AllCases = new ObservableCollection<CovidCase>(App.AppCases);
 
                 //filter with location
-                DisplayCases = new ObservableCollection<CovidCase>(
-                    AllCases.Where(s => s.LocationName.Equals(Item.LocationName)));
+                DisplayCases = Item is null ? AllCases : 
+                     new ObservableCollection<CovidCase>(
+                        AllCases.Where(s => s.LocationName.Equals(Item.LocationName)));
             }
             catch (Exception ex)
             {

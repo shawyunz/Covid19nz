@@ -11,18 +11,19 @@ namespace Covid19nz.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class MapPage : ContentPage
+    public partial class LocationMapPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        LocationsViewModel viewModel;
 
-        public MapPage()
+        public LocationMapPage()
         {
             InitializeComponent();
 
-            viewModel = new ItemsViewModel
+            viewModel = new LocationsViewModel
             {
                 Items = new ObservableCollection<CovidLocation>(App.AppLocations)
             };
+
             BindingContext = viewModel;
         }
 
@@ -30,7 +31,7 @@ namespace Covid19nz.Views
         {
             var layout = (BindableObject)sender;
             var item = (CovidLocation)layout.BindingContext;
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            await Navigation.PushAsync(new CasesPage(new CasesViewModel(item)));
         }
     }
 }

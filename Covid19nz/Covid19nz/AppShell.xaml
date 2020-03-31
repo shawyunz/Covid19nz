@@ -28,14 +28,17 @@
     </Shell.Resources>
 
     <TabBar>
-        <Tab Title="List" Icon="icn_menu_list.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <Tab Title="Summary" Icon="icn_menu_list.png">
+            <ShellContent ContentTemplate="{DataTemplate local:LocationsPage}" />
         </Tab>
+        <Tab Title="Cases" Icon="icn_menu_list.png">
+            <ShellContent ContentTemplate="{DataTemplate local:CasesPage}" />
+        </Tab>
+        <!--<Tab Title="Map" Icon="icn_menu_map.png">
+            <ShellContent ContentTemplate="{DataTemplate local:LocationMapPage}" />
+        </Tab>-->
         <Tab Title="Map" Icon="icn_menu_map.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MapPage}" />
-        </Tab>
-        <Tab Title="MOH" Icon="icn_menu_list.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:StatsPage}" />
         </Tab>
         <Tab Title="Info" Icon="icn_menu_info.png">
             <ShellContent ContentTemplate="{DataTemplate local:AlertPage}" />

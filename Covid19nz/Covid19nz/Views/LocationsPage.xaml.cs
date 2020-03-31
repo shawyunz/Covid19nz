@@ -9,20 +9,20 @@ namespace Covid19nz.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class ItemsPage : ContentPage
+    public partial class LocationsPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        LocationsViewModel viewModel;
 
-        public ItemsPage()
+        public LocationsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new LocationsViewModel();
         }
 
         async void OnItemSelected(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(viewModel.SelectedLocation)));
+            await Navigation.PushAsync(new CasesPage(new CasesViewModel(viewModel.SelectedLocation)));
         }
 
         protected override void OnAppearing()

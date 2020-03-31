@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Covid19nz.Views.StatsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="{Binding Title}">
+
+    <Shell.TitleView>
+        <Label
+            VerticalOptions="EndAndExpand"
+            Text="Stats from health.govt.nz"
+            VerticalTextAlignment="Center"
+            FontSize="18"
+            TextColor="White" />
+    </Shell.TitleView>
+
+    <Grid>
+        <Image Aspect="AspectFit" Source="{Binding ImageUrl}" />
+        <Button
+            HeightRequest="35"
+            Margin="40,40,60,32"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            BackgroundColor="#FFCD38"
+            CornerRadius="6"
+            Text="Open MOH NZ"
+            FontSize="12"
+            TextColor="White"
+            Clicked="Button_Clicked" />
+    </Grid>
+
+    <!--<WebView Source="{Binding WebSourceUrl, Mode=OneWay}" />-->
+</ContentPage>

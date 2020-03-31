@@ -13,11 +13,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\CasesPage.xaml.cs">
+      <DependentUpon>CasesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LocationsPage.xaml.cs">
+      <DependentUpon>LocationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\StatsPage.xaml.cs">
+      <DependentUpon>StatsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\AlertPage.xaml.cs">
       <DependentUpon>AlertPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\MapPage.xaml.cs">
-      <DependentUpon>MapPage.xaml</DependentUpon>
+    <Compile Update="Views\LocationMapPage.xaml.cs">
+      <DependentUpon>LocationMapPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
