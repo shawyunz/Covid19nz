@@ -18,9 +18,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ## Screenshots:
 
-|                     Locations                     |                       Cases                       |                        Map                        |
-| :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
-| <img src=".\assets\screenshot1.png" width="200" > | <img src=".\assets\screenshot2.png" width="200" > | <img src=".\assets\screenshot3.png" width="200" > |
+|                     Locations                     |                    Cases (todo)                    |                        Map                        |
+| :-----------------------------------------------: | :------------------------------------------------: | :-----------------------------------------------: |
+| <img src=".\assets\screenshot1.png" width="200" > | <img src=".\assets\CasesDesign2.png" width="240" > | <img src=".\assets\screenshot3.png" width="200" > |
 
 
 
@@ -33,11 +33,11 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ~~[Google map for android](https://developers.google.com/maps/documentation/android-sdk/intro)~~
 
+[Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
+
 [Azure pipeline](https://dev.azure.com/)
 
 [VS App Center](https://appcenter.ms/)
-
-[Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
 
 
 
@@ -51,13 +51,23 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 * Check alert level and other links.
 * ~~Check official website.~~ (added in map page)
 
+
+
 ### TODO :
+
+#### Refresh on March 31th:
+
+- [ ] New cases page UI
+- [ ] Header detail UI
+- [ ] Info page UI
+- [ ] cluster information
+- [ ] icons not ready
 
 #### Refresh on March 27th:
 
-- [ ] api updated based on the new formatting from MOH
-- [ ] Geo location removed from api (no cities from MOH)
-- [ ] new header information api pending
+- [x] api updated based on the new formatting from MOH
+- [x] Geo location removed from api (no cities from MOH)
+- [x] new header information api pending
 - [x] build a pipeline for the project releases
 
 #### General (March 25th):
@@ -69,7 +79,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 #### List page
 
-- [ ] Header api implementation
+- [x] Header api implementation
 - [ ] detail info for Header
 - [ ] refresh time stated
 - [ ] Filters and sorters for the listing
@@ -101,13 +111,19 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ​	v1.0.4	CasePage UI updated (check screenshot2 above). Menu changed to "List", "Map", "MOH" and "Info"
 
-​	v1.0.5	(**STATIC** version) Pipeline set up. This version displays **STATIC** data on March 25th before API updated.
+​	v1.0.5	(STATIC version) Pipeline set up. This version displays **STATIC** data on March 25th before API updated.
 
-​	v1.0.6	(**STATIC** version) Loading data at beginning improve in-app experience. Splash screen added. Fixed map view init bug.
+​	v1.0.6	(STATIC version) Loading data at beginning improve in-app experience. Splash screen added. Fixed map view init bug.
 
-​	v1.0.7	Files renamed. Updated StatsPage with image from MOH. Cases page added.
+​	v1.0.7	(STATIC version) Files renamed. Updated StatsPage with image from MOH. Cases page added.
 
-​	v1.0.8	:construction:
+​	v1.0.8	(**LIVE** version) API updated. Readme and screenshots updated.
+
+​	v1.0.9	:construction:
+
+
+
+
 
 
 
