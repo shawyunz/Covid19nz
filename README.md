@@ -1,4 +1,6 @@
-# <img src="./assets/epidemic_512.png" alt="Icon" width="64" />  Covid-19 NZ App
+# <img src="./assets/epidemic_512.png" alt="Icon" width="96" /> 
+
+# Covid-19 NZ App
 
 [![Build Status](https://dev.azure.com/shawyunz/Covid19NZApp/_apis/build/status/Covid19nz%20APK?branchName=master)](https://dev.azure.com/shawyunz/Covid19NZApp/_build/latest?definitionId=2&branchName=master)
 
@@ -29,9 +31,13 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 [Xamarin maps](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/)
 
-[Google map for android](https://developers.google.com/maps/documentation/android-sdk/intro)
+~~[Google map for android](https://developers.google.com/maps/documentation/android-sdk/intro)~~
 
 [Azure pipeline](https://dev.azure.com/)
+
+[VS App Center](https://appcenter.ms/)
+
+[Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
 
 
 
@@ -42,8 +48,8 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 * Check locations and cases published by [Ministry of Health](https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-cases).
 * Check cases detail.
 * Check Covid19 map for NZ.
-* Check alert level and links.
-* Check official website.
+* Check alert level and other links.
+* ~~Check official website.~~ (added in map page)
 
 ### TODO :
 
@@ -59,7 +65,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 - [x] move api loading to init page and app cache stored
 - [x] Splash screen?
 - [ ] Security updated
-- [ ] file rename and code refactor
+- [x] file rename and code refactor
 
 #### List page
 
@@ -70,8 +76,8 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 #### Cases page:
 
-- [x] Detail page UI
-- [ ] cases full list with search
+- [ ] Detail page UI
+- [ ] cases listing with search
 - [ ] cases confirmed or probable
 
 
@@ -95,11 +101,13 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ​	v1.0.4	CasePage UI updated (check screenshot2 above). Menu changed to "List", "Map", "MOH" and "Info"
 
-​	v1.0.5	(**STATIC** data version) Pipeline set up. This version displays **STATIC** data on March 25th before API updated.
+​	v1.0.5	(**STATIC** version) Pipeline set up. This version displays **STATIC** data on March 25th before API updated.
 
-​	v1.0.6	(**STATIC** data version) Loading data at beginning improve in-app experience. Splash screen added. Fixed map view init bug.
+​	v1.0.6	(**STATIC** version) Loading data at beginning improve in-app experience. Splash screen added. Fixed map view init bug.
 
-​	v1.0.7	:construction:
+​	v1.0.7	Files renamed. Updated StatsPage with image from MOH. Cases page added.
+
+​	v1.0.8	:construction:
 
 
 
