@@ -36,7 +36,7 @@ namespace Covid19nz.Models
         public string LastCityBeforeNz
         {
             get { return lastCityBeforeNz; }
-            set => lastCityBeforeNz = string.IsNullOrWhiteSpace(value) ? " == " : value;
+            set => lastCityBeforeNz = string.IsNullOrWhiteSpace(value) ? " - " : value;
         }
 
         private string flightNumber;
@@ -45,7 +45,7 @@ namespace Covid19nz.Models
         public string FlightNumber
         {
             get { return flightNumber; }
-            set => flightNumber = string.IsNullOrWhiteSpace(value) ? " == " : value;
+            set => flightNumber = string.IsNullOrWhiteSpace(value) ? " - " : value;
         }
 
         [JsonProperty("CaseType")]
@@ -90,6 +90,7 @@ namespace Covid19nz.Models
         public string DisplayReportedDate => ReportedDate.ToString("dd/MM/yyyy");
         public string DisplayDepDate => DepartureDate.Valid ? DepartureDate.Value.ToString("dd/MM/yyyy") : " - ";
         public string DisplayArrDate => ArrivalDate.Valid ? ArrivalDate.Value.ToString("dd/MM/yyyy") : " - ";
+        public string DisplayFlightDates => (DepartureDate.Valid || ArrivalDate.Valid) ? DisplayDepDate + "   >     " + DisplayArrDate : " - > -";
 
         //sample data 31/03
         //[

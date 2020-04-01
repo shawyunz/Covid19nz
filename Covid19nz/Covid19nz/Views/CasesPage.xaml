@@ -55,7 +55,7 @@
                                                 <Setter Property="LineBreakMode" Value="TailTruncation" />
                                             </Style>
                                             <Style TargetType="Image">
-                                                <Setter Property="WidthRequest" Value="14" />
+                                                <Setter Property="WidthRequest" Value="16" />
                                             </Style>
                                         </ResourceDictionary>
                                     </Grid.Resources>
@@ -73,7 +73,7 @@
                                         VerticalOptions="FillAndExpand"
                                         BackgroundColor="LightGray" />
 
-                                    <Grid Grid.Column="2" Margin="16,0">
+                                    <Grid Grid.Column="2" Margin="12,0,8,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="9" />
@@ -81,12 +81,21 @@
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
 
-                                        <StackLayout Grid.Row="0" Orientation="Horizontal">
-                                            <Image Source="icn_male.png" />
-                                            <Label Text="{Binding Gender}" />
-                                            <Label Text="{Binding Age.OlderOrEqualToAge, StringFormat='{0}+'}" />
-                                            <Label HorizontalOptions="EndAndExpand" Text="{Binding CaseType}" />
-                                        </StackLayout>
+                                        <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="icn_male.png" />
+                                            <Label Grid.Column="1" Text="{Binding Gender}" />
+                                            <Label Grid.Column="2" Text="{Binding Age.OlderOrEqualToAge, StringFormat='{0}+'}" />
+                                            <Label
+                                                Grid.Column="3"
+                                                HorizontalOptions="EndAndExpand"
+                                                Text="{Binding CaseType}" />
+                                        </Grid>
 
                                         <BoxView
                                             Grid.Row="1"
@@ -94,18 +103,31 @@
                                             HorizontalOptions="FillAndExpand"
                                             BackgroundColor="LightGray" />
 
-                                        <StackLayout Grid.Row="2" Orientation="Horizontal">
-                                            <Image Source="icn_plane.png" />
-                                            <Label Text="{Binding FlightNumber}" />
-                                            <Image Source="icn_city.png" />
-                                            <Label Text="{Binding LastCityBeforeNz}" />
-                                        </StackLayout>
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="icn_plane.png" />
+                                            <Label Grid.Column="1" Text="{Binding FlightNumber}" />
+                                            <Image Grid.Column="2" Source="icn_city.png" />
+                                            <Label Grid.Column="3" Text="{Binding LastCityBeforeNz}" />
+                                        </Grid>
 
-                                        <StackLayout Grid.Row="3" Orientation="Horizontal">
-                                            <Label Text="{Binding DisplayDepDate}" />
-                                            <Label Text="&gt;" />
-                                            <Label Text="{Binding DisplayArrDate}" />
-                                        </StackLayout>
+                                        <Grid Grid.Row="3">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="1.1*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="icn_calendar.png" />
+                                            <Label Grid.Column="1" Text="{Binding DisplayDepDate}" />
+                                            <Label Grid.Column="2" Text="&gt;  " />
+                                            <Label Grid.Column="3" Text="{Binding DisplayArrDate}" />
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Frame>
