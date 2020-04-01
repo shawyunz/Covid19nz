@@ -17,9 +17,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ## Screenshots:
 
-|                     Locations                     |                       Cases                        |                        Map                        |
-| :-----------------------------------------------: | :------------------------------------------------: | :-----------------------------------------------: |
-| <img src=".\assets\screenshot1.png" width="200" > | <img src=".\assets\screenshot2.png" width="200" > | <img src=".\assets\screenshot3.png" width="200" > |
+|                     Locations                     |                       Cases                       |                        Map                        |
+| :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
+| <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > |
 
 
 
@@ -57,6 +57,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 #### Refresh on April fools:
 
 - [ ] Color redesign.
+- [ ] Paging cases
+- [ ] icon converter for gender and color converter for case type
+- [ ] animation for summary page?
 
 #### Refresh on March 31th:
 
@@ -85,7 +88,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 - [x] Header api implementation
 - [ ] detail info for Header
 - [ ] refresh time stated
-- [ ] Filters and sorters for the listing
+- [ ] ~~Filters and sorters for the listing~~
 
 #### Cases page:
 
@@ -99,7 +102,6 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 - [x] pins on the map
 - [x] init page no pin display
 - [ ] overlay on the map
-- [ ] personal location need or not? (the only difference from web?) 
 
 
 
