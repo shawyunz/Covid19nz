@@ -1,5 +1,4 @@
 # <img src="./assets/epidemic_512.png" alt="Icon" width="96" /> 
-
 # Covid-19 NZ App
 
 [![Build Status](https://dev.azure.com/shawyunz/Covid19NZApp/_apis/build/status/Covid19nz%20APK?branchName=master)](https://dev.azure.com/shawyunz/Covid19NZApp/_build/latest?definitionId=2&branchName=master)
@@ -18,9 +17,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ## Screenshots:
 
-|                     Locations                     |                    Cases (todo)                    |                        Map                        |
+|                     Locations                     |                       Cases                        |                        Map                        |
 | :-----------------------------------------------: | :------------------------------------------------: | :-----------------------------------------------: |
-| <img src=".\assets\screenshot1.png" width="200" > | <img src=".\assets\CasesDesign2.png" width="240" > | <img src=".\assets\screenshot3.png" width="200" > |
+| <img src=".\assets\screenshot1.png" width="200" > | <img src=".\assets\screenshot2.png" width="200" > | <img src=".\assets\screenshot3.png" width="200" > |
 
 
 
@@ -29,7 +28,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 [Xamarin.Forms Shell](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/shell/)
 
-[Xamarin maps](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/)
+~~[Xamarin maps](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/)~~
 
 ~~[Google map for android](https://developers.google.com/maps/documentation/android-sdk/intro)~~
 
@@ -55,13 +54,17 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ### TODO :
 
+#### Refresh on April fools:
+
+- [ ] Color redesign.
+
 #### Refresh on March 31th:
 
-- [ ] New cases page UI
+- [x] New cases page UI
 - [ ] Header detail UI
 - [ ] Info page UI
 - [ ] cluster information
-- [ ] icons not ready
+- [x] icons not ready
 
 #### Refresh on March 27th:
 
@@ -86,9 +89,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 #### Cases page:
 
-- [ ] Detail page UI
+- [x] Detail page UI
 - [ ] cases listing with search
-- [ ] cases confirmed or probable
+- [x] cases confirmed or probable
 
 
 ####  ~~Map page:~~
@@ -115,11 +118,13 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ​	v1.0.6	(STATIC version) Loading data at beginning improve in-app experience. Splash screen added. Fixed map view init bug.
 
-​	v1.0.7	(STATIC version) Files renamed. Updated StatsPage with image from MOH. Cases page added.
+​	v1.0.8	(STATIC version) Files renamed. Updated StatsPage with image from MOH. Cases page added.
 
-​	v1.0.8	(**LIVE** version) API updated. Readme and screenshots updated.
+​	v1.0.9	API updated (back to live). Readme and screenshots updated.
 
-​	v1.0.9	:construction:
+​	v1.1.0	:tada: Case page updated. Icons updated.
+
+​	v1.1.1	:construction:
 
 
 
