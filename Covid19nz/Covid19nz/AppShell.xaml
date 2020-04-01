@@ -31,7 +31,7 @@
         <Tab Title="Summary" Icon="icn_menu_list.png">
             <ShellContent ContentTemplate="{DataTemplate local:LocationsPage}" />
         </Tab>
-        <Tab Title="Cases" Icon="icn_menu_list.png">
+        <Tab Title="Cases" Icon="icn_menu_case.png">
             <ShellContent ContentTemplate="{DataTemplate local:CasesPage}" />
         </Tab>
         <!--<Tab Title="Map" Icon="icn_menu_map.png">
