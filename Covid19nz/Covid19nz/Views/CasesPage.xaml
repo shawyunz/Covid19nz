@@ -40,48 +40,73 @@
                     <DataTemplate>
                         <ViewCell>
                             <Frame Margin="10,5" CornerRadius="5">
-                                <Grid Margin="-8,-12">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
+                                <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="1" />
-                                        <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition Width="3*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        Margin="-10,0,0,0"
-                                        HorizontalOptions="CenterAndExpand"
-                                        Text="{Binding CaseNumber, StringFormat='{0:000}'}"
-                                        FontAttributes="Bold"
-                                        FontSize="20"
-                                        TextDecorations="Underline" />
-                                    <StackLayout
-                                        Grid.Row="1"
-                                        Grid.Column="0"
-                                        Margin="0,-4,6,0"
-                                        Orientation="Horizontal"
-                                        HorizontalOptions="CenterAndExpand">
-                                        <Label Text="{Binding GenderChar}" FontSize="12" />
-                                        <Label Text="{Binding Age.OlderOrEqualToAge, StringFormat='{0}+'}" FontSize="12" />
+
+                                    <Grid.Resources>
+                                        <ResourceDictionary>
+                                            <Style TargetType="Label">
+                                                <Setter Property="FontSize" Value="12" />
+                                                <Setter Property="Margin" Value="0" />
+                                                <Setter Property="LineBreakMode" Value="TailTruncation" />
+                                            </Style>
+                                            <Style TargetType="Image">
+                                                <Setter Property="WidthRequest" Value="14" />
+                                            </Style>
+                                        </ResourceDictionary>
+                                    </Grid.Resources>
+
+                                    <StackLayout Grid.Column="0" Margin="0,0">
+                                        <Label
+                                            Margin="0,0,0,4"
+                                            Text="{Binding CaseNumber}"
+                                            FontSize="20" />
+                                        <Label Margin="0,-4" Text="{Binding DisplayReportedDate}" />
+                                        <Label LineBreakMode="CharacterWrap" Text="{Binding LocationName}" />
                                     </StackLayout>
                                     <BoxView
-                                        Grid.Row="0"
-                                        Grid.RowSpan="2"
                                         Grid.Column="1"
                                         VerticalOptions="FillAndExpand"
                                         BackgroundColor="LightGray" />
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.RowSpan="2"
-                                        Grid.Column="2"
-                                        Margin="10,0"
-                                        VerticalOptions="CenterAndExpand"
-                                        Text="{Binding FlightNumber}"
-                                        FontSize="14" />
+
+                                    <Grid Grid.Column="2" Margin="16,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="9" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout Grid.Row="0" Orientation="Horizontal">
+                                            <Image Source="icn_male.png" />
+                                            <Label Text="{Binding Gender}" />
+                                            <Label Text="{Binding Age.OlderOrEqualToAge, StringFormat='{0}+'}" />
+                                            <Label HorizontalOptions="EndAndExpand" Text="{Binding CaseType}" />
+                                        </StackLayout>
+
+                                        <BoxView
+                                            Grid.Row="1"
+                                            Margin="0,4"
+                                            HorizontalOptions="FillAndExpand"
+                                            BackgroundColor="LightGray" />
+
+                                        <StackLayout Grid.Row="2" Orientation="Horizontal">
+                                            <Image Source="icn_plane.png" />
+                                            <Label Text="{Binding FlightNumber}" />
+                                            <Image Source="icn_city.png" />
+                                            <Label Text="{Binding LastCityBeforeNz}" />
+                                        </StackLayout>
+
+                                        <StackLayout Grid.Row="3" Orientation="Horizontal">
+                                            <Label Text="{Binding DisplayDepDate}" />
+                                            <Label Text="&gt;" />
+                                            <Label Text="{Binding DisplayArrDate}" />
+                                        </StackLayout>
+                                    </Grid>
                                 </Grid>
                             </Frame>
                         </ViewCell>

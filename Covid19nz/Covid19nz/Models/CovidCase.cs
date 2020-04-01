@@ -30,11 +30,23 @@ namespace Covid19nz.Models
         [JsonProperty("ArrivalDate")]
         public Date ArrivalDate { get; set; }
 
+        private string lastCityBeforeNz;
+
         [JsonProperty("LastCityBeforeNZ")]
-        public string LastCityBeforeNz { get; set; }
+        public string LastCityBeforeNz
+        {
+            get { return lastCityBeforeNz; }
+            set => lastCityBeforeNz = string.IsNullOrWhiteSpace(value) ? " == " : value;
+        }
+
+        private string flightNumber;
 
         [JsonProperty("FlightNumber")]
-        public string FlightNumber { get; set; }
+        public string FlightNumber
+        {
+            get { return flightNumber; }
+            set => flightNumber = string.IsNullOrWhiteSpace(value) ? " == " : value;
+        }
 
         [JsonProperty("CaseType")]
         public string CaseType { get; set; }
@@ -75,6 +87,9 @@ namespace Covid19nz.Models
         public static List<CovidCase> FromJson(string json) => JsonConvert.DeserializeObject<List<CovidCase>>(json, Converter.Settings);
 
         public string GenderChar => Gender.Substring(0, 1);
+        public string DisplayReportedDate => ReportedDate.ToString("dd/MM/yyyy");
+        public string DisplayDepDate => DepartureDate.Valid ? DepartureDate.Value.ToString("dd/MM/yyyy") : " - ";
+        public string DisplayArrDate => ArrivalDate.Valid ? ArrivalDate.Value.ToString("dd/MM/yyyy") : " - ";
 
         //sample data 31/03
         //[
