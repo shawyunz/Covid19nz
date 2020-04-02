@@ -10,17 +10,26 @@ namespace Covid19nz.ViewModels
 {
     public class LocationsViewModel : BaseViewModel
     {
+        public bool ExpandHeader { get; set; }
         public CovidLocation SelectedLocation { get; set; }
         public CovidSummary SummaryData { get; set; }
         public ObservableCollection<CovidLocation> Items { get; set; }
 
+        public Command ExpandHeaderCommand { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public LocationsViewModel()
         {
             Title = "Covid-19 NZ";
             Items = new ObservableCollection<CovidLocation>();
+            ExpandHeaderCommand = new Command(() => ExecuteExpandCommand());
             LoadItemsCommand = new Command(() => ExecuteLoadItemsCommand());
+        }
+
+        private void ExecuteExpandCommand()
+        {
+            ExpandHeader = !ExpandHeader;
+            OnPropertyChanged(nameof(ExpandHeader));
         }
 
         private void ExecuteLoadItemsCommand()
