@@ -7,16 +7,16 @@ namespace Covid19nz.Models
     {
         public CovidSummary(Dictionary<string, int> SummaryData)
         {
-            ConfirmedCasesTotal = SummaryData["ConfirmedCasesTotal"];
-            ConfirmedCasesNew24h = SummaryData["ConfirmedCasesNew24h"];
-            ProbableCasesTotal = SummaryData["ProbableCasesTotal"];
-            ProbableCasesNew24h = SummaryData["ProbableCasesNew24h"];
-            RecoveredCasesTotal = SummaryData["RecoveredCasesTotal"];
-            RecoveredCasesNew24h = SummaryData["RecoveredCasesNew24h"];
-            HospitalisedCasesTotal = SummaryData["HospitalisedCasesTotal"];
+            ConfirmedCasesTotal     = SummaryData["ConfirmedCasesTotal"];
+            ConfirmedCasesNew24h    = SummaryData["ConfirmedCasesNew24h"];
+            ProbableCasesTotal      = SummaryData["ProbableCasesTotal"];
+            ProbableCasesNew24h     = SummaryData["ProbableCasesNew24h"];
+            RecoveredCasesTotal     = SummaryData["RecoveredCasesTotal"];
+            RecoveredCasesNew24h    = SummaryData["RecoveredCasesNew24h"];
+            HospitalisedCasesTotal  = SummaryData["HospitalisedCasesTotal"];
             HospitalisedCasesCurrent = SummaryData["HospitalisedCasesCurrent"];
-            DeathCasesTotal = SummaryData["DeathCasesTotal"];
-            DeathCasesNew24h = SummaryData["DeathCasesNew24h"];
+            DeathCasesTotal         = SummaryData["DeathCasesTotal"];
+            DeathCasesNew24h        = SummaryData["DeathCasesNew24h"];
         }
 
         public int ConfirmedCasesTotal { get; set; }

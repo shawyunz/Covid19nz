@@ -10,11 +10,11 @@ namespace Covid19nz.ViewModels
 {
     public class LocationsViewModel : BaseViewModel
     {
-        public ObservableCollection<CovidLocation> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
-
         public CovidLocation SelectedLocation { get; set; }
         public CovidSummary SummaryData { get; set; }
+        public ObservableCollection<CovidLocation> Items { get; set; }
+
+        public Command LoadItemsCommand { get; set; }
 
         public LocationsViewModel()
         {
