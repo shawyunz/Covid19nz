@@ -15,8 +15,16 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 
 
+
+
+
+
 ## Screenshots:
 
+### Demo
+<img src=".\assets\Covid19AppDemo.gif" width="340"/>
+
+### Pages
 |                     Locations                     |                       Cases                       |                        Map                        |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
 | <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > |
