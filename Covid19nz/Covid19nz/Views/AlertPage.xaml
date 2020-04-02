@@ -27,21 +27,10 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackLayout
+            Padding="0,40"
             HorizontalOptions="Fill"
             VerticalOptions="FillAndExpand"
-            BackgroundColor="#FFCD38">
-            <StackLayout
-                Orientation="Horizontal"
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <!--<Image
-                        HeightRequest="64"
-                        VerticalOptions="Center"
-                        Source="xamarin_logo.png" />-->
-                </ContentView>
-            </StackLayout>
-        </StackLayout>
+            BackgroundColor="#FFCD38" />
         <ScrollView Grid.Row="1">
             <StackLayout
                 Padding="16,40,16,40"
@@ -60,7 +49,49 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Label>
+                <Grid RowSpacing="10" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Global stats: " />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Text="Covid nz map: " />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Text="NZ alert lv: " />
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="https://ncov2019.live/data"
+                        FontAttributes="Bold"
+                        TextDecorations="Underline" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="https://covid19map.nz/"
+                        FontAttributes="Bold"
+                        TextDecorations="Underline" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Text="https://covid19.govt.nz/government-actions/covid-19-alert-level/"
+                        FontAttributes="Bold"
+                        TextDecorations="Underline" />
+                </Grid>
+                <!--<Label>
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
@@ -98,15 +129,14 @@
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
-                </Label>
+                </Label>-->
                 <Button
-                    Margin="0,10,0,0"
+                    Margin="30,10,30,0"
                     BackgroundColor="#FFCD38"
-                    Text="NZ Alert Levels"
+                    Text="Check NZ Alert PDF"
                     TextColor="White"
                     Command="{Binding OpenAlertPDFCommand}" />
             </StackLayout>
         </ScrollView>
     </Grid>
-
 </ContentPage>
