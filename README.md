@@ -59,13 +59,13 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 - [ ] Color redesign.
 - [ ] Paging cases
 - [ ] icon converter for gender and color converter for case type
-- [ ] animation for summary page?
+- [x] animation for summary page?
 
 #### Refresh on March 31th:
 
 - [x] New cases page UI
-- [ ] Header detail UI
-- [ ] Info page UI
+- [x] Header detail UI
+- [x] Info page UI
 - [ ] cluster information
 - [x] icons not ready
 
@@ -86,7 +86,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 #### List page
 
 - [x] Header api implementation
-- [ ] detail info for Header
+- [x] detail info for Header
 - [ ] refresh time stated
 - [ ] ~~Filters and sorters for the listing~~
 
@@ -126,11 +126,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ​	v1.1.0	:tada: Case page updated. Icons updated.
 
-​	v1.1.1	:construction:
+​	v1.1.1	Add expandable header (check new screenshot above). Update accent color and info page.
 
-
-
-
+​	v1.1.2	:construction:
 
 
 
