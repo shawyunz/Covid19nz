@@ -1,21 +1,9 @@
-# <img src="./assets/epidemic_512.png" alt="Icon" width="96" /> 
-# Covid-19 NZ App
-
+# <img src="./assets/epidemic_512.png" alt="Icon" width="96" />      Covid-19 NZ App
 [![Build Status](https://dev.azure.com/shawyunz/Covid19NZApp/_apis/build/status/Covid19nz%20APK?branchName=master)](https://dev.azure.com/shawyunz/Covid19NZApp/_build/latest?definitionId=2&branchName=master)
 
 A Xamarin.Forms app for checking locations and cases published by [Ministry of Health](https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-cases) in New Zealand.
 
 Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid19cases](https://github.com/simeonmiteff/nzcovid19cases).
-
-
-
-## APK releases:
-
-APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
-
-
-
-
 
 
 
@@ -25,9 +13,15 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 <img src=".\assets\Covid19AppDemo.gif" width="340"/>
 
 ### Pages
-|                     Locations                     |                       Cases                       |                        Map                        |
+|                      Summary                      |                       Cases                       |                        Map                        |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
 | <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > |
+
+
+
+## APK releases:
+
+APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
 
 
 
@@ -61,6 +55,11 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 
 ### TODO :
+
+#### Refresh on April 2nd:
+
+- [ ] publish apk to store
+- [ ] pinch to the picture
 
 #### Refresh on April fools:
 
