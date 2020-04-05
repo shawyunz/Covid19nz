@@ -24,8 +24,7 @@ namespace Covid19nz.ViewModels
         //public string ImageUrl => "https://www.health.govt.nz/sites/default/files/images/our-work/diseases-conditions/covid19/hp7357_-_covid_confirmed_and_probable_cases_by_dhb-merged-310320_updated_02.jpg";
         //public string ImageUrl => "https://www.health.govt.nz/sites/default/files/images/our-work/diseases-conditions/covid19/hp7357_-_covid_confirmed_and_probable_cases_by_dhb-merged-010420.jpg";
 
-        public string ImageUrl => "https://www.health.govt.nz/sites/default/files/images/our-work/diseases-conditions/covid19/hp7357-covid-confirmed-and-probable-cases-by-dhb-merged-020420.jpg";
-
+        public string ImageUrl => "https://www.health.govt.nz/sites/default/files/images/our-work/diseases-conditions/covid19/hp7357_-_covid_confirmed_and_probable_cases_by_dhb-merged-050420.jpg";
 
 
         //live image url
