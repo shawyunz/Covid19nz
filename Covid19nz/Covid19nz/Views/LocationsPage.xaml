@@ -145,7 +145,7 @@
                         TextColor="SkyBlue" />
                     <Label
                         VerticalOptions="Center"
-                        Text="{Binding SummaryData.HospitalisedCasesCurrent, StringFormat='(+{0})'}"
+                        Text="{Binding SummaryData.HospitalisedCasesNew24h, StringFormat='(+{0})'}"
                         FontAttributes="Bold"
                         FontSize="14"
                         TextColor="SkyBlue" />
