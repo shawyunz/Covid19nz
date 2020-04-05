@@ -14,7 +14,7 @@ namespace Covid19nz.Models
             RecoveredCasesTotal     = SummaryData["RecoveredCasesTotal"];
             RecoveredCasesNew24h    = SummaryData["RecoveredCasesNew24h"];
             HospitalisedCasesTotal  = SummaryData["HospitalisedCasesTotal"];
-            HospitalisedCasesCurrent = SummaryData["HospitalisedCasesCurrent"];
+            HospitalisedCasesNew24h = SummaryData["HospitalisedCasesNew24h"];
             DeathCasesTotal         = SummaryData["DeathCasesTotal"];
             DeathCasesNew24h        = SummaryData["DeathCasesNew24h"];
         }
@@ -26,7 +26,7 @@ namespace Covid19nz.Models
         public int RecoveredCasesTotal { get; set; }
         public int RecoveredCasesNew24h { get; set; }
         public int HospitalisedCasesTotal { get; set; }
-        public int HospitalisedCasesCurrent { get; set; }
+        public int HospitalisedCasesNew24h { get; set; }
         public int DeathCasesTotal { get; set; }
         public int DeathCasesNew24h { get; set; }
         public int CasesAmount => ConfirmedCasesTotal + ProbableCasesTotal;
