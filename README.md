@@ -60,6 +60,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 - [ ] publish apk to store
 - [ ] pinch to the picture
+- [ ] implement Shell features.
 
 #### Refresh on April fools:
 
@@ -100,7 +101,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 #### Cases page:
 
 - [x] Detail page UI
-- [ ] cases listing with search
+- [x] cases listing with search
 - [x] cases confirmed or probable
 
 
@@ -108,7 +109,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 - [x] pins on the map
 - [x] init page no pin display
-- [ ] overlay on the map
+- [x] overlay on the map
 
 
 
@@ -135,7 +136,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ​	v1.1.1	Add expandable header (check new screenshot above). Update accent color and info page.
 
-​	v1.1.2	:construction:
+​	v1.1.2	Add search bar from Shell.
+
+​	v1.1.3	:construction:
 
 
 
