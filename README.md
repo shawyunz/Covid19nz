@@ -59,8 +59,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 #### Refresh on April 2nd:
 
 - [ ] publish apk to store
+- [ ] iOS version publish
 - [ ] pinch to the picture
-- [ ] implement Shell features.
+- [ ] implement Shell features.(Search done, navigation pending)
 
 #### Refresh on April fools:
 
