@@ -2,7 +2,10 @@
 using System.ComponentModel;
 using Xamarin.Forms;
 
+using Covid19nz.Controls;
 using Covid19nz.ViewModels;
+using Covid19nz.Models;
+using System.Collections.ObjectModel;
 
 namespace Covid19nz.Views
 {
@@ -11,33 +14,33 @@ namespace Covid19nz.Views
     [DesignTimeVisible(false)]
     public partial class CasesPage : ContentPage
     {
-        CasesViewModel viewModel;
-
-        public CasesPage(CasesViewModel viewModel)
+        public CasesPage(CasesViewModel viewModel) : this()
         {
-            InitializeComponent();
-
-            BindingContext = this.viewModel = viewModel;
+            BindingContext = viewModel;
         }
+
         public CasesPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new CasesViewModel(null);
+            BindingContext = new CasesViewModel(null);
+            SubscribeMsgFromSearch();
         }
 
-        //public ItemDetailPage()
-        //{
-        //    InitializeComponent();
-
-        //    var item = new Item
-        //    {
-        //        Text = "Item 1",
-        //        Description = "This is an item description."
-        //    };
-
-        //    viewModel = new ItemDetailViewModel(item);
-        //    BindingContext = viewModel;
-        //}
+        private void SubscribeMsgFromSearch()
+        {
+            MessagingCenter.Subscribe<SearchHandler, CovidCase>(this, "FindLine", async (sender, e) =>
+            {
+                if (CovidCaseList.ItemsSource is ObservableCollection<CovidCase> list)
+                {
+                    if (list.Contains(e))
+                    {
+                        //CovidCaseList.SelectedItem = e;
+                        await CovidCaseList.FadeTo(0.5, 200, Easing.CubicIn);
+                        CovidCaseList.ScrollTo(e, ScrollToPosition.MakeVisible, false);
+                        await CovidCaseList.FadeTo(1, 200, Easing.CubicOut);
+                    }
+                }
+            });
+        }
     }
 }

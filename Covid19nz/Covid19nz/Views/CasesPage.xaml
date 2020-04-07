@@ -6,8 +6,41 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:controls="clr-namespace:Covid19nz.Controls"
+    xmlns:data="clr-namespace:Covid19nz"
     Title="{Binding Title}"
     BackgroundColor="#f1f5ff">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="CaseSearchTemplate">
+            <Grid Padding="10" BackgroundColor="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding CaseNumber, StringFormat='Case: {0} '}" FontAttributes="Bold" />
+                <Label
+                    Grid.Column="1"
+                    Text="{Binding Gender}"
+                    FontAttributes="Bold" />
+                <Label
+                    Grid.Column="2"
+                    Text="{Binding FlightNumber}"
+                    FontAttributes="Bold" />
+            </Grid>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <!--  CaseList="{Binding DisplayCases}"  -->
+    <Shell.SearchHandler>
+        <controls:CaseSearchHandler
+            CaseList="{Static data:App.AppCases}"
+            Keyboard="Plain"
+            ShowsResults="true"
+            Placeholder="Search case"
+            ItemTemplate="{StaticResource CaseSearchTemplate}" />
+    </Shell.SearchHandler>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="icn_menu_list.png" Command="{Binding LoadItemsCommand}" />
@@ -15,23 +48,9 @@
 
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
         <StackLayout>
-            <SearchBar BackgroundColor="WhiteSmoke" Placeholder="Search here" />
-            <!--<StackLayout Margin="20,0" Orientation="Horizontal">
-                <Button
-                    HeightRequest="35"
-                    VerticalOptions="Center"
-                    CornerRadius="15"
-                    Text="flight"
-                    FontSize="12" />
-                <Button
-                    HeightRequest="35"
-                    VerticalOptions="Center"
-                    CornerRadius="15"
-                    Text="school"
-                    FontSize="12" />
-            </StackLayout>-->
+            <!--<SearchBar BackgroundColor="WhiteSmoke" Placeholder="Search here" />-->
             <ListView
-                x:Name="ItemsCollectionView"
+                x:Name="CovidCaseList"
                 SeparatorColor="Transparent"
                 HasUnevenRows="True"
                 ItemsSource="{Binding DisplayCases}"
@@ -135,7 +154,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </StackLayout>
     </RefreshView>
 </ContentPage>

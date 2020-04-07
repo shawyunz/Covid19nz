@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using Covid19nz.Models;
 using Xamarin.Forms;
 
@@ -20,7 +17,10 @@ namespace Covid19nz.ViewModels
         {
             Title = item is null ? "All Cases" : item?.LocationName + " (" + item?.CaseCount + ")";
             Item = item;
+
             AllCases = new ObservableCollection<CovidCase>();
+            DisplayCases = new ObservableCollection<CovidCase>();
+
             LoadItemsCommand = new Command(() => ExecuteLoadCasesCommand());
 
             ExecuteLoadCasesCommand();
@@ -41,6 +41,8 @@ namespace Covid19nz.ViewModels
                 DisplayCases = Item is null ? AllCases : 
                      new ObservableCollection<CovidCase>(
                         AllCases.Where(s => s.LocationName.Equals(Item.LocationName)));
+
+                OnPropertyChanged(nameof(DisplayCases));
             }
             catch (Exception ex)
             {
