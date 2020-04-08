@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:vm="clr-namespace:Covid19nz.ViewModels"
-    Title="Alert">
+    Title="Alert"
+    Shell.NavBarIsVisible="False">
 
     <ContentPage.BindingContext>
         <vm:StatsViewModel />
@@ -21,117 +22,71 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout
-            Padding="0,40"
-            HorizontalOptions="Fill"
-            VerticalOptions="FillAndExpand"
-            BackgroundColor="#FFCD38" />
-        <ScrollView Grid.Row="1">
-            <StackLayout
-                Padding="16,0,16,40"
-                Spacing="10"
-                Orientation="Vertical">
-                <Label
-                    Text="{Binding CurrentLevel.Level, StringFormat='Alert Level {0}'}"
-                    FontAttributes="Bold"
-                    FontSize="22" />
-                <Label
-                    Text="{Binding CurrentLevel.LevelName}"
-                    FontAttributes="Bold"
-                    FontSize="20" />
-                <Grid RowSpacing="10" Margin="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Text="Global stats: " />
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Text="Covid nz map: " />
-                    <Label
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Text="NZ alert lv: " />
+    <StackLayout>
+        <Image
+            HeightRequest="80"
+            Aspect="AspectFill"
+            Source="banner.png" />
 
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Text="https://ncov2019.live/data"
-                        FontAttributes="Bold"
-                        TextDecorations="Underline" />
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Text="https://covid19map.nz/"
-                        FontAttributes="Bold"
-                        TextDecorations="Underline" />
-                    <Label
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        Text="https://covid19.govt.nz/government-actions/covid-19-alert-level/"
-                        FontAttributes="Bold"
-                        TextDecorations="Underline" />
-                </Grid>
-                <!--<Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Global stats:    " />
-                                <Span
-                                    Text="https://ncov2019.live/data"
-                                    FontAttributes="Bold"
-                                    TextDecorations="Underline" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Covid nz map: " />
-                                <Span
-                                    Text="https://covid19map.nz/"
-                                    FontAttributes="Bold"
-                                    TextDecorations="Underline" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="About alert:      " />
-                                <Span
-                                    Text="https://covid19.govt.nz/government-actions/covid-19-alert-level/"
-                                    FontAttributes="Bold"
-                                    TextDecorations="Underline" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>-->
-                <Button
-                    Margin="30,10,30,0"
-                    BackgroundColor="#FFCD38"
-                    Text="Check NZ Alert PDF"
-                    TextColor="White"
-                    Command="{Binding OpenAlertPDFCommand}" />
-            </StackLayout>
-        </ScrollView>
-    </Grid>
+        <StackLayout Margin="20,8" Orientation="Horizontal">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OpenNZAlertLevel" />
+            </StackLayout.GestureRecognizers>
+            <Label
+                Text="{Binding CurrentLevel.Level, StringFormat='Alert Level {0} (pdf)'}"
+                FontAttributes="Bold"
+                FontSize="22"
+                TextDecorations="Underline" />
+            <Label
+                HorizontalOptions="EndAndExpand"
+                Text="{Binding CurrentLevel.LevelName}"
+                FontAttributes="Bold"
+                FontSize="18" />
+        </StackLayout>
+
+        <TableView HasUnevenRows="True">
+            <TableRoot>
+                <TableSection Title="Official Links">
+                    <ViewCell Tapped="OpenUriCovidNZ">
+                        <StackLayout Margin="40,4">
+                            <Label Text="Unite against COVID-19: " />
+                            <Label
+                                Text="{Binding UriCovidNZ}"
+                                FontAttributes="Bold"
+                                TextDecorations="Underline" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Tapped="OpenUriMohNZ">
+                        <StackLayout Margin="40,4">
+                            <Label Text="Ministry of Health - Current cases: " />
+                            <Label
+                                Text="{Binding UriMohNZ}"
+                                FontAttributes="Bold"
+                                TextDecorations="Underline" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Other Links">
+                    <ViewCell Tapped="OpenUriGlobalStats">
+                        <StackLayout Margin="40,4">
+                            <Label Text="Global stats: " />
+                            <Label
+                                Text="{Binding UriGlobalStats}"
+                                FontAttributes="Bold"
+                                TextDecorations="Underline" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Tapped="OpenUriMapNZ">
+                        <StackLayout Margin="40,4">
+                            <Label Text="Covid nz map: " />
+                            <Label
+                                Text="{Binding UriMapNZ}"
+                                FontAttributes="Bold"
+                                TextDecorations="Underline" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
 </ContentPage>
