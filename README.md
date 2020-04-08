@@ -13,15 +13,19 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 <img src=".\assets\Covid19AppDemo.gif" width="340"/>
 
 ### Pages
-|                      Summary                      |                       Cases                       |                        Map                        |
-| :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
-| <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > |
+|                      Summary                      |                       Cases                       |                        Map                        |                       Info                        |
+| :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
+| <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > | <img src=".\assets\screenshot4.png" width="240" > |
 
 
 
-## APK releases:
+## App releases:
 
-APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
+Android APK: [VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
+
+iOS: <TODO>
+
+Official store links: <TODO>
 
 
 
@@ -56,11 +60,20 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ### TODO :
 
+#### Refresh on April 8th:
+
+- [x] Stats image source relocated
+- [ ] Help info for Cases
+- [ ] Gif demo update for whole app
+- [x] Alert level API
+- [x] Info page updated
+
+
 #### Refresh on April 2nd:
 
 - [ ] publish apk to store
 - [ ] iOS version publish
-- [ ] pinch to the picture
+- [x] pinch to the picture
 - [ ] implement Shell features.(Search done, navigation pending)
 
 #### Refresh on April fools:
@@ -69,6 +82,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 - [ ] Paging cases
 - [ ] icon converter for gender and color converter for case type
 - [x] animation for summary page?
+
+<details><summary><b>More previous tasks from March... </b></summary>
+<p>
 
 #### Refresh on March 31th:
 
@@ -96,7 +112,7 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 - [x] Header api implementation
 - [x] detail info for Header
-- [ ] refresh time stated
+- [ ] refresh time stated ([issue 10](https://github.com/simeonmiteff/nzcovid19cases/issues/10))
 - [ ] ~~Filters and sorters for the listing~~
 
 #### Cases page:
@@ -112,6 +128,8 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 - [x] init page no pin display
 - [x] overlay on the map
 
+</p>
+</details>
 
 
 
@@ -139,7 +157,9 @@ APK access from [VS App Center](https://tinyurl.com/covid19nzapp), or this url: 
 
 ​	v1.1.2	Add search bar from Shell.
 
-​	v1.1.3	:construction:
+​	v1.1.3	Stats image source relocated. Info page updated. Alert level API added. 
+
+​	v1.1.4	:construction:
 
 
 
