@@ -21,11 +21,11 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 ## App releases:
 
-Android APK: [VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
+Android:	[VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
 
-iOS: <TODO>
+iOS: 		[TODO]
 
-Official store links: <TODO>
+Official store: [TODO]
 
 
 
@@ -133,6 +133,8 @@ Official store links: <TODO>
 
 
 
+
+
 ## Versions
 
 ​	v1.0.1	Implemented with simeonmiteff API for locations, cases and map.
@@ -157,9 +159,11 @@ Official store links: <TODO>
 
 ​	v1.1.2	Add search bar from Shell.
 
-​	v1.1.3	Stats image source relocated. Info page updated. Alert level API added. 
+​	v1.1.3	Stats image source relocated. Info page updated. Alert level API added. Allow zoom on Map page.
 
 ​	v1.1.4	:construction:
+
+
 
 
 
