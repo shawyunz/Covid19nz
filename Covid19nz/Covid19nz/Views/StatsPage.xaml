@@ -6,6 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
     Title="{Binding Title}">
 
     <Shell.TitleView>
@@ -19,7 +20,12 @@
     </Shell.TitleView>
 
     <Grid>
-        <Image Aspect="AspectFill" Source="{Binding ImageUrl}" />
+        <!--<Image Aspect="AspectFill" Source="{Binding ImageUrl}" />-->
+        <WebView
+            HorizontalOptions="Fill"
+            android:WebView.DisplayZoomControls="true"
+            android:WebView.EnableZoomControls="true"
+            Source="{Binding WebsiteUrl, Mode=OneWay}" />
         <Button
             HeightRequest="35"
             Margin="40,40,20,52"
@@ -32,6 +38,4 @@
             TextColor="White"
             Clicked="Button_Clicked" />
     </Grid>
-
-    <!--<WebView Source="{Binding WebSourceUrl, Mode=OneWay}" />-->
 </ContentPage>
