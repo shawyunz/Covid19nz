@@ -11,10 +11,11 @@
     <Shell.TitleView>
         <Label
             VerticalOptions="EndAndExpand"
-            Text="Stats from health.govt.nz"
+            Text="health.govt.nz"
             VerticalTextAlignment="Center"
             FontSize="18"
-            TextColor="White" />
+            TextColor="White"
+            TextDecorations="Underline" />
     </Shell.TitleView>
 
     <Grid>
