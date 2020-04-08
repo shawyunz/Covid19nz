@@ -33,22 +33,17 @@
             BackgroundColor="#FFCD38" />
         <ScrollView Grid.Row="1">
             <StackLayout
-                Padding="16,40,16,40"
+                Padding="16,0,16,40"
                 Spacing="10"
                 Orientation="Vertical">
-                <Label FontSize="22">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span
-                                    Text="Alert level 4"
-                                    FontAttributes="Bold"
-                                    FontSize="22" />
-                                <Span Text=" " />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Label
+                    Text="{Binding CurrentLevel.Level, StringFormat='Alert Level {0}'}"
+                    FontAttributes="Bold"
+                    FontSize="22" />
+                <Label
+                    Text="{Binding CurrentLevel.LevelName}"
+                    FontAttributes="Bold"
+                    FontSize="20" />
                 <Grid RowSpacing="10" Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />

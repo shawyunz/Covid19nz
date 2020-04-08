@@ -13,12 +13,14 @@ namespace Covid19nz
         public new static App Current => Application.Current as App;
         public static List<CovidCase> AppCases { get; set; }
         public static List<CovidLocation> AppLocations { get; set; }
+        public static AlertLevel AppAlertLevel { get; set; }
         public static CovidSummary AppSummary { get; set; }
 
         public App()
         {
             InitializeComponent();
 
+            GetAlertLevel();
             GetSummary();
             GetLocations();
             GetCases();
@@ -39,10 +41,20 @@ namespace Covid19nz
         {
         }
 
-        public void GetSummary()
+        public void GetAlertLevel()
         {
-            var locationsJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/casestats/json");
-            AppSummary = new CovidSummary(CovidSummary.FromJson(locationsJson));
+            var levelJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/alertlevel/json");
+            AppAlertLevel = AlertLevel.FromJson(levelJson);
+        }
+
+        public void GetCases()
+        {
+            //live data
+            var casesJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/cases/json");
+            AppCases = CovidCase.FromJson(casesJson);
+
+            ////static data
+            //AppCases = CovidCase.FromJson(JsonCases0325);
         }
 
         public void GetLocations()
@@ -55,14 +67,10 @@ namespace Covid19nz
             //AppLocations = CovidLocation.FromJson(JsonLocation0325).Values.ToList();
         }
 
-        public void GetCases()
+        public void GetSummary()
         {
-            //live data
-            var casesJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/cases/json");
-            AppCases = CovidCase.FromJson(casesJson);
-
-            ////static data
-            //AppCases = CovidCase.FromJson(JsonCases0325);
+            var locationsJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/casestats/json");
+            AppSummary = new CovidSummary(CovidSummary.FromJson(locationsJson));
         }
 
         //#region static data on 25/03

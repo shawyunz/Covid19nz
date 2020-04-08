@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Covid19nz.Models;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Covid19nz.Views
 {
@@ -10,9 +9,13 @@ namespace Covid19nz.Views
     [DesignTimeVisible(false)]
     public partial class AlertPage : ContentPage
     {
+        public AlertLevel CurrentLevel { get; private set; }
+
         public AlertPage()
         {
             InitializeComponent();
+            CurrentLevel = App.AppAlertLevel;
+            BindingContext = this;
         }
     }
 }
