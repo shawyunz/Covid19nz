@@ -17,7 +17,13 @@ namespace Covid19nz.ViewModels
         public Command LoadFilterCommand { get; set; }
         public Command LoadItemsCommand { get; set; }
         public ObservableCollection<CovidCase> AllCases { get; set; }
-        public ObservableCollection<CovidCase> DisplayCases { get; set; }
+
+        ObservableCollection<CovidCase> displayCases;
+        public ObservableCollection<CovidCase> DisplayCases
+        {
+            get { return displayCases; }
+            set { SetProperty(ref displayCases, value); }
+        }
 
         public CasesViewModel(CovidLocation location = null)
         {
@@ -45,8 +51,6 @@ namespace Covid19nz.ViewModels
                     new ObservableCollection<CovidCase>(App.AppCases.Where(s => s.LocationName.Equals(SelectedLocation.LocationName)));
 
                 LoadFilterCases();
-
-                OnPropertyChanged(nameof(DisplayCases));
             }
             catch (Exception ex)
             {
@@ -60,31 +64,47 @@ namespace Covid19nz.ViewModels
 
         private void LoadFilterCases()
         {
-            DisplayCases = AllCases;
+            IsBusy = true;
 
-            if (HasFlight)
+            try
             {
-                DisplayCases = new ObservableCollection<CovidCase>
-                    (DisplayCases.Where(s => !s.FlightNumber.Equals(CovidCase.CASEPLACEHOLDER)));
-            }
+                DisplayCases = AllCases;
 
-            if (IsConfirmed && IsProbable)
-            {
-                DisplayCases = new ObservableCollection<CovidCase>
-                    (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.CONFIRMEDCASE) || s.CaseType.Equals(CovidCase.PROBABLECASE)));
-            }
-            if (IsConfirmed && !IsProbable)
-            {
-                DisplayCases = new ObservableCollection<CovidCase>
-                    (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.CONFIRMEDCASE)));
-            }
-            if (!IsConfirmed && IsProbable)
-            {
-                DisplayCases = new ObservableCollection<CovidCase>
-                    (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.PROBABLECASE)));
-            }
+                if (HasFlight)
+                {
+                    DisplayCases = new ObservableCollection<CovidCase>
+                        (DisplayCases.Where(s => !s.FlightNumber.Equals(CovidCase.CASEPLACEHOLDER)));
+                }
 
-            OnPropertyChanged(nameof(DisplayCases));
+                if (IsConfirmed && IsProbable)
+                {
+                    DisplayCases = new ObservableCollection<CovidCase>
+                        (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.CONFIRMEDCASE) || s.CaseType.Equals(CovidCase.PROBABLECASE)));
+                }
+                if (IsConfirmed && !IsProbable)
+                {
+                    DisplayCases = new ObservableCollection<CovidCase>
+                        (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.CONFIRMEDCASE)));
+                }
+                if (!IsConfirmed && IsProbable)
+                {
+                    DisplayCases = new ObservableCollection<CovidCase>
+                        (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.PROBABLECASE)));
+                }
+                if (!IsConfirmed && !IsProbable)
+                {
+                    DisplayCases = new ObservableCollection<CovidCase>
+                        (DisplayCases.Where(s => !s.CaseType.Equals(CovidCase.CONFIRMEDCASE) && !s.CaseType.Equals(CovidCase.PROBABLECASE)));
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }

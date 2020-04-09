@@ -47,38 +47,77 @@
         <ToolbarItem IconImageSource="icn_menu_list.png" Command="{Binding LoadItemsCommand}" />
     </ContentPage.ToolbarItems>
 
-    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+    <RefreshView IsRefreshing="{Binding IsBusy}" Command="{Binding LoadItemsCommand}">
         <StackLayout>
-            <StackLayout Margin="10,2,10,-2" Orientation="Horizontal">
+            <StackLayout Margin="10,6,10,-2" Orientation="Horizontal">
                 <StackLayout.Resources>
                     <ResourceDictionary>
                         <Style TargetType="Label">
                             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                            <Setter Property="Margin" Value="-2,0,2,0" />
+                            <Setter Property="Margin" Value="-4,0,4,0" />
                         </Style>
                     </ResourceDictionary>
                 </StackLayout.Resources>
 
-                <CheckBox IsChecked="{Binding HasFlight}">
+                <CheckBox
+                    x:Name="ckFlight"
+                    IsChecked="{Binding HasFlight}"
+                    Color="Navy">
                     <CheckBox.Behaviors>
                         <behaviors:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding LoadFilterCommand}" />
                     </CheckBox.Behaviors>
                 </CheckBox>
-                <Label Text="with flight no." />
+                <Label Text="Flight only">
+                    <Label.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference ckFlight}, Path=IsChecked}"
+                            TargetType="Label"
+                            Value="true">
+                            <Setter Property="FontAttributes" Value="Bold" />
+                            <Setter Property="TextColor" Value="Navy" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
 
-                <CheckBox IsChecked="{Binding IsConfirmed}">
+                <CheckBox
+                    x:Name="ckConfirmed"
+                    IsChecked="{Binding IsConfirmed}"
+                    Color="IndianRed">
                     <CheckBox.Behaviors>
                         <behaviors:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding LoadFilterCommand}" />
                     </CheckBox.Behaviors>
                 </CheckBox>
-                <Label Text="Confirmed" />
+                <Label Text="Confirmed">
+                    <Label.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference ckConfirmed}, Path=IsChecked}"
+                            TargetType="Label"
+                            Value="true">
+                            <Setter Property="FontAttributes" Value="Bold" />
+                            <Setter Property="TextColor" Value="IndianRed" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
 
-                <CheckBox IsChecked="{Binding IsProbable}">
+                <CheckBox
+                    x:Name="ckProbable"
+                    IsChecked="{Binding IsProbable}"
+                    Color="DarkOrange">
                     <CheckBox.Behaviors>
                         <behaviors:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding LoadFilterCommand}" />
                     </CheckBox.Behaviors>
                 </CheckBox>
-                <Label Text="Probable" />
+                <Label Text="Probable">
+                    <Label.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference ckProbable}, Path=IsChecked}"
+                            TargetType="Label"
+                            Value="true">
+                            <Setter Property="FontAttributes" Value="Bold" />
+                            <Setter Property="TextColor" Value="DarkOrange" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
             </StackLayout>
 
             <ListView
