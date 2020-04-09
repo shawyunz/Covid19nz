@@ -18,7 +18,6 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 | <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > | <img src=".\assets\screenshot4.png" width="240" > |
 
 
-
 ## App releases:
 
 Android:	[VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
@@ -26,8 +25,6 @@ Android:	[VS App Center](https://tinyurl.com/covid19nzapp), or this url: https:/
 iOS: 		[TODO]
 
 Official store: [TODO]
-
-
 
 
 ## Usage:
@@ -56,9 +53,9 @@ Official store: [TODO]
 * Check alert level and other links.
 * ~~Check official website.~~ (added in map page)
 
-
-
 ### TODO :
+
+Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/1) from April 9th
 
 #### Refresh on April 8th:
 
@@ -80,8 +77,9 @@ Official store: [TODO]
 
 - [ ] Color redesign.
 - [ ] Paging cases
-- [ ] icon converter for gender and color converter for case type
+- [x] icon converter for gender and color converter for case type
 - [x] animation for summary page?
+
 
 <details><summary><b>More previous tasks from March... </b></summary>
 <p>
@@ -113,7 +111,7 @@ Official store: [TODO]
 - [x] Header api implementation
 - [x] detail info for Header
 - [ ] refresh time stated ([issue 10](https://github.com/simeonmiteff/nzcovid19cases/issues/10))
-- [ ] ~~Filters and sorters for the listing~~
+- [x] ~~Filters and sorters for the listing~~
 
 #### Cases page:
 
@@ -132,37 +130,35 @@ Official store: [TODO]
 </details>
 
 
-
-
-
 ## Versions
 
-​	v1.0.1	Implemented with simeonmiteff API for locations, cases and map.
+​	v1.1.5	:construction: 
 
-​	v1.0.2	Alert page added. Listing UI updated. Detail view fixed.
-
-​	v1.0.3	Map pins fixed. RefreshView was back. Website added. UI updated. Readme big change.
-
-​	v1.0.4	CasePage UI updated (check screenshot2 above). Menu changed to "List", "Map", "MOH" and "Info"
-
-​	v1.0.5	(STATIC version) Pipeline set up. This version displays **STATIC** data on March 25th before API updated.
-
-​	v1.0.6	(STATIC version) Loading data at beginning improve in-app experience. Splash screen added. Fixed map view init bug.
-
-​	v1.0.8	(STATIC version) Files renamed. Updated StatsPage with image from MOH. Cases page added.
-
-​	v1.0.9	API updated (back to live). Readme and screenshots updated.
-
-​	v1.1.0	:tada: Case page updated. Icons updated.
-
-​	v1.1.1	Add expandable header (check new screenshot above). Update accent color and info page.
-
-​	v1.1.2	Add search bar from Shell.
+​	v1.1.4	Filter applied. Icons on case page updated. Info page UI improved.
 
 ​	v1.1.3	Stats image source relocated. Info page updated. Alert level API added. Allow zoom on Map page.
 
-​	v1.1.4	:construction:
+​	v1.1.2	Add search bar from Shell.
 
+​	v1.1.1	Add expandable header (check new screenshot above). Update accent color and info page.
+
+​	v1.1.0	:tada: Case page updated. Icons updated.
+
+​	v1.0.9	API updated (back to live). Readme and screenshots updated.
+
+​	v1.0.8	(STATIC version) Files renamed. Updated StatsPage with image from MOH. Cases page added.
+
+​	v1.0.6	(STATIC version) Loading data when launching. Splash screen added. Fixed map view init bug.
+
+​	v1.0.5	(STATIC version) Pipeline set up. This version displays **STATIC** data on March 25th before API updated.
+
+​	v1.0.4	CasePage UI updated (check screenshot2 above). Menu changed to "List", "Map", "MOH" and "Info"
+
+​	v1.0.3	Map pins fixed. RefreshView was back. Website added. UI updated. Readme big change.
+
+​	v1.0.2	Alert page added. Listing UI updated. Detail view fixed.
+
+​	v1.0.1	(Init) Implemented with simeonmiteff API for locations, cases and map.
 
 
 
