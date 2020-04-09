@@ -86,40 +86,44 @@ namespace Covid19nz.Models
     {
         public static List<CovidCase> FromJson(string json) => JsonConvert.DeserializeObject<List<CovidCase>>(json, Converter.Settings);
 
-        public string GenderChar => Gender.Substring(0, 1);
-        public string DisplayReportedDate => ReportedDate.ToString("dd/MM/yyyy");
-        public string DisplayDepDate => DepartureDate.Valid ? DepartureDate.Value.ToString("dd/MM/yyyy") : " - ";
         public string DisplayArrDate => ArrivalDate.Valid ? ArrivalDate.Value.ToString("dd/MM/yyyy") : " - ";
+        public string DisplayDepDate => DepartureDate.Valid ? DepartureDate.Value.ToString("dd/MM/yyyy") : " - ";
         public string DisplayFlightDates => (DepartureDate.Valid || ArrivalDate.Valid) ? DisplayDepDate + "   >     " + DisplayArrDate : " - > -";
+        public string DisplayReportedDate => ReportedDate.ToString("dd/MM/yyyy");
+        public string GenderChar => Gender.Substring(0, 1);
 
-        //sample data 31/03
-        //[
-        //  {
-        //    "CaseNumber": 600,
-        //    "ReportedDate": "2020-03-31T00:00:00+13:00",
-        //    "LocationName": "Southern",
-        //    "Age": {
-        //      "Valid": true,
-        //      "OlderOrEqualToAge": 20,
-        //      "YoungerThanAge": 29
-        //    },
-        //    "Gender": "Female",
-        //    "IsTravelRelated": {
-        //      "Valid": false,
-        //      "Value": false
-        //    },
-        //    "DepartureDate": {
-        //      "Valid": false,
-        //      "Value": "0001-01-01T00:00:00Z"
-        //    },
-        //    "ArrivalDate": {
-        //      "Valid": false,
-        //      "Value": "0001-01-01T00:00:00Z"
-        //    },
-        //    "LastCityBeforeNZ": " ",
-        //    "FlightNumber": " ",
-        //    "CaseType": "confirmed"
-        //  }
-        //]
+        public string GenderImage => Gender.Equals("Male") ? "icn_male.png" : "icn_female.png";
+        public string TypeConfirmImage => CaseType.Equals("confirmed") ? "icn_type_cfm1.png" : "icn_type_cfm0.png";
+        public string TypeProbableImage => CaseType.Equals("probable") ? "icn_type_prb1.png" : "icn_type_prb0.png";
     }
+
+    //sample data 31/03
+    //[
+    //  {
+    //    "CaseNumber": 600,
+    //    "ReportedDate": "2020-03-31T00:00:00+13:00",
+    //    "LocationName": "Southern",
+    //    "Age": {
+    //      "Valid": true,
+    //      "OlderOrEqualToAge": 20,
+    //      "YoungerThanAge": 29
+    //    },
+    //    "Gender": "Female",
+    //    "IsTravelRelated": {
+    //      "Valid": false,
+    //      "Value": false
+    //    },
+    //    "DepartureDate": {
+    //      "Valid": false,
+    //      "Value": "0001-01-01T00:00:00Z"
+    //    },
+    //    "ArrivalDate": {
+    //      "Valid": false,
+    //      "Value": "0001-01-01T00:00:00Z"
+    //    },
+    //    "LastCityBeforeNZ": " ",
+    //    "FlightNumber": " ",
+    //    "CaseType": "confirmed"
+    //  }
+    //]
 }

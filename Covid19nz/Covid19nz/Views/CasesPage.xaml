@@ -103,17 +103,30 @@
                                         <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-                                            <Image Grid.Column="0" Source="icn_male.png" />
+                                            <Image Grid.Column="0" Source="{Binding GenderImage}" />
                                             <Label Grid.Column="1" Text="{Binding Gender}" />
-                                            <Label Grid.Column="2" Text="{Binding Age.OlderOrEqualToAge, StringFormat='{0}+'}" />
                                             <Label
+                                                Grid.Column="2"
+                                                Margin="10,0,0,0"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding Age.OlderOrEqualToAge, StringFormat='{0}+'}" />
+                                            <!--<Label
                                                 Grid.Column="3"
                                                 HorizontalOptions="EndAndExpand"
-                                                Text="{Binding CaseType}" />
+                                                Text="{Binding CaseType}" />-->
+                                            <Image
+                                                Grid.Column="3"
+                                                HorizontalOptions="EndAndExpand"
+                                                Source="{Binding TypeConfirmImage}" />
+                                            <Image
+                                                Grid.Column="4"
+                                                HorizontalOptions="End"
+                                                Source="{Binding TypeProbableImage}" />
                                         </Grid>
 
                                         <BoxView
