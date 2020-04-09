@@ -12,10 +12,12 @@ namespace Covid19nz.ViewModels
         public bool IsConfirmed { get; set; } = true;
         public bool IsProbable { get; set; } = true;
         public bool HasFlight { get; set; } = false;
+        public bool ShowHelpInfo { get; set; } = false;
 
         public CovidLocation SelectedLocation { get; set; }
         public Command LoadFilterCommand { get; set; }
         public Command LoadItemsCommand { get; set; }
+        public Command ShowHelpCommand { get; set; }
         public ObservableCollection<CovidCase> AllCases { get; set; }
 
         ObservableCollection<CovidCase> displayCases;
@@ -35,6 +37,7 @@ namespace Covid19nz.ViewModels
 
             LoadFilterCommand = new Command(() => LoadFilterCases());
             LoadItemsCommand = new Command(() => ExecuteLoadCasesCommand());
+            ShowHelpCommand = new Command(() => ShowHelp());
 
             ExecuteLoadCasesCommand();
         }
@@ -105,6 +108,12 @@ namespace Covid19nz.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        private void ShowHelp()
+        {
+            ShowHelpInfo = !ShowHelpInfo;
+            OnPropertyChanged(nameof(ShowHelpInfo));
         }
     }
 }
