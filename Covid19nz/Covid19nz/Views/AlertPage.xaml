@@ -22,9 +22,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout>
+    <StackLayout BackgroundColor="#f1f5ff">
         <Image
             HeightRequest="80"
+            BackgroundColor="#ffffff"
             Aspect="AspectFill"
             Source="banner.png" />
 
@@ -48,18 +49,22 @@
             <TableRoot>
                 <TableSection Title="Official Links">
                     <ViewCell Tapped="OpenUriCovidNZ">
-                        <StackLayout Margin="40,4">
+                        <StackLayout Padding="20,8" BackgroundColor="White">
                             <Label Text="Unite against COVID-19: " />
                             <Label
+                                Margin="20,-4,20,8"
                                 Text="{Binding UriCovidNZ}"
                                 FontAttributes="Bold"
                                 TextDecorations="Underline" />
                         </StackLayout>
                     </ViewCell>
                     <ViewCell Tapped="OpenUriMohNZ">
-                        <StackLayout Margin="40,4">
+                        <StackLayout Padding="20,8" BackgroundColor="White">
                             <Label Text="Ministry of Health - Current cases: " />
                             <Label
+                                Margin="20,-4,20,8"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="2"
                                 Text="{Binding UriMohNZ}"
                                 FontAttributes="Bold"
                                 TextDecorations="Underline" />
@@ -68,18 +73,20 @@
                 </TableSection>
                 <TableSection Title="Other Links">
                     <ViewCell Tapped="OpenUriGlobalStats">
-                        <StackLayout Margin="40,4">
+                        <StackLayout Padding="20,8" BackgroundColor="White">
                             <Label Text="Global stats: " />
                             <Label
+                                Margin="20,-4,20,8"
                                 Text="{Binding UriGlobalStats}"
                                 FontAttributes="Bold"
                                 TextDecorations="Underline" />
                         </StackLayout>
                     </ViewCell>
                     <ViewCell Tapped="OpenUriMapNZ">
-                        <StackLayout Margin="40,4">
+                        <StackLayout Padding="20,8" BackgroundColor="White">
                             <Label Text="Covid nz map: " />
                             <Label
+                                Margin="20,-4,20,8"
                                 Text="{Binding UriMapNZ}"
                                 FontAttributes="Bold"
                                 TextDecorations="Underline" />
