@@ -6,6 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:behaviors="clr-namespace:Covid19nz.Services"
     xmlns:controls="clr-namespace:Covid19nz.Controls"
     xmlns:data="clr-namespace:Covid19nz"
     Title="{Binding Title}"
@@ -48,7 +49,38 @@
 
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
         <StackLayout>
-            <!--<SearchBar BackgroundColor="WhiteSmoke" Placeholder="Search here" />-->
+            <StackLayout Margin="10,2,10,-2" Orientation="Horizontal">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Label">
+                            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                            <Setter Property="Margin" Value="-2,0,2,0" />
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+
+                <CheckBox IsChecked="{Binding HasFlight}">
+                    <CheckBox.Behaviors>
+                        <behaviors:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding LoadFilterCommand}" />
+                    </CheckBox.Behaviors>
+                </CheckBox>
+                <Label Text="with flight no." />
+
+                <CheckBox IsChecked="{Binding IsConfirmed}">
+                    <CheckBox.Behaviors>
+                        <behaviors:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding LoadFilterCommand}" />
+                    </CheckBox.Behaviors>
+                </CheckBox>
+                <Label Text="Confirmed" />
+
+                <CheckBox IsChecked="{Binding IsProbable}">
+                    <CheckBox.Behaviors>
+                        <behaviors:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding LoadFilterCommand}" />
+                    </CheckBox.Behaviors>
+                </CheckBox>
+                <Label Text="Probable" />
+            </StackLayout>
+
             <ListView
                 x:Name="CovidCaseList"
                 SeparatorColor="Transparent"

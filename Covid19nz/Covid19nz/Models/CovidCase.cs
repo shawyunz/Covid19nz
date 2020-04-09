@@ -36,7 +36,7 @@ namespace Covid19nz.Models
         public string LastCityBeforeNz
         {
             get { return lastCityBeforeNz; }
-            set => lastCityBeforeNz = string.IsNullOrWhiteSpace(value) ? " - " : value;
+            set => lastCityBeforeNz = string.IsNullOrWhiteSpace(value) ? CASEPLACEHOLDER : value;
         }
 
         private string flightNumber;
@@ -45,7 +45,7 @@ namespace Covid19nz.Models
         public string FlightNumber
         {
             get { return flightNumber; }
-            set => flightNumber = string.IsNullOrWhiteSpace(value) ? " - " : value;
+            set => flightNumber = string.IsNullOrWhiteSpace(value) ? CASEPLACEHOLDER : value;
         }
 
         [JsonProperty("CaseType")]
@@ -86,15 +86,19 @@ namespace Covid19nz.Models
     {
         public static List<CovidCase> FromJson(string json) => JsonConvert.DeserializeObject<List<CovidCase>>(json, Converter.Settings);
 
-        public string DisplayArrDate => ArrivalDate.Valid ? ArrivalDate.Value.ToString("dd/MM/yyyy") : " - ";
-        public string DisplayDepDate => DepartureDate.Valid ? DepartureDate.Value.ToString("dd/MM/yyyy") : " - ";
+        public string DisplayArrDate => ArrivalDate.Valid ? ArrivalDate.Value.ToString("dd/MM/yyyy") : CASEPLACEHOLDER;
+        public string DisplayDepDate => DepartureDate.Valid ? DepartureDate.Value.ToString("dd/MM/yyyy") : CASEPLACEHOLDER;
         public string DisplayFlightDates => (DepartureDate.Valid || ArrivalDate.Valid) ? DisplayDepDate + "   >     " + DisplayArrDate : " - > -";
         public string DisplayReportedDate => ReportedDate.ToString("dd/MM/yyyy");
         public string GenderChar => Gender.Substring(0, 1);
 
         public string GenderImage => Gender.Equals("Male") ? "icn_male.png" : "icn_female.png";
-        public string TypeConfirmImage => CaseType.Equals("confirmed") ? "icn_type_cfm1.png" : "icn_type_cfm0.png";
-        public string TypeProbableImage => CaseType.Equals("probable") ? "icn_type_prb1.png" : "icn_type_prb0.png";
+        public string TypeConfirmImage => CaseType.Equals(CONFIRMEDCASE) ? "icn_type_cfm1.png" : "icn_type_cfm0.png";
+        public string TypeProbableImage => CaseType.Equals(PROBABLECASE) ? "icn_type_prb1.png" : "icn_type_prb0.png";
+
+        public static string CONFIRMEDCASE = "confirmed";
+        public static string PROBABLECASE = "probable";
+        public static string CASEPLACEHOLDER = " - ";
     }
 
     //sample data 31/03
