@@ -7,12 +7,17 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 
 
-## Screenshots:
+## Demo:
 
-### Demo
-<img src=".\assets\Covid19AppDemo.gif" width="340"/>
+### App demo gif (v1.1.5):
+<img align="center" src=".\assets\demo_app.gif" width="340" />
 
-### Pages
+
+### Case page details (v1.1.5):
+<img align="center" src=".\assets\demo_case.gif" width="340"/>
+
+
+### Screenshots (v1.1.5)
 |                      Summary                      |                       Cases                       |                        Map                        |                       Info                        |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
 | <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > | <img src=".\assets\screenshot4.png" width="240" > |
@@ -132,9 +137,11 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 
 ## Versions
 
-​	v1.1.5	:construction: 
+​	v1.1.6	:construction: 
 
-​	v1.1.4	Filter applied. Icons on case page updated. Info page UI improved.
+​	v1.1.5	Help info on case page updated. Demos updated.
+
+​	v1.1.4	Filter applied. Icons on case page fixed. Info page UI improved.
 
 ​	v1.1.3	Stats image source relocated. Info page updated. Alert level API added. Allow zoom on Map page.
 
@@ -143,6 +150,9 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 ​	v1.1.1	Add expandable header (check new screenshot above). Update accent color and info page.
 
 ​	v1.1.0	:tada: Case page updated. Icons updated.
+
+<details><summary><b>More history... </b></summary>
+<p>
 
 ​	v1.0.9	API updated (back to live). Readme and screenshots updated.
 
@@ -160,6 +170,8 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 
 ​	v1.0.1	(Init) Implemented with simeonmiteff API for locations, cases and map.
 
+</p>
+</details>
 
 
 
