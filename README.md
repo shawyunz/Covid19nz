@@ -65,8 +65,8 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 #### Refresh on April 8th:
 
 - [x] Stats image source relocated
-- [ ] Help info for Cases
-- [ ] Gif demo update for whole app
+- [x] Help info for Cases
+- [x] Gif demo update for whole app
 - [x] Alert level API
 - [x] Info page updated
 
@@ -78,7 +78,7 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 - [x] pinch to the picture
 - [ ] implement Shell features.(Search done, navigation pending)
 
-#### Refresh on April fools:
+#### Refresh on April Fools' Day:
 
 - [ ] Color redesign.
 - [ ] Paging cases
@@ -147,7 +147,7 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 
 ​	v1.1.2	Add search bar from Shell.
 
-​	v1.1.1	Add expandable header (check new screenshot above). Update accent color and info page.
+​	v1.1.1	Add expandable header (check demo above). Update accent color and info page.
 
 ​	v1.1.0	:tada: Case page updated. Icons updated.
 
