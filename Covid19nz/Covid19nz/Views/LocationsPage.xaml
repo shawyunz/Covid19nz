@@ -71,7 +71,7 @@
                         TextColor="IndianRed" />
                     <Label
                         VerticalOptions="Center"
-                        Text="{Binding SummaryData.CasesAmountNew24h, StringFormat='(+{0})'}"
+                        Text="{Binding SummaryData.CasesAmountNew24h}"
                         FontAttributes="Bold"
                         FontSize="14"
                         TextColor="IndianRed" />
@@ -93,7 +93,7 @@
                         TextColor="ForestGreen" />
                     <Label
                         VerticalOptions="Center"
-                        Text="{Binding SummaryData.RecoveredCasesNew24h, StringFormat='(+{0})'}"
+                        Text="{Binding SummaryData.RecoveredCasesNew24h}"
                         FontAttributes="Bold"
                         FontSize="14"
                         TextColor="ForestGreen" />
@@ -119,7 +119,7 @@
                         TextColor="Salmon" />
                     <Label
                         VerticalOptions="Center"
-                        Text="{Binding SummaryData.ConfirmedCasesNew24h, StringFormat='(+{0})'}"
+                        Text="{Binding SummaryData.ConfirmedCasesNew24h}"
                         FontAttributes="Bold"
                         FontSize="14"
                         TextColor="Salmon" />
@@ -145,7 +145,7 @@
                         TextColor="SkyBlue" />
                     <Label
                         VerticalOptions="Center"
-                        Text="{Binding SummaryData.HospitalisedCasesNew24h, StringFormat='(+{0})'}"
+                        Text="{Binding SummaryData.HospitalisedCasesNew24h}"
                         FontAttributes="Bold"
                         FontSize="14"
                         TextColor="SkyBlue" />
@@ -170,7 +170,7 @@
                         TextColor="Orange" />
                     <Label
                         VerticalOptions="Center"
-                        Text="{Binding SummaryData.ProbableCasesNew24h, StringFormat='(+{0})'}"
+                        Text="{Binding SummaryData.ProbableCasesNew24h}"
                         FontAttributes="Bold"
                         FontSize="14"
                         TextColor="Orange" />
@@ -195,7 +195,7 @@
                         TextColor="Gray" />
                     <Label
                         VerticalOptions="Center"
-                        Text="{Binding SummaryData.DeathCasesNew24h, StringFormat='(+{0})'}"
+                        Text="{Binding SummaryData.DeathCasesNew24h}"
                         FontAttributes="Bold"
                         FontSize="14"
                         TextColor="Gray" />
