@@ -1,10 +1,9 @@
-﻿using System;
-using Xamarin.Forms;
-using Covid19nz.Services;
+﻿using Xamarin.Forms;
 using Covid19nz.Models;
 using System.Linq;
 using System.Collections.Generic;
 using System.Net;
+using Xamarin.Essentials;
 
 namespace Covid19nz
 {
@@ -19,13 +18,24 @@ namespace Covid19nz
         public App()
         {
             InitializeComponent();
-
-            GetAlertLevel();
-            GetSummary();
-            GetLocations();
-            GetCases();
-
             MainPage = new AppShell();
+
+            //InitializeDataFromAPI();
+        }
+
+        public async void InitializeDataFromAPI()
+        {
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+                GetAlertLevel();
+                GetSummary();
+                GetLocations();
+                GetCases();
+            }
+            else
+            {
+                await MainPage.DisplayAlert("Error", "Connection failure", "OK");
+            }
         }
 
         protected override void OnStart()
@@ -40,13 +50,13 @@ namespace Covid19nz
         {
         }
 
-        public void GetAlertLevel()
+        private void GetAlertLevel()
         {
             var levelJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/alertlevel/json");
             AppAlertLevel = AlertLevel.FromJson(levelJson);
         }
 
-        public void GetCases()
+        private void GetCases()
         {
             //live data
             var casesJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/cases/json");
@@ -56,7 +66,7 @@ namespace Covid19nz
             //AppCases = CovidCase.FromJson(JsonCases0325);
         }
 
-        public void GetLocations()
+        private void GetLocations()
         {
             //live data
             var locationsJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/locations/json");
@@ -66,7 +76,7 @@ namespace Covid19nz
             //AppLocations = CovidLocation.FromJson(JsonLocation0325).Values.ToList();
         }
 
-        public void GetSummary()
+        private void GetSummary()
         {
             var locationsJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/casestats/json");
             AppSummary = new CovidSummary(CovidSummary.FromJson(locationsJson));

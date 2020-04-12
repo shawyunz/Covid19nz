@@ -38,10 +38,7 @@ namespace Covid19nz.ViewModels
 
             try
             {
-                App.Current.GetAlertLevel();
-                App.Current.GetCases();
-                App.Current.GetLocations();
-                App.Current.GetSummary();
+                App.Current.InitializeDataFromAPI();
 
                 SummaryData = App.AppSummary;
                 OnPropertyChanged(nameof(SummaryData));
