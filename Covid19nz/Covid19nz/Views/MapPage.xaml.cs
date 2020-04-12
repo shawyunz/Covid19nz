@@ -10,15 +10,15 @@ namespace Covid19nz.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class StatsPage : ContentPage
+    public partial class MapPage : ContentPage
     {
-        StatsViewModel viewModel;
+        MapViewModel viewModel;
 
-        public StatsPage()
+        public MapPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new StatsViewModel();
+            BindingContext = viewModel = new MapViewModel();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

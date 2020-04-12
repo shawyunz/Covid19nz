@@ -5,11 +5,10 @@ using Xamarin.Forms;
 
 namespace Covid19nz.ViewModels
 {
-    public class StatsViewModel : BaseViewModel
+    public class MapViewModel : BaseViewModel
     {
-        public StatsViewModel()
+        public MapViewModel()
         {
-            Title = "About";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
             OpenAlertPDFCommand = new Command(async () => await Browser.OpenAsync("https://covid19.govt.nz/assets/COVID_Alert-levels_v2.pdf"));
         }

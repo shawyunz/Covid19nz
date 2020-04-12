@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Covid19nz.Views.StatsPage"
+    x:Class="Covid19nz.Views.MapPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-    Title="{Binding Title}">
+    Title="Map">
 
     <Shell.TitleView>
         <Label
             VerticalOptions="EndAndExpand"
-            Text="health.govt.nz"
+            Text="Source: health.govt.nz"
             VerticalTextAlignment="Center"
             FontSize="18"
             TextColor="White"

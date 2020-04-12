@@ -38,7 +38,7 @@
             <ShellContent ContentTemplate="{DataTemplate local:LocationMapPage}" />
         </Tab>-->
         <Tab Title="Map" Icon="icn_menu_map.png">
-            <ShellContent ContentTemplate="{DataTemplate local:StatsPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:MapPage}" />
         </Tab>
         <Tab Title="Info" Icon="icn_menu_info.png">
             <ShellContent ContentTemplate="{DataTemplate local:AlertPage}" />

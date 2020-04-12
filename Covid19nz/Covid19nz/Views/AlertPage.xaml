@@ -10,10 +10,6 @@
     Title="Alert"
     Shell.NavBarIsVisible="False">
 
-    <ContentPage.BindingContext>
-        <vm:StatsViewModel />
-    </ContentPage.BindingContext>
-
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
