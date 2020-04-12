@@ -25,7 +25,6 @@ namespace Covid19nz
             GetLocations();
             GetCases();
 
-            DependencyService.Register<LocationStore>();
             MainPage = new AppShell();
         }
 

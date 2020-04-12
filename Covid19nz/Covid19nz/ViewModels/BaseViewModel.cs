@@ -12,8 +12,6 @@ namespace Covid19nz.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<CovidLocation> LocationData => DependencyService.Get<IDataStore<CovidLocation>>();
-
         bool isBusy = false;
         public bool IsBusy
         {
