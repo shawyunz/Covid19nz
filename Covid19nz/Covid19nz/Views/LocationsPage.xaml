@@ -225,17 +225,19 @@
         </Frame>
 
         <Label
-            Margin="30,0"
+            Margin="30,10,30,0"
             HorizontalOptions="StartAndExpand"
             VerticalOptions="End"
             Text="Locations:"
-            FontSize="16" />
+            FontSize="14" />
 
-        <Frame Margin="20,0,20,10" CornerRadius="10">
+        <Frame
+            Margin="20,0,20,10"
+            Padding="20,12"
+            CornerRadius="10">
             <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
                 <ListView
                     x:Name="ItemsCollectionView"
-                    Margin="-10"
                     ItemsSource="{Binding Items}"
                     ItemTapped="OnItemSelected"
                     SelectedItem="{Binding SelectedLocation}">
@@ -243,21 +245,19 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout
-                                    Margin="20,0"
-                                    Padding="10"
+                                    Padding="24,0"
                                     Orientation="Horizontal"
                                     HorizontalOptions="FillAndExpand">
                                     <Label
-                                        Style="{DynamicResource ListItemTextStyle}"
                                         HorizontalOptions="StartAndExpand"
-                                        VerticalOptions="End"
+                                        VerticalOptions="CenterAndExpand"
                                         Text="{Binding LocationName}"
                                         FontSize="16"
                                         TextColor="#011223"
                                         TextDecorations="Underline" />
                                     <Label
-                                        Style="{DynamicResource ListItemDetailTextStyle}"
                                         HorizontalOptions="End"
+                                        VerticalOptions="CenterAndExpand"
                                         Text="{Binding CaseCount}"
                                         FontSize="18"
                                         TextColor="#011223" />
