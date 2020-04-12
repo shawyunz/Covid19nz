@@ -8,28 +8,27 @@ namespace Covid19nz.Models
         public CovidSummary(Dictionary<string, int> SummaryData)
         {
             ConfirmedCasesTotal  = SummaryData["ConfirmedCasesTotal"];
-            var cfm24            = SummaryData["ConfirmedCasesNew24h"];
-            ConfirmedCasesNew24h = cfm24 > 0 ? $"(+{cfm24})" : $"({cfm24})";    //need refactor
+            ConfirmedCasesNew24h = FormatNumber24h(SummaryData["ConfirmedCasesNew24h"]);
 
             ProbableCasesTotal   = SummaryData["ProbableCasesTotal"];
-            var prb24            = SummaryData["ProbableCasesNew24h"];
-            ProbableCasesNew24h  = prb24 > 0 ? $"(+{prb24})" : $"({prb24})";
+            ProbableCasesNew24h  = FormatNumber24h(SummaryData["ProbableCasesNew24h"]);
 
             RecoveredCasesTotal  = SummaryData["RecoveredCasesTotal"];
-            var rcv24            = SummaryData["RecoveredCasesNew24h"];
-            RecoveredCasesNew24h = rcv24 > 0 ? $"(+{rcv24})" : $"({rcv24})";
+            RecoveredCasesNew24h = FormatNumber24h(SummaryData["RecoveredCasesNew24h"]);
 
             HospitalisedCasesTotal  = SummaryData["HospitalisedCasesTotal"];
-            var hsp24               = SummaryData["HospitalisedCasesNew24h"];
-            HospitalisedCasesNew24h = hsp24 > 0 ? $"(+{hsp24})" : $"({hsp24})";
+            HospitalisedCasesNew24h = FormatNumber24h(SummaryData["HospitalisedCasesNew24h"]);
 
             DeathCasesTotal      = SummaryData["DeathCasesTotal"];
-            var dth24            = SummaryData["DeathCasesNew24h"];
-            DeathCasesNew24h     = dth24 > 0 ? $"(+{dth24})" : $"({dth24})";
+            DeathCasesNew24h     = FormatNumber24h(SummaryData["DeathCasesNew24h"]);
 
             CasesAmount          = ConfirmedCasesTotal + ProbableCasesTotal;
-            var amt24            = cfm24 + prb24;
-            CasesAmountNew24h    = amt24 > 0 ? $"(+{amt24})" : $"({amt24})";
+            CasesAmountNew24h    = FormatNumber24h(SummaryData["ConfirmedCasesNew24h"] + SummaryData["ProbableCasesNew24h"]);
+        }
+
+        private string FormatNumber24h(int number)
+        {
+            return number > 0 ? $"(+{number})" : $"({number})";
         }
 
         public int ConfirmedCasesTotal { get; set; }
