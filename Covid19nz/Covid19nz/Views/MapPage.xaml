@@ -19,6 +19,10 @@
             TextDecorations="Underline" />
     </Shell.TitleView>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icn_menu_info.png" Command="{Binding ShowCopyrightCommand}" />
+    </ContentPage.ToolbarItems>
+
     <Grid>
         <!--<Image Aspect="AspectFill" Source="{Binding ImageUrl}" />-->
         <WebView
@@ -36,6 +40,37 @@
             Text="Open MOH NZ"
             FontSize="12"
             TextColor="White"
-            Clicked="Button_Clicked" />
+            Clicked="OpenMoh" />
+
+
+        <Grid IsVisible="{Binding ShowCopyright}">
+            <BoxView BackgroundColor="Black" Opacity="0.6">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowCopyrightCommand}" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <Frame
+                WidthRequest="200"
+                Padding="10"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="White"
+                CornerRadius="8"
+                HasShadow="True">
+                <Grid RowSpacing="12" Margin="12,12,12,12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="&quot;Cases by DHB&quot; by the Ministry of Health is licensed under CC BY 4.0." />
+                    <ImageButton
+                        Grid.Row="1"
+                        HorizontalOptions="Start"
+                        Source="icn_cc40.png"
+                        Clicked="OpenCopyright" />
+                </Grid>
+            </Frame>
+        </Grid>
+
     </Grid>
 </ContentPage>

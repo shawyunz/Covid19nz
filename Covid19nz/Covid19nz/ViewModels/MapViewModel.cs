@@ -11,10 +11,19 @@ namespace Covid19nz.ViewModels
         {
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
             OpenAlertPDFCommand = new Command(async () => await Browser.OpenAsync("https://covid19.govt.nz/assets/COVID_Alert-levels_v2.pdf"));
+            ShowCopyrightCommand = new Command(() => ExecuteShowCopyright());
+        }
+
+        private void ExecuteShowCopyright()
+        {
+            ShowCopyright = !ShowCopyright;
+            OnPropertyChanged(nameof(ShowCopyright));
         }
 
         public ICommand OpenWebCommand { get; }
         public ICommand OpenAlertPDFCommand { get; }
+        public Command ShowCopyrightCommand { get; set; }
+        public bool ShowCopyright { get; set; } = false;
 
         public string ImageUrl => "https://tinyurl.com/covid19nz-stats";
         public string WebsiteUrl => "http://shawyunz.c1.biz/";
