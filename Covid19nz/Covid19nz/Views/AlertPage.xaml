@@ -18,14 +18,28 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout BackgroundColor="#f1f5ff">
+    <Grid BackgroundColor="#f1f5ff">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <Image
+            Grid.Row="0"
             HeightRequest="80"
             BackgroundColor="#ffffff"
             Aspect="AspectFill"
-            Source="banner.png" />
+            Source="banner.png">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="OpenEasterEgg" />
+            </Image.GestureRecognizers>
+        </Image>
 
-        <StackLayout Margin="20,8" Orientation="Horizontal">
+        <StackLayout
+            Grid.Row="1"
+            Margin="20,8"
+            Orientation="Horizontal">
             <StackLayout.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OpenNZAlertLevel" />
             </StackLayout.GestureRecognizers>
@@ -41,7 +55,7 @@
                 FontSize="18" />
         </StackLayout>
 
-        <TableView HasUnevenRows="True">
+        <TableView Grid.Row="2" HasUnevenRows="True">
             <TableRoot>
                 <TableSection Title="Official Links">
                     <ViewCell Tapped="OpenUriCovidNZ">
@@ -91,5 +105,13 @@
                 </TableSection>
             </TableRoot>
         </TableView>
-    </StackLayout>
+
+        <ImageButton
+            x:Name="ImgMorning"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            IsVisible="False"
+            Source="morning.png"
+            Clicked="HideEasterEgg" />
+    </Grid>
 </ContentPage>

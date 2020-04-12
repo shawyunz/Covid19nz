@@ -1,5 +1,6 @@
 ﻿using Covid19nz.Models;
 using System.ComponentModel;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -20,6 +21,7 @@ namespace Covid19nz.Views
         public AlertPage()
         {
             InitializeComponent();
+
             CurrentLevel = App.AppAlertLevel;
             BindingContext = this;
         }
@@ -52,6 +54,20 @@ namespace Covid19nz.Views
         {
             if (await Launcher.CanOpenAsync(UriNZAlertLevel))
                 await Launcher.OpenAsync(UriNZAlertLevel);
+        }
+
+        private async void HideEasterEgg(object sender, System.EventArgs e)
+        {
+            await ImgMorning.ScaleTo(5, 300, Easing.CubicIn);
+            ImgMorning.IsVisible = false;
+            ImgMorning.Scale = 1;
+        }
+
+        private async void OpenEasterEgg(object sender, System.EventArgs e)
+        {
+            ImgMorning.IsVisible = true;
+            ImgMorning.Opacity = 0;
+            await ImgMorning.FadeTo(1, 2000, Easing.Linear);
         }
     }
 }
