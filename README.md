@@ -23,6 +23,7 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 | <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > | <img src=".\assets\screenshot4.png" width="240" > |
 
 
+
 ## App releases:
 
 Android:	[VS App Center](https://tinyurl.com/covid19nzapp), or this url: https://tinyurl.com/covid19nzapp
@@ -30,6 +31,8 @@ Android:	[VS App Center](https://tinyurl.com/covid19nzapp), or this url: https:/
 iOS: 		[TODO]
 
 Official store: [TODO]
+
+
 
 
 ## Usage:
@@ -137,7 +140,9 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 
 ## Versions
 
-​	v1.1.6	:construction: 
+​	v1.1.7	:construction: 
+
+​	v1.1.6	Fix a bug of number formatting. Refactor some code. Catch no internet crash. Copyright. Easter egg.
 
 ​	v1.1.5	Help info on case page updated. Demos updated.
 
@@ -181,4 +186,5 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 * Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid19cases](https://github.com/simeonmiteff/nzcovid19cases).
 * App Icon made by [Nhor Phai](https://www.flaticon.com/authors/nhor-phai) from www.flaticon.com
 * Icons in app from https://materialdesignicons.com/
+* The images, "Total cases by DHB"  by the Ministry of Health and "UniteAgainstCovid-19" by NZ Government, are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
