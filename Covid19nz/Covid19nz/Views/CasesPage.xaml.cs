@@ -23,6 +23,9 @@ namespace Covid19nz.Views
         {
             InitializeComponent();
             BindingContext = new CasesViewModel(null);
+
+            CovidCaseList.Scrolled += Scrollview_Scrolled;
+
             SubscribeMsgFromSearch();
         }
 
@@ -42,5 +45,34 @@ namespace Covid19nz.Views
                 }
             });
         }
+
+        double previousOffset;
+
+        private void Scrollview_Scrolled(object sender, ScrolledEventArgs e)
+        {
+            double translation;
+            bool visibility;
+
+            if (previousOffset < e.ScrollY - 5)
+            {
+                translation = -40;
+                visibility = false;
+            }
+            else if (previousOffset > e.ScrollY + 5)
+            {
+                translation = 0;
+                visibility = true;
+            }
+            else
+            {
+                return;
+            }
+
+            LytFilter.TranslateTo(LytFilter.TranslationX, translation);
+            LytFilter.IsVisible = visibility;
+            previousOffset = e.ScrollY;
+        }
+
+
     }
 }
