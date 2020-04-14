@@ -138,9 +138,11 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 </details>
 
 
+
+
 ## Versions
 
-​	v1.1.7	:construction: 
+​	v1.1.7	:construction: Hide filter when scrolling.
 
 ​	v1.1.6	Fix a bug of number formatting. Refactor some code. Catch no internet crash. Copyright. Easter egg.
 
@@ -184,7 +186,8 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 
 * This project is licensed under the MIT License.
 * Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid19cases](https://github.com/simeonmiteff/nzcovid19cases).
-* App Icon made by [Nhor Phai](https://www.flaticon.com/authors/nhor-phai) from www.flaticon.com
-* Icons in app from https://materialdesignicons.com/
-* The images, "Total cases by DHB"  by the Ministry of Health and "UniteAgainstCovid-19" by NZ Government, are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+* App Icon made by [Nhor Phai](https://www.flaticon.com/authors/nhor-phai) from www.flaticon.com.
+* Icons in app from https://materialdesignicons.com/.
+* In-app images, "Total cases by DHB"  by the Ministry of Health and "UniteAgainstCovid-19" by NZ Government, are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+* Emojis in commits from [carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji) under MIT.
 
