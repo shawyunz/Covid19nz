@@ -1,7 +1,7 @@
 # <img src="./assets/epidemic_512.png" alt="Icon" width="96" />      Covid-19 NZ App
-[![Build Status](https://dev.azure.com/shawyunz/Covid19NZApp/_apis/build/status/Covid19nz%20APK?branchName=master)](https://dev.azure.com/shawyunz/Covid19NZApp/_build/latest?definitionId=2&branchName=master)
+[![Build Status](https://dev.azure.com/shawyunz/Covid19NZApp/_apis/build/status/Covid19nz%20APK?branchName=master)](https://dev.azure.com/shawyunz/Covid19NZApp/_build/latest?definitionId=2&branchName=master)  [![GitHub last commit](https://img.shields.io/github/last-commit/shawyunz/Covid19nz)](https://github.com/shawyunz/Covid19nz/commits/master)  [![Visual Studio App Center Releases](https://img.shields.io/visual-studio-app-center/releases/version/shawyunz/Covid19-NZ/c94c37e9bd4ccab2f4bb021876c4c604b4eb3ea0)](https://tinyurl.com/covid19nzapp)
 
-A Xamarin.Forms app for checking locations and cases published by [Ministry of Health](https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-cases) in New Zealand.
+A Xamarin.Forms app for tracking Covid19 cases published by [Ministry of Health](https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-cases) in New Zealand.
 
 Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid19cases](https://github.com/simeonmiteff/nzcovid19cases).
 
@@ -10,12 +10,14 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 ## Demo:
 
 ### App demo gif (v1.1.5):
-<img align="center" src=".\assets\demo_app.gif" width="340" />
-
+<p align="center">
+	<img align="center" src=".\assets\demo_app.gif" width="340" />
+</p>
 
 ### Case page details (v1.1.5):
-<img align="center" src=".\assets\demo_case.gif" width="340"/>
-
+<p align="center">
+	<img align="center" src=".\assets\demo_case.gif" width="340"/>
+</p>
 
 ### Screenshots (v1.1.5)
 |                      Summary                      |                       Cases                       |                        Map                        |                       Info                        |
@@ -31,7 +33,6 @@ Android:	[VS App Center](https://tinyurl.com/covid19nzapp), or this url: https:/
 iOS: 		[TODO]
 
 Official store: [TODO]
-
 
 
 
@@ -79,7 +80,7 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 - [ ] publish apk to store
 - [ ] iOS version publish
 - [x] pinch to the picture
-- [ ] implement Shell features.(Search done, navigation pending)
+- [x] implement Shell features.(Search done, ~~navigation pending~~)
 
 #### Refresh on April Fools' Day:
 
@@ -139,7 +140,6 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 
 
 
-
 ## Versions
 
 ​	v1.1.7	:construction: Hide filter when scrolling.
@@ -185,9 +185,10 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 ## License
 
 * This project is licensed under the MIT License.
-* Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid19cases](https://github.com/simeonmiteff/nzcovid19cases).
-* App Icon made by [Nhor Phai](https://www.flaticon.com/authors/nhor-phai) from www.flaticon.com.
-* Icons in app from https://materialdesignicons.com/.
-* In-app images, "Total cases by DHB"  by the Ministry of Health and "UniteAgainstCovid-19" by NZ Government, are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-* Emojis in commits from [carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji) under MIT.
+* The launcher icon made by [Nhor Phai](https://www.flaticon.com/authors/nhor-phai) from www.flaticon.com.
+* In-app images, "Total cases by DHB"  by the Ministry of Health and "UniteAgainstCovid-19" by NZ Government, are licensed under CC BY 4.0 [![.\assets\icn_cc40.png](.\assets\icn_cc40.png)](https://creativecommons.org/licenses/by/4.0/).
+* In-app API from https://nzcovid19api.xerra.nz by [![GitHub stars](https://img.shields.io/github/stars/simeonmiteff/nzcovid19cases?label=nzcovid19cases&style=social)](https://github.com/templarian/MaterialDesign/) licensed under MIT.
+* In-app icons from https://materialdesignicons.com by [![GitHub stars](https://img.shields.io/github/stars/Templarian/MaterialDesign?label=MaterialDesign&style=social)](https://github.com/templarian/MaterialDesign/) licensed under OFL.
+* Emojis in commits from https://gitmoji.carloscuesta.me by [![GitHub stars](https://img.shields.io/github/stars/carloscuesta/gitmoji?label=gitmoji&style=social)](https://github.com/carloscuesta/gitmoji) licensed under MIT.
+* Badges in this doc from https://shields.io/ by [![GitHub stars](https://img.shields.io/github/stars/badges/shields?label=shields&style=social)](https://github.com/badges/shields) under CCO-1.0
 
