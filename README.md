@@ -186,7 +186,7 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 
 * This project is licensed under the MIT License.
 * The launcher icon made by [Nhor Phai](https://www.flaticon.com/authors/nhor-phai) from www.flaticon.com.
-* In-app images, "Total cases by DHB"  by the Ministry of Health and "UniteAgainstCovid-19" by NZ Government, are licensed under CC BY 4.0 [<img src=".\assets\demo_case.gif" />](https://creativecommons.org/licenses/by/4.0/).
+* In-app images, "Total cases by DHB"  by the Ministry of Health and "UniteAgainstCovid-19" by NZ Government, are licensed under CC BY 4.0 [<img src=".\assets\icn_cc40.png" />](https://creativecommons.org/licenses/by/4.0/).
 * In-app API from https://nzcovid19api.xerra.nz by [![GitHub stars](https://img.shields.io/github/stars/simeonmiteff/nzcovid19cases?label=nzcovid19cases&style=social)](https://github.com/templarian/MaterialDesign/) licensed under MIT.
 * In-app icons from https://materialdesignicons.com by [![GitHub stars](https://img.shields.io/github/stars/Templarian/MaterialDesign?label=MaterialDesign&style=social)](https://github.com/templarian/MaterialDesign/) licensed under OFL.
 * Emojis in commits from https://gitmoji.carloscuesta.me by [![GitHub stars](https://img.shields.io/github/stars/carloscuesta/gitmoji?label=gitmoji&style=social)](https://github.com/carloscuesta/gitmoji) licensed under MIT.
