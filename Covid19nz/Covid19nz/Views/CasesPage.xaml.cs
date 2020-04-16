@@ -6,6 +6,7 @@ using Covid19nz.Controls;
 using Covid19nz.ViewModels;
 using Covid19nz.Models;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace Covid19nz.Views
 {
@@ -48,17 +49,17 @@ namespace Covid19nz.Views
 
         double previousOffset;
 
-        private void Scrollview_Scrolled(object sender, ScrolledEventArgs e)
+        private async void Scrollview_Scrolled(object sender, ScrolledEventArgs e)
         {
             double translation;
             bool visibility;
 
-            if (previousOffset < e.ScrollY - 5)
+            if (previousOffset < e.ScrollY - 45)
             {
                 translation = -40;
                 visibility = false;
             }
-            else if (previousOffset > e.ScrollY + 5)
+            else if (previousOffset > e.ScrollY + 45)
             {
                 translation = 0;
                 visibility = true;
@@ -68,7 +69,8 @@ namespace Covid19nz.Views
                 return;
             }
 
-            LytFilter.TranslateTo(LytFilter.TranslationX, translation);
+            await LytFilter.TranslateTo(LytFilter.TranslationX, translation, 300);
+            await Task.Delay(100);
             LytFilter.IsVisible = visibility;
             previousOffset = e.ScrollY;
         }
