@@ -64,7 +64,7 @@ Official store: [TODO]
 
 ### TODO :
 
-Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/1) from April 9th
+Check todo list here **[Covid19nz/project](https://github.com/shawyunz/Covid19nz/projects/1)** from April 9th
 
 #### Refresh on April 8th:
 
@@ -142,13 +142,18 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 
 ## Versions
 
-​	v1.1.7	:construction: Hide filter when scrolling.
+​	v1.1.8	:construction: 
+
+​	v1.1.7	Filter animation when scrolling on case page. Android config update.
 
 ​	v1.1.6	Fix a bug of number formatting. Refactor some code. Catch no internet crash. Copyright. Easter egg.
 
 ​	v1.1.5	Help info on case page updated. Demos updated.
 
-​	v1.1.4	Filter applied. Icons on case page fixed. Info page UI improved.
+​	v1.1.4	Implement filters. Icons on case page fixed. Info page UI improved.
+
+<details><summary><b>More versions... </b></summary>
+<p>
 
 ​	v1.1.3	Stats image source relocated. Info page updated. Alert level API added. Allow zoom on Map page.
 
@@ -157,9 +162,6 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 ​	v1.1.1	Add expandable header (check demo above). Update accent color and info page.
 
 ​	v1.1.0	:tada: Case page updated. Icons updated.
-
-<details><summary><b>More history... </b></summary>
-<p>
 
 ​	v1.0.9	API updated (back to live). Readme and screenshots updated.
 
@@ -190,5 +192,5 @@ Check [the project in this repo](https://github.com/shawyunz/Covid19nz/projects/
 * In-app API from https://nzcovid19api.xerra.nz by [![GitHub stars](https://img.shields.io/github/stars/simeonmiteff/nzcovid19cases?label=nzcovid19cases&style=social)](https://github.com/templarian/MaterialDesign/) licensed under MIT.
 * In-app icons from https://materialdesignicons.com by [![GitHub stars](https://img.shields.io/github/stars/Templarian/MaterialDesign?label=MaterialDesign&style=social)](https://github.com/templarian/MaterialDesign/) licensed under OFL.
 * Emojis in commits from https://gitmoji.carloscuesta.me by [![GitHub stars](https://img.shields.io/github/stars/carloscuesta/gitmoji?label=gitmoji&style=social)](https://github.com/carloscuesta/gitmoji) licensed under MIT.
-* Badges in this doc from https://shields.io/ by [![GitHub stars](https://img.shields.io/github/stars/badges/shields?label=shields&style=social)](https://github.com/badges/shields) under CCO-1.0
+* Badges in this doc from https://shields.io/ by [![GitHub stars](https://img.shields.io/github/stars/badges/shields?label=shields&style=social)](https://github.com/badges/shields) under CCO-1.0.
 
