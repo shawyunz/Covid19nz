@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Xamarin.Forms;
 
 using Covid19nz.Models;
+using System.Threading.Tasks;
 
 namespace Covid19nz.ViewModels
 {
@@ -23,7 +24,8 @@ namespace Covid19nz.ViewModels
             Title = "Covid-19 NZ";
             Items = new ObservableCollection<CovidLocation>();
             ExpandHeaderCommand = new Command(() => ExecuteExpandCommand());
-            LoadItemsCommand = new Command(() => ExecuteLoadItemsCommand());
+            //Todo:replace with AsyncCommand from MvvmHelpers
+            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
         }
 
         private void ExecuteExpandCommand()
@@ -32,13 +34,13 @@ namespace Covid19nz.ViewModels
             OnPropertyChanged(nameof(ExpandHeader));
         }
 
-        private void ExecuteLoadItemsCommand()
+        private async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;
 
             try
             {
-                App.Current.InitializeDataFromAPI();
+                await App.Current.InitializeDataFromAPI();
 
                 SummaryData = App.AppSummary;
                 OnPropertyChanged(nameof(SummaryData));

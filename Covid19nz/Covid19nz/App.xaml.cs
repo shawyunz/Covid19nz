@@ -4,6 +4,9 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Net;
 using Xamarin.Essentials;
+using System.Net.Http;
+using Covid19nz.Utils;
+using System.Threading.Tasks;
 
 namespace Covid19nz
 {
@@ -14,23 +17,25 @@ namespace Covid19nz
         public static List<CovidLocation> AppLocations { get; set; }
         public static AlertLevel AppAlertLevel { get; set; }
         public static CovidSummary AppSummary { get; set; }
+        readonly HttpClient httpClient;
 
         public App()
         {
             InitializeComponent();
             MainPage = new AppShell();
+            //contructor should empty to utilize NativeHandlers
+            httpClient = new HttpClient();
 
             //InitializeDataFromAPI();
         }
 
-        public async void InitializeDataFromAPI()
+        public async Task InitializeDataFromAPI()
         {
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                GetAlertLevel();
-                GetSummary();
-                GetLocations();
-                GetCases();
+                //run methods in parallel as they are independent
+                await Task.WhenAll(GetAlertLevel(), GetSummary(), GetLocations(), GetCases());
+
             }
             else
             {
@@ -50,35 +55,35 @@ namespace Covid19nz
         {
         }
 
-        private void GetAlertLevel()
+        private async Task GetAlertLevel()
         {
-            var levelJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/alertlevel/json");
+            var levelJson = await httpClient.DownloadStringAsync("https://nzcovid19api.xerra.nz/alertlevel/json");
             AppAlertLevel = AlertLevel.FromJson(levelJson);
         }
 
-        private void GetCases()
+        private async Task GetCases()
         {
             //live data
-            var casesJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/cases/json");
+            var casesJson = await httpClient.DownloadStringAsync("https://nzcovid19api.xerra.nz/cases/json");
             AppCases = CovidCase.FromJson(casesJson);
 
             ////static data
             //AppCases = CovidCase.FromJson(JsonCases0325);
         }
 
-        private void GetLocations()
+        private async Task GetLocations()
         {
             //live data
-            var locationsJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/locations/json");
+            var locationsJson = await httpClient.DownloadStringAsync("https://nzcovid19api.xerra.nz/locations/json");
             AppLocations = CovidLocation.FromJson(locationsJson).Values.ToList();
 
             ////static data
             //AppLocations = CovidLocation.FromJson(JsonLocation0325).Values.ToList();
         }
 
-        private void GetSummary()
+        private async Task GetSummary()
         {
-            var locationsJson = new WebClient().DownloadString("https://nzcovid19api.xerra.nz/casestats/json");
+            var locationsJson = await httpClient.DownloadStringAsync("https://nzcovid19api.xerra.nz/casestats/json");
             AppSummary = new CovidSummary(CovidSummary.FromJson(locationsJson));
         }
 
