@@ -9,7 +9,7 @@ namespace Covid19nz.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class AlertPage : ContentPage
+    public partial class InfoPage : ContentPage
     {
         public AlertLevel CurrentLevel { get; private set; }
         public string UriCovidNZ => "https://covid19.govt.nz";
@@ -18,7 +18,7 @@ namespace Covid19nz.Views
         public string UriMapNZ => "https://covid19map.nz/";
         public string UriNZAlertLevel => "https://covid19.govt.nz/assets/COVID_Alert-levels_v2.pdf";
 
-        public AlertPage()
+        public InfoPage()
         {
             InitializeComponent();
 
