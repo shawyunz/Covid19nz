@@ -142,7 +142,7 @@ Check todo list here **[Covid19nz/project](https://github.com/shawyunz/Covid19nz
 
 ## Versions
 
-​	v1.1.8	:construction: 
+​	v1.x	:construction: HttpClient by [yurkinh](https://github.com/yurkinh). map page connection check. Cluster API implementation. Summary page artwork. 
 
 ​	v1.1.7	Filter animation when scrolling on case page. Android config update.
 
