@@ -10,7 +10,6 @@ namespace Covid19nz.Controls
     {
         public List<CovidCase> CaseList { get; set; }
 
-
         protected override void OnQueryChanged(string oldValue, string newValue)
         {
             base.OnQueryChanged(oldValue, newValue);
@@ -25,7 +24,7 @@ namespace Covid19nz.Controls
                 {
                     ItemsSource = CaseList
                         .Where(cc => cc.FlightNumber.ToLower().Contains(newValue.ToLower()) 
-                            || cc.LastCityBeforeNz.ToLower().Contains(newValue.ToLower())).ToList();
+                            || cc.LastCountryBeforeReturn.ToLower().Contains(newValue.ToLower())).ToList();
                 }
             }
         }

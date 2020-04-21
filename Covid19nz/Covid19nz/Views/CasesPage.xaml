@@ -20,11 +20,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="{Binding CaseNumber, StringFormat='Case: {0} '}" FontAttributes="Bold" />
-                <Label
-                    Grid.Column="1"
-                    Text="{Binding Gender}"
-                    FontAttributes="Bold" />
+                <Label Text="{Binding DateOfReport}" FontAttributes="Bold" />
+                <Label Grid.Column="1" Text="{Binding Sex}" />
                 <Label
                     Grid.Column="2"
                     Text="{Binding FlightNumber}"
@@ -162,10 +159,10 @@
                                     <StackLayout Grid.Column="0" Margin="0,0">
                                         <Label
                                             Margin="0,0,0,4"
-                                            Text="{Binding CaseNumber}"
+                                            Text="{Binding DisplayReportedDate}"
                                             FontSize="20" />
                                         <Label Margin="0,-4" Text="{Binding DisplayReportedDate}" />
-                                        <Label LineBreakMode="CharacterWrap" Text="{Binding LocationName}" />
+                                        <Label LineBreakMode="CharacterWrap" Text="{Binding DHB}" />
                                     </StackLayout>
                                     <BoxView
                                         Grid.Column="1"
@@ -189,12 +186,12 @@
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <Image Grid.Column="0" Source="{Binding GenderImage}" />
-                                            <Label Grid.Column="1" Text="{Binding Gender}" />
+                                            <Label Grid.Column="1" Text="{Binding Sex}" />
                                             <Label
                                                 Grid.Column="2"
                                                 Margin="10,0,0,0"
                                                 HorizontalOptions="Start"
-                                                Text="{Binding Age.OlderOrEqualToAge, StringFormat='{0}+'}" />
+                                                Text="{Binding AgeLower, StringFormat='{0}+'}" />
                                             <Image
                                                 Grid.Column="3"
                                                 HorizontalOptions="EndAndExpand"
@@ -221,7 +218,7 @@
                                             <Image Grid.Column="0" Source="icn_plane.png" />
                                             <Label Grid.Column="1" Text="{Binding FlightNumber}" />
                                             <Image Grid.Column="2" Source="icn_city.png" />
-                                            <Label Grid.Column="3" Text="{Binding LastCityBeforeNz}" />
+                                            <Label Grid.Column="3" Text="{Binding LastCountryBeforeReturn}" />
                                         </Grid>
 
                                         <Grid Grid.Row="3">

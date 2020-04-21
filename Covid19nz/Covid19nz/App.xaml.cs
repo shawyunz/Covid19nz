@@ -13,6 +13,7 @@ namespace Covid19nz
     public partial class App : Application
     {
         public new static App Current => Application.Current as App;
+        public static CovidCaseData AppCaseData { get; set; }
         public static List<CovidCase> AppCases { get; set; }
         public static List<CovidLocation> AppLocations { get; set; }
         public static AlertLevel AppAlertLevel { get; set; }
@@ -63,12 +64,19 @@ namespace Covid19nz
 
         private async Task GetCases()
         {
-            //live data
-            var casesJson = await httpClient.DownloadStringAsync("https://nzcovid19api.xerra.nz/cases/json");
-            AppCases = CovidCase.FromJson(casesJson);
-
-            ////static data
+            ////static data (deprecated)
             //AppCases = CovidCase.FromJson(JsonCases0325);
+            //live data (deprecated)
+            //var casesJson = await httpClient.DownloadStringAsync("https://nzcovid19api.xerra.nz/cases/json");
+
+            //live data
+            var casesJson = await httpClient.DownloadStringAsync("https://raw.githubusercontent.com/philiprenich/nz-covid19-data/master/nz-covid-cases.json");
+            AppCaseData = CovidCaseData.FromJson(casesJson);
+
+            AppCaseData.Confirmed.Select(c => { c.TypeConfirmImage = "icn_type_cfm1.png"; c.TypeProbableImage = "icn_type_prb0.png"; return c; }).ToList();
+            AppCaseData.Probable.Select(p => { p.TypeConfirmImage = "icn_type_cfm0.png"; p.TypeProbableImage = "icn_type_prb1.png"; return p; }).ToList();
+
+            AppCases = AppCaseData.Confirmed.Concat(AppCaseData.Probable).ToList();
         }
 
         private async Task GetLocations()

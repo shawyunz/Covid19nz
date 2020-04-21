@@ -51,7 +51,7 @@ namespace Covid19nz.ViewModels
                 AllCases.Clear();
                 AllCases = SelectedLocation is null ?
                     new ObservableCollection<CovidCase>(App.AppCases) :
-                    new ObservableCollection<CovidCase>(App.AppCases.Where(s => s.LocationName.Equals(SelectedLocation.LocationName)));
+                    new ObservableCollection<CovidCase>(App.AppCases.Where(s => s.Dhb.Equals(SelectedLocation.LocationName)));
 
                 LoadFilterCases();
             }
@@ -81,23 +81,19 @@ namespace Covid19nz.ViewModels
 
                 if (IsConfirmed && IsProbable)
                 {
-                    DisplayCases = new ObservableCollection<CovidCase>
-                        (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.CONFIRMEDCASE) || s.CaseType.Equals(CovidCase.PROBABLECASE)));
+                    DisplayCases = new ObservableCollection<CovidCase>(App.AppCases);
                 }
                 if (IsConfirmed && !IsProbable)
                 {
-                    DisplayCases = new ObservableCollection<CovidCase>
-                        (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.CONFIRMEDCASE)));
+                    DisplayCases = new ObservableCollection<CovidCase>(App.AppCaseData.Confirmed);
                 }
                 if (!IsConfirmed && IsProbable)
                 {
-                    DisplayCases = new ObservableCollection<CovidCase>
-                        (DisplayCases.Where(s => s.CaseType.Equals(CovidCase.PROBABLECASE)));
+                    DisplayCases = new ObservableCollection<CovidCase>(App.AppCaseData.Probable);
                 }
                 if (!IsConfirmed && !IsProbable)
                 {
-                    DisplayCases = new ObservableCollection<CovidCase>
-                        (DisplayCases.Where(s => !s.CaseType.Equals(CovidCase.CONFIRMEDCASE) && !s.CaseType.Equals(CovidCase.PROBABLECASE)));
+                    DisplayCases = null;
                 }
             }
             catch (Exception ex)
