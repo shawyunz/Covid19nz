@@ -23,8 +23,8 @@ namespace Covid19nz.Controls
                 if (CaseList != null)
                 {
                     ItemsSource = CaseList
-                        .Where(cc => cc.FlightNumber.ToLower().Contains(newValue.ToLower()) 
-                            || cc.LastCountryBeforeReturn.ToLower().Contains(newValue.ToLower())).ToList();
+                        .Where(cc => (!string.IsNullOrEmpty(cc.FlightNumber) && cc.FlightNumber.ToLower().Contains(newValue.ToLower())) 
+                            || (!string.IsNullOrEmpty(cc.LastCountryBeforeReturn) && cc.LastCountryBeforeReturn.ToLower().Contains(newValue.ToLower()))).ToList();
                 }
             }
         }
