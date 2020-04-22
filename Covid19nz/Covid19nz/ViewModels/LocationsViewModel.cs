@@ -11,7 +11,7 @@ namespace Covid19nz.ViewModels
 {
     public class LocationsViewModel : BaseViewModel
     {
-        public bool ExpandHeader { get; set; }
+        public bool ExpandHeader { get; set; } = true;
         public CovidLocation SelectedLocation { get; set; }
         public CovidSummary SummaryData { get; set; }
         public ObservableCollection<CovidLocation> Items { get; set; }

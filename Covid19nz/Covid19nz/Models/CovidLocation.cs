@@ -16,7 +16,7 @@ namespace Covid19nz.Models
         public LocationCentrePoint LocationCentrePoint { get; set; }
 
         [JsonProperty("CaseCount")]
-        public long CaseCount { get; set; }
+        public int CaseCount { get; set; }
     }
 
     public partial class LocationCentrePoint
@@ -44,8 +44,10 @@ namespace Covid19nz.Models
                 return new Position(0, 0);
             }
         }
+        public string CovidType { get; set; }
+        public int CountConfirmed { get; set; }
+        public int CountProbable { get; set; }
     }
-
 
     internal class TypeEnumConverter : JsonConverter
     {

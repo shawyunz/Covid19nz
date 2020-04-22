@@ -35,7 +35,7 @@ namespace Covid19nz
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
                 //run methods in parallel as they are independent
-                await Task.WhenAll(GetAlertLevel(), GetSummary(), GetLocations(), GetCases());
+                await Task.WhenAll(GetAlertLevel(), GetSummary(), GetCases());
 
             }
             else
@@ -64,23 +64,41 @@ namespace Covid19nz
 
         private async Task GetCases()
         {
-            ////static data (deprecated)
+            ////(deprecated)
+            ////static data
             //AppCases = CovidCase.FromJson(JsonCases0325);
-            //live data (deprecated)
+            ////live data
             //var casesJson = await httpClient.DownloadStringAsync("https://nzcovid19api.xerra.nz/cases/json");
 
             //live data
             var casesJson = await httpClient.DownloadStringAsync("https://raw.githubusercontent.com/philiprenich/nz-covid19-data/master/nz-covid-cases.json");
             AppCaseData = CovidCaseData.FromJson(casesJson);
 
-            AppCaseData.Confirmed.Select(c => { c.TypeConfirmImage = "icn_type_cfm1.png"; c.TypeProbableImage = "icn_type_prb0.png"; return c; }).ToList();
-            AppCaseData.Probable.Select(p => { p.TypeConfirmImage = "icn_type_cfm0.png"; p.TypeProbableImage = "icn_type_prb1.png"; return p; }).ToList();
+            var confirmedList = AppCaseData.Confirmed.Select(c => { c.TypeConfirmImage = "icn_type_cfm1.png"; c.TypeProbableImage = "icn_type_prb0.png"; return c; }).ToList();
+            var probableList = AppCaseData.Probable.Select(p => { p.TypeConfirmImage = "icn_type_cfm0.png"; p.TypeProbableImage = "icn_type_prb1.png"; return p; }).ToList();
+            AppCases = confirmedList.Concat(probableList).ToList();
 
-            AppCases = AppCaseData.Confirmed.Concat(AppCaseData.Probable).ToList();
+            var result1 = confirmedList.GroupBy(n => n.Dhb)
+                .Select(group => new CovidLocation { LocationName = group.Key, CaseCount = group.Count() })
+                .ToList();
+
+            var result2 = probableList.GroupBy(n => n.Dhb)
+                .Select(group => new CovidLocation { LocationName = group.Key, CaseCount = group.Count() })
+                .ToList();
+
+            AppLocations = result1.OrderBy(l => l.LocationName).ToList();
+            foreach (var district in AppLocations)
+            {
+                district.CountConfirmed = district.CaseCount;
+                district.CountProbable = result2.Single(s => s.LocationName.Equals(district.LocationName))?.CaseCount ?? 0;
+                district.CaseCount = district.CountConfirmed + district.CountProbable;
+            }
         }
 
         private async Task GetLocations()
         {
+            //how to catch exception or timeout if api unavailable??
+
             //live data
             var locationsJson = await httpClient.DownloadStringAsync("https://nzcovid19api.xerra.nz/locations/json");
             AppLocations = CovidLocation.FromJson(locationsJson).Values.ToList();
