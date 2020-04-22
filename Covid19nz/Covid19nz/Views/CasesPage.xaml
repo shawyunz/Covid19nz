@@ -162,7 +162,7 @@
                                             Text="{Binding DisplayReportedDate}"
                                             FontSize="20" />
                                         <Label Margin="0,-4" Text="{Binding DisplayReportedDate}" />
-                                        <Label LineBreakMode="CharacterWrap" Text="{Binding DHB}" />
+                                        <Label LineBreakMode="CharacterWrap" Text="{Binding Dhb}" />
                                     </StackLayout>
                                     <BoxView
                                         Grid.Column="1"
