@@ -265,7 +265,7 @@
                             <DataTemplate>
                                 <ViewCell>
                                     <StackLayout
-                                        Padding="24,0"
+                                        Padding="24,0,40,0"
                                         Orientation="Horizontal"
                                         HorizontalOptions="FillAndExpand">
                                         <Label

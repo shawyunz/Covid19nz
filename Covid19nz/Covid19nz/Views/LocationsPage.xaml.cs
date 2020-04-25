@@ -45,6 +45,9 @@ namespace Covid19nz.Views
             }
             else
             {
+                IsClusterExpanded = false;
+                LytCluster.LayoutTo(new Rectangle(LytSummary.Bounds.X + 80, LytSummary.Bounds.Height - 110, LytCluster.Bounds.Width - 40, 160), 300, Easing.CubicIn);
+
                 IsDistrictExpanded = false;
                 LytDistrict.LayoutTo(new Rectangle(LytSummary.Bounds.X + 40, LytSummary.Bounds.Height - 220, LytDistrict.Bounds.Width - 20, 270), 300, Easing.CubicIn); //110+110+50
             }
@@ -54,6 +57,9 @@ namespace Covid19nz.Views
         {
             if (!IsClusterExpanded)
             {
+                IsDistrictExpanded = true;
+                LytDistrict.LayoutTo(new Rectangle(LytSummary.Bounds.X + 20, LytSummary.Bounds.Y + 100, LytDistrict.Bounds.Width + 20, LytSummary.Bounds.Height), 300, Easing.CubicOut);
+
                 IsClusterExpanded = true;
                 LytCluster.LayoutTo(new Rectangle(LytSummary.Bounds.X + 40, LytSummary.Bounds.Y + 220, LytCluster.Bounds.Width + 40, LytSummary.Bounds.Height - 110), 300, Easing.CubicOut);
             }
