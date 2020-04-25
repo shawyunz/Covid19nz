@@ -55,6 +55,7 @@
                 Grid.Row="0"
                 Margin="10,6,10,-2"
                 Orientation="Horizontal">
+
                 <StackLayout.Resources>
                     <ResourceDictionary>
                         <Style TargetType="Label">
@@ -160,8 +161,12 @@
                                         <Label
                                             Margin="0,0,0,4"
                                             Text="{Binding DisplayReportedDate}"
+                                            FontAttributes="Bold"
                                             FontSize="20" />
-                                        <Label Margin="0,-4" Text="{Binding DisplayReportedDate}" />
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image HorizontalOptions="Center" Source="{Binding TypeConfirmImage}" />
+                                            <Image HorizontalOptions="Center" Source="{Binding TypeProbableImage}" />
+                                        </StackLayout>
                                         <Label LineBreakMode="CharacterWrap" Text="{Binding Dhb}" />
                                     </StackLayout>
                                     <BoxView
@@ -172,12 +177,36 @@
                                     <Grid Grid.Column="2" Margin="12,0,8,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="9" />
                                             <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="3" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1.1*" />
+                                        </Grid.ColumnDefinitions>
 
-                                        <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
+                                        <Image
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Source="icn_plane.png" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Text="{Binding FlightNumber}" />
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            Orientation="Horizontal">
+                                            <Image Source="{Binding GenderImage}" />
+                                            <Label Text="{Binding Sex}" />
+                                            <Label
+                                                Margin="0,0,0,0"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding AgeLower, StringFormat='{0}+'}" />
+                                        </StackLayout>
+                                        <!--<Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
@@ -200,15 +229,51 @@
                                                 Grid.Column="4"
                                                 HorizontalOptions="End"
                                                 Source="{Binding TypeProbableImage}" />
+                                        </Grid>-->
+
+
+                                        <Image
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Source="icn_calendar.png" />
+                                        <Grid
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Grid.ColumnSpan="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="1.1*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="{Binding DisplayDepDate}"
+                                                FontSize="20" />
+                                            <Label Grid.Column="1" Text="-  " />
+                                            <Label
+                                                Grid.Column="2"
+                                                Text="{Binding DisplayArrDate}"
+                                                FontSize="20" />
                                         </Grid>
 
                                         <BoxView
-                                            Grid.Row="1"
-                                            Margin="0,4"
+                                            Grid.Row="2"
+                                            Grid.ColumnSpan="3"
+                                            Margin="0,1"
                                             HorizontalOptions="FillAndExpand"
                                             BackgroundColor="LightGray" />
 
-                                        <Grid Grid.Row="2">
+                                        <Image
+                                            Grid.Row="3"
+                                            Grid.Column="0"
+                                            Source="icn_city.png" />
+                                        <Label
+                                            Grid.Row="3"
+                                            Grid.Column="1"
+                                            Grid.ColumnSpan="2"
+                                            Text="{Binding LastCountryBeforeReturn}" />
+
+                                        <!--<Grid Grid.Row="2">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
@@ -219,20 +284,9 @@
                                             <Label Grid.Column="1" Text="{Binding FlightNumber}" />
                                             <Image Grid.Column="2" Source="icn_city.png" />
                                             <Label Grid.Column="3" Text="{Binding LastCountryBeforeReturn}" />
-                                        </Grid>
+                                        </Grid>-->
 
-                                        <Grid Grid.Row="3">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="1.1*" />
-                                            </Grid.ColumnDefinitions>
-                                            <Image Grid.Column="0" Source="icn_calendar.png" />
-                                            <Label Grid.Column="1" Text="{Binding DisplayDepDate}" />
-                                            <Label Grid.Column="2" Text="&gt;  " />
-                                            <Label Grid.Column="3" Text="{Binding DisplayArrDate}" />
-                                        </Grid>
+
                                     </Grid>
 
                                     <BoxView Grid.ColumnSpan="3" BackgroundColor="Transparent">

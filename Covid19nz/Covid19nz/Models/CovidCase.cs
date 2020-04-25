@@ -64,11 +64,11 @@ namespace Covid19nz.Models
 
         public static string CONFIRMEDCASE = "confirmed";
         public static string PROBABLECASE = "probable";
-        public static string CASEPLACEHOLDER = " - ";
+        public static string CASEPLACEHOLDER = " N/A ";
 
         private string FormatFlightDate(string date)
         {
-            return string.IsNullOrEmpty(date) ? CASEPLACEHOLDER : date.Substring(0, 10);
+            return string.IsNullOrEmpty(date) ? CASEPLACEHOLDER : date.Substring(5, 10);
         }
 
         ////sample data
