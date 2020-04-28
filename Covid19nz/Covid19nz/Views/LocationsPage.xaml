@@ -245,7 +245,7 @@
             CornerRadius="60">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100" />
+                    <RowDefinition Height="80" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
@@ -268,7 +268,7 @@
                     Command="{Binding LoadItemsCommand}">
                     <ListView
                         x:Name="ItemsCollectionView"
-                        ItemsSource="{Binding Items}"
+                        ItemsSource="{Binding ListLocation}"
                         ItemTapped="OnItemSelected"
                         SelectedItem="{Binding SelectedLocation}">
                         <ListView.ItemTemplate>
@@ -308,7 +308,7 @@
             CornerRadius="60">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100" />
+                    <RowDefinition Height="80" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
@@ -330,7 +330,7 @@
                     Command="{Binding LoadItemsCommand}">
                     <ListView
                         x:Name="ItemsCollectionView2"
-                        ItemsSource="{Binding Items}"
+                        ItemsSource="{Binding ListCluster}"
                         ItemTapped="OnItemSelected"
                         SelectedItem="{Binding SelectedLocation}">
                         <ListView.ItemTemplate>
@@ -343,15 +343,20 @@
                                         <Label
                                             HorizontalOptions="StartAndExpand"
                                             VerticalOptions="CenterAndExpand"
-                                            Text="{Binding LocationName}"
-                                            FontSize="16"
-                                            TextColor="#011223"
-                                            TextDecorations="Underline" />
+                                            Text="{Binding Name}"
+                                            FontSize="12"
+                                            TextColor="#011223" />
                                         <Label
                                             HorizontalOptions="End"
                                             VerticalOptions="CenterAndExpand"
-                                            Text="{Binding CaseCount}"
+                                            Text="{Binding Cases}"
                                             FontSize="18"
+                                            TextColor="#011223" />
+                                        <Label
+                                            HorizontalOptions="End"
+                                            VerticalOptions="CenterAndExpand"
+                                            Text="{Binding CasesNew24H, StringFormat='({0})'}"
+                                            FontSize="12"
                                             TextColor="#011223" />
                                     </StackLayout>
                                 </ViewCell>

@@ -36,7 +36,7 @@ namespace Covid19nz
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
                 //run methods in parallel as they are independent
-                await Task.WhenAll(GetAlertLevel(), GetSummary(), GetCases());
+                await Task.WhenAll(GetSummary(), GetCases(), GetCluster(), GetAlertLevel());
 
             }
             else

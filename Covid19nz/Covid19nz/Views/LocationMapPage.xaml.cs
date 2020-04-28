@@ -21,7 +21,7 @@ namespace Covid19nz.Views
 
             viewModel = new LocationsViewModel
             {
-                Items = new ObservableCollection<CovidLocation>(App.AppLocations)
+                ListLocation = new ObservableCollection<CovidLocation>(App.AppLocations)
             };
 
             BindingContext = viewModel;

@@ -14,7 +14,8 @@ namespace Covid19nz.ViewModels
         public bool ExpandHeader { get; set; } = true;
         public CovidLocation SelectedLocation { get; set; }
         public CovidSummary SummaryData { get; set; }
-        public ObservableCollection<CovidLocation> Items { get; set; }
+        public ObservableCollection<CovidLocation> ListLocation { get; set; }
+        public ObservableCollection<CovidCluster> ListCluster { get; set; }
 
         public Command ExpandHeaderCommand { get; set; }
         public Command LoadItemsCommand { get; set; }
@@ -22,7 +23,8 @@ namespace Covid19nz.ViewModels
         public LocationsViewModel()
         {
             Title = "Covid-19 NZ";
-            Items = new ObservableCollection<CovidLocation>();
+            ListLocation = new ObservableCollection<CovidLocation>();
+            ListCluster = new ObservableCollection<CovidCluster>();
             ExpandHeaderCommand = new Command(() => ExecuteExpandCommand());
             //Todo:replace with AsyncCommand from MvvmHelpers
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
@@ -45,9 +47,14 @@ namespace Covid19nz.ViewModels
                 SummaryData = App.AppSummary;
                 OnPropertyChanged(nameof(SummaryData));
 
-                Items.Clear();
-                Items = new ObservableCollection<CovidLocation>(App.AppLocations);
-                OnPropertyChanged(nameof(Items));
+                ListLocation.Clear();
+                ListLocation = new ObservableCollection<CovidLocation>(App.AppLocations);
+
+                ListCluster.Clear();
+                ListCluster = new ObservableCollection<CovidCluster>(App.AppClusters);
+
+                OnPropertyChanged(nameof(ListLocation));
+                OnPropertyChanged(nameof(ListCluster));
             }
             catch (Exception ex)
             {

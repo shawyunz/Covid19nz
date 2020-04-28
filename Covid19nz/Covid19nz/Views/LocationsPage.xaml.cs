@@ -26,7 +26,7 @@ namespace Covid19nz.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
+            if (viewModel.ListLocation?.Count == 0)
                 viewModel.IsBusy = true;
         }
 

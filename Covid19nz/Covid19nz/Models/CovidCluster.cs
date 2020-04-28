@@ -13,10 +13,10 @@ namespace Covid19nz.Models
         public string Location { get; set; }
 
         [JsonProperty("Cases")]
-        public long Cases { get; set; }
+        public int Cases { get; set; }
 
         [JsonProperty("CasesNew24h")]
-        public long CasesNew24H { get; set; }
+        public int CasesNew24H { get; set; }
     }
 
     public partial class CovidCluster
