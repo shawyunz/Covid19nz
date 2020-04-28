@@ -142,7 +142,9 @@ Check todo list here **[Covid19nz/project](https://github.com/shawyunz/Covid19nz
 
 ## Versions
 
-​	v1.x	:construction: HttpClient by [yurkinh](https://github.com/yurkinh). map page connection check. Cluster API implementation. Summary page artwork. 
+​	v1.X	:construction:
+
+​	v1.1.8	HttpClient by [yurkinh](https://github.com/yurkinh). API update. Summary animation. New case page UI. New splash.
 
 ​	v1.1.7	Filter animation when scrolling on case page. Android config update.
 
@@ -193,4 +195,5 @@ Check todo list here **[Covid19nz/project](https://github.com/shawyunz/Covid19nz
 * In-app icons from https://materialdesignicons.com by [![GitHub stars](https://img.shields.io/github/stars/Templarian/MaterialDesign?label=MaterialDesign&style=social)](https://github.com/templarian/MaterialDesign/) licensed under OFL.
 * Emojis in commits from https://gitmoji.carloscuesta.me by [![GitHub stars](https://img.shields.io/github/stars/carloscuesta/gitmoji?label=gitmoji&style=social)](https://github.com/carloscuesta/gitmoji) licensed under MIT.
 * Badges in this doc from https://shields.io/ by [![GitHub stars](https://img.shields.io/github/stars/badges/shields?label=shields&style=social)](https://github.com/badges/shields) under CCO-1.0.
+* New case API from: https://raw.githubusercontent.com/philiprenich/nz-covid19-data/master/nz-covid-cases.json
 
