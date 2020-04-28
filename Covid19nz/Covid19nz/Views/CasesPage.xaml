@@ -24,7 +24,7 @@
                 <Label Grid.Column="1" Text="{Binding Sex}" />
                 <Label
                     Grid.Column="2"
-                    Text="{Binding FlightNumber}"
+                    Text="{Binding DisplayFlightNumber}"
                     FontAttributes="Bold" />
             </Grid>
         </DataTemplate>
@@ -194,7 +194,7 @@
                                         <Label
                                             Grid.Row="0"
                                             Grid.Column="1"
-                                            Text="{Binding FlightNumber}" />
+                                            Text="{Binding DisplayFlightNumber}" />
                                         <StackLayout
                                             Grid.Row="0"
                                             Grid.Column="2"

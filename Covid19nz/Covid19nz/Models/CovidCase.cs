@@ -53,7 +53,8 @@ namespace Covid19nz.Models
         public string AgeLower => AgeGroup?.Substring(0,2) ?? CASEPLACEHOLDER;
         public string DisplayArrDate => FormatFlightDate(ArrivalDate);
         public string DisplayDepDate => FormatFlightDate(FlightDepartureDate);
-        public string DisplayReportedDate => DateOfReport;
+        public string DisplayFlightNumber => FlightNumber ?? CASEPLACEHOLDER;
+        public string DisplayReportedDate => DateOfReport?.Substring(0, 5);
         public string GenderChar => Sex?.Substring(0, 1) ?? CASEPLACEHOLDER;
 
         public string GenderImage => Sex.Equals("Male") ? "icn_male.png" : "icn_female.png";

@@ -73,12 +73,6 @@ namespace Covid19nz.ViewModels
             {
                 DisplayCases = AllCases;
 
-                if (HasFlight)
-                {
-                    DisplayCases = new ObservableCollection<CovidCase>
-                        (DisplayCases.Where(s => !s.FlightNumber.Equals(CovidCase.CASEPLACEHOLDER)));
-                }
-
                 if (IsConfirmed && IsProbable)
                 {
                     DisplayCases = new ObservableCollection<CovidCase>(App.AppCases);
@@ -94,6 +88,12 @@ namespace Covid19nz.ViewModels
                 if (!IsConfirmed && !IsProbable)
                 {
                     DisplayCases = null;
+                }
+
+                if (HasFlight && DisplayCases != null)
+                {
+                    DisplayCases = new ObservableCollection<CovidCase>
+                        (DisplayCases.Where(s => !string.IsNullOrEmpty(s.FlightNumber)));
                 }
             }
             catch (Exception ex)
