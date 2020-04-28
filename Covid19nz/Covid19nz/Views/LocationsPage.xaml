@@ -42,9 +42,12 @@
             Padding="40"
             BackgroundColor="#f1f5ff">
             <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TappedSummary" />
+                </Grid.GestureRecognizers>
                 <StackLayout Orientation="Horizontal">
                     <Image
-                        WidthRequest="36"
+                        WidthRequest="40"
                         Margin="10,0"
                         Source="icon.png" />
                     <Label
@@ -52,11 +55,6 @@
                         FontAttributes="Bold"
                         FontSize="24" />
                 </StackLayout>
-                <BoxView>
-                    <BoxView.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TappedSummary" />
-                    </BoxView.GestureRecognizers>
-                </BoxView>
             </Grid>
             <Grid RowSpacing="10" Padding="0,25,0,25">
                 <Grid.RowDefinitions>
@@ -223,16 +221,6 @@
                         FontSize="14"
                         TextColor="Gray" />
                 </StackLayout>
-
-                <!--<Image
-                    Grid.Row="5"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    HeightRequest="20"
-                    Margin="0,0,0,-16"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="End"
-                    Source="icn_unfold.png" />-->
             </Grid>
         </StackLayout>
 
@@ -263,7 +251,7 @@
 
                 <RefreshView
                     Grid.Row="1"
-                    Margin="16,0,24,80"
+                    Margin="16,0,24,180"
                     IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
                     Command="{Binding LoadItemsCommand}">
                     <ListView
@@ -283,8 +271,7 @@
                                             VerticalOptions="CenterAndExpand"
                                             Text="{Binding LocationName}"
                                             FontSize="16"
-                                            TextColor="#011223"
-                                            TextDecorations="Underline" />
+                                            TextColor="#011223" />
                                         <Label
                                             HorizontalOptions="End"
                                             VerticalOptions="CenterAndExpand"
@@ -325,14 +312,10 @@
 
                 <RefreshView
                     Grid.Row="1"
-                    Margin="16,0,24,80"
+                    Margin="16,0,24,180"
                     IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
                     Command="{Binding LoadItemsCommand}">
-                    <ListView
-                        x:Name="ItemsCollectionView2"
-                        ItemsSource="{Binding ListCluster}"
-                        ItemTapped="OnItemSelected"
-                        SelectedItem="{Binding SelectedLocation}">
+                    <ListView x:Name="ItemsCollectionView2" ItemsSource="{Binding ListCluster}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
