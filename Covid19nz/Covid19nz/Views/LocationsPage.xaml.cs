@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Covid19nz.ViewModels;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
-
-using Covid19nz.ViewModels;
 
 namespace Covid19nz.Views
 {
@@ -11,18 +10,16 @@ namespace Covid19nz.Views
     [DesignTimeVisible(false)]
     public partial class LocationsPage : ContentPage
     {
-        LocationsViewModel viewModel;
+        private const int TIMESPAN = 250;
+        private bool IsClusterExpanded = false;
+        private bool IsDistrictExpanded = false;
+        private LocationsViewModel viewModel;
 
         public LocationsPage()
         {
             InitializeComponent();
 
             BindingContext = viewModel = new LocationsViewModel();
-        }
-
-        async void OnItemSelected(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new CasesPage(new CasesViewModel(viewModel.SelectedLocation)));
         }
 
         protected override void OnAppearing()
@@ -33,40 +30,71 @@ namespace Covid19nz.Views
                 viewModel.IsBusy = true;
         }
 
-        bool IsDistrictExpanded = false;
-        bool IsClusterExpanded = false;
-
-        private void TappedDistrict(object sender, EventArgs e)
+        private async void OnItemSelected(object sender, EventArgs args)
         {
-            if (!IsDistrictExpanded)
-            {
-                IsDistrictExpanded = true;
-                LytDistrict.LayoutTo(new Rectangle(LytSummary.Bounds.X + 20, LytSummary.Bounds.Y + 100, LytDistrict.Bounds.Width + 20, LytSummary.Bounds.Height), 300, Easing.CubicOut);
-            }
-            else
-            {
-                IsClusterExpanded = false;
-                LytCluster.LayoutTo(new Rectangle(LytSummary.Bounds.X + 80, LytSummary.Bounds.Height - 110, LytCluster.Bounds.Width - 40, 160), 300, Easing.CubicIn);
-
-                IsDistrictExpanded = false;
-                LytDistrict.LayoutTo(new Rectangle(LytSummary.Bounds.X + 40, LytSummary.Bounds.Height - 220, LytDistrict.Bounds.Width - 20, 270), 300, Easing.CubicIn); //110+110+50
-            }
+            await Navigation.PushAsync(new CasesPage(new CasesViewModel(viewModel.SelectedLocation)));
         }
 
         private void TappedCluster(object sender, EventArgs e)
         {
+            var heightSummary = LytSummary.Bounds.Height;
+            var widthSummary = LytSummary.Bounds.Width;
+
             if (!IsClusterExpanded)
             {
                 IsDistrictExpanded = true;
-                LytDistrict.LayoutTo(new Rectangle(LytSummary.Bounds.X + 20, LytSummary.Bounds.Y + 100, LytDistrict.Bounds.Width + 20, LytSummary.Bounds.Height), 300, Easing.CubicOut);
+                LytDistrict.LayoutTo(new Rectangle(20, 100, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
 
                 IsClusterExpanded = true;
-                LytCluster.LayoutTo(new Rectangle(LytSummary.Bounds.X + 40, LytSummary.Bounds.Y + 220, LytCluster.Bounds.Width + 40, LytSummary.Bounds.Height - 110), 300, Easing.CubicOut);
+                LytCluster.LayoutTo(new Rectangle(40, 200, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
             }
             else
             {
                 IsClusterExpanded = false;
-                LytCluster.LayoutTo(new Rectangle(LytSummary.Bounds.X + 80, LytSummary.Bounds.Height - 110, LytCluster.Bounds.Width - 40, 160), 300, Easing.CubicIn);
+                LytCluster.LayoutTo(new Rectangle(80, heightSummary - 100, widthSummary, 200), TIMESPAN, Easing.CubicIn);
+            }
+        }
+
+        private void TappedDistrict(object sender, EventArgs e)
+        {
+            var heightSummary = LytSummary.Bounds.Height;
+            var widthSummary = LytSummary.Bounds.Width;
+
+            if (!IsDistrictExpanded)
+            {
+                IsDistrictExpanded = true;
+                LytDistrict.LayoutTo(new Rectangle(20, 100, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
+            }
+            else
+            {
+                if (IsClusterExpanded)
+                {
+                    IsClusterExpanded = false;
+                    LytCluster.LayoutTo(new Rectangle(80, heightSummary - 100, widthSummary, 200), TIMESPAN, Easing.CubicIn);
+                }
+                else
+                {
+                    IsDistrictExpanded = false;
+                    LytDistrict.LayoutTo(new Rectangle(40, heightSummary - 200, widthSummary, 300), TIMESPAN, Easing.CubicIn);
+                }
+            }
+        }
+
+        private void TappedSummary(object sender, EventArgs e)
+        {
+            var heightSummary = LytSummary.Bounds.Height;
+            var widthSummary = LytSummary.Bounds.Width;
+
+            if (IsClusterExpanded)
+            {
+                IsClusterExpanded = false;
+                LytCluster.LayoutTo(new Rectangle(80, heightSummary - 100, widthSummary, 200), TIMESPAN, Easing.CubicIn);
+            }
+
+            if (IsDistrictExpanded)
+            {
+                IsDistrictExpanded = false;
+                LytDistrict.LayoutTo(new Rectangle(40, heightSummary - 200, widthSummary, 300), TIMESPAN, Easing.CubicIn);
             }
         }
     }

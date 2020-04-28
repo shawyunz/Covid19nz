@@ -31,8 +31,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
         <StackLayout
@@ -40,21 +40,26 @@
             Grid.Row="0"
             Grid.RowSpan="3"
             Padding="40"
-            BackgroundColor="#AFDAFF">
-            <StackLayout Orientation="Horizontal">
-                <Image
-                    WidthRequest="36"
-                    Margin="10,0"
-                    Source="icon.png" />
-                <Label
-                    CharacterSpacing="1"
-                    Text="Summary"
-                    FontAttributes="Bold"
-                    FontSize="24" />
-            </StackLayout>
-            <Grid RowSpacing="10" Padding="0,5,0,25">
+            BackgroundColor="#f1f5ff">
+            <Grid>
+                <StackLayout Orientation="Horizontal">
+                    <Image
+                        WidthRequest="36"
+                        Margin="10,0"
+                        Source="icon.png" />
+                    <Label
+                        Text="Covid-19 Summary"
+                        FontAttributes="Bold"
+                        FontSize="24" />
+                </StackLayout>
+                <BoxView>
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TappedSummary" />
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+            </Grid>
+            <Grid RowSpacing="10" Padding="0,25,0,25">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -73,7 +78,6 @@
                         </Style>
                     </ResourceDictionary>
                 </Grid.Resources>
-
                 <Label
                     Grid.Row="0"
                     Grid.Column="0"
@@ -220,7 +224,7 @@
                         TextColor="Gray" />
                 </StackLayout>
 
-                <Image
+                <!--<Image
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -228,8 +232,7 @@
                     Margin="0,0,0,-16"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End"
-                    Source="icn_unfold.png" />
-
+                    Source="icn_unfold.png" />-->
             </Grid>
         </StackLayout>
 
@@ -237,25 +240,32 @@
             x:Name="LytDistrict"
             Grid.Row="1"
             Grid.RowSpan="2"
-            Margin="40,0,-50,-50"
+            Margin="40,0,-60,-60"
             BackgroundColor="#C9FCC9"
             CornerRadius="60">
-            <StackLayout>
-                <Grid Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Padding="20">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TappedDistrict" />
+                    </Grid.GestureRecognizers>
                     <Label
+                        VerticalOptions="FillAndExpand"
                         CharacterSpacing="1"
                         Text="Districts"
                         FontAttributes="Bold"
                         FontSize="24" />
-
-                    <BoxView HeightRequest="120">
-                        <BoxView.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TappedDistrict" />
-                        </BoxView.GestureRecognizers>
-                    </BoxView>
                 </Grid>
 
-                <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+                <RefreshView
+                    Grid.Row="1"
+                    Margin="16,0,24,80"
+                    IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                    Command="{Binding LoadItemsCommand}">
                     <ListView
                         x:Name="ItemsCollectionView"
                         ItemsSource="{Binding Items}"
@@ -265,7 +275,7 @@
                             <DataTemplate>
                                 <ViewCell>
                                     <StackLayout
-                                        Padding="24,0,40,0"
+                                        Margin="20,0,40,0"
                                         Orientation="Horizontal"
                                         HorizontalOptions="FillAndExpand">
                                         <Label
@@ -287,274 +297,69 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </RefreshView>
-            </StackLayout>
+            </Grid>
         </Frame>
 
         <Frame
             x:Name="LytCluster"
             Grid.Row="2"
-            Margin="80,0,-50,-50"
+            Margin="80,0,-60,-60"
             BackgroundColor="#FCFFAF"
             CornerRadius="60">
-            <StackLayout Padding="20">
-                <Grid Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Padding="20">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TappedCluster" />
+                    </Grid.GestureRecognizers>
                     <Label
                         CharacterSpacing="1"
                         Text="Clusters"
                         FontAttributes="Bold"
                         FontSize="24" />
-
-                    <BoxView HeightRequest="120">
-                        <BoxView.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TappedCluster" />
-                        </BoxView.GestureRecognizers>
-                    </BoxView>
                 </Grid>
-            </StackLayout>
-        </Frame>
 
-    </Grid>
-
-
-    <!--<StackLayout>
-        <Frame
-            Margin="20,20,20,0"
-            Padding="10,20,10,0"
-            CornerRadius="10">
-            <Grid RowSpacing="0" Padding="0,5,0,25">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.Resources>
-                    <ResourceDictionary>
-                        <Style TargetType="Label">
-                            <Setter Property="HorizontalOptions" Value="Center" />
-                            <Setter Property="Margin" Value="0,0" />
-                        </Style>
-                    </ResourceDictionary>
-                </Grid.Resources>
-
-                <Label
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Text="Total Number" />
-                <StackLayout
+                <RefreshView
                     Grid.Row="1"
-                    Grid.Column="0"
-                    Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand">
-                    <Label
-                        Text="{Binding SummaryData.CasesAmount}"
-                        FontAttributes="Bold"
-                        FontSize="24"
-                        TextColor="IndianRed" />
-                    <Label
-                        VerticalOptions="Center"
-                        Text="{Binding SummaryData.CasesAmountNew24h}"
-                        FontAttributes="Bold"
-                        FontSize="14"
-                        TextColor="IndianRed" />
-                </StackLayout>
-
-                <Label
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Text="Recovered" />
-                <StackLayout
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand">
-                    <Label
-                        Text="{Binding SummaryData.RecoveredCasesTotal}"
-                        FontAttributes="Bold"
-                        FontSize="24"
-                        TextColor="ForestGreen" />
-                    <Label
-                        VerticalOptions="Center"
-                        Text="{Binding SummaryData.RecoveredCasesNew24h}"
-                        FontAttributes="Bold"
-                        FontSize="14"
-                        TextColor="ForestGreen" />
-                </StackLayout>
-
-                <Label
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    IsVisible="{Binding ExpandHeader}"
-                    Margin="0,10,0,0"
-                    Text="Confirmed"
-                    TextColor="LightGray" />
-                <StackLayout
-                    Grid.Row="3"
-                    Grid.Column="0"
-                    IsVisible="{Binding ExpandHeader}"
-                    Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand">
-                    <Label
-                        Text="{Binding SummaryData.ConfirmedCasesTotal}"
-                        FontAttributes="Bold"
-                        FontSize="24"
-                        TextColor="Salmon" />
-                    <Label
-                        VerticalOptions="Center"
-                        Text="{Binding SummaryData.ConfirmedCasesNew24h}"
-                        FontAttributes="Bold"
-                        FontSize="14"
-                        TextColor="Salmon" />
-                </StackLayout>
-
-                <Label
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    IsVisible="{Binding ExpandHeader}"
-                    Margin="0,10,0,0"
-                    Text="in Hospital"
-                    TextColor="LightGray" />
-                <StackLayout
-                    Grid.Row="3"
-                    Grid.Column="1"
-                    IsVisible="{Binding ExpandHeader}"
-                    Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand">
-                    <Label
-                        Text="{Binding SummaryData.HospitalisedCasesTotal}"
-                        FontAttributes="Bold"
-                        FontSize="24"
-                        TextColor="SkyBlue" />
-                    <Label
-                        VerticalOptions="Center"
-                        Text="{Binding SummaryData.HospitalisedCasesNew24h}"
-                        FontAttributes="Bold"
-                        FontSize="14"
-                        TextColor="SkyBlue" />
-                </StackLayout>
-
-                <Label
-                    Grid.Row="4"
-                    Grid.Column="0"
-                    IsVisible="{Binding ExpandHeader}"
-                    Text="Probable"
-                    TextColor="LightGray" />
-                <StackLayout
-                    Grid.Row="5"
-                    Grid.Column="0"
-                    IsVisible="{Binding ExpandHeader}"
-                    Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand">
-                    <Label
-                        Text="{Binding SummaryData.ProbableCasesTotal}"
-                        FontAttributes="Bold"
-                        FontSize="24"
-                        TextColor="Orange" />
-                    <Label
-                        VerticalOptions="Center"
-                        Text="{Binding SummaryData.ProbableCasesNew24h}"
-                        FontAttributes="Bold"
-                        FontSize="14"
-                        TextColor="Orange" />
-                </StackLayout>
-
-                <Label
-                    Grid.Row="4"
-                    Grid.Column="1"
-                    IsVisible="{Binding ExpandHeader}"
-                    Text="Death"
-                    TextColor="LightGray" />
-                <StackLayout
-                    Grid.Row="5"
-                    Grid.Column="1"
-                    IsVisible="{Binding ExpandHeader}"
-                    Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand">
-                    <Label
-                        Text="{Binding SummaryData.DeathCasesTotal}"
-                        FontAttributes="Bold"
-                        FontSize="24"
-                        TextColor="Gray" />
-                    <Label
-                        VerticalOptions="Center"
-                        Text="{Binding SummaryData.DeathCasesNew24h}"
-                        FontAttributes="Bold"
-                        FontSize="14"
-                        TextColor="Gray" />
-                </StackLayout>
-
-                <Image
-                    Grid.Row="5"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    HeightRequest="20"
-                    Margin="0,0,0,-16"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="End"
-                    Source="icn_unfold.png" />
-
-                <Button
-                    Grid.Row="0"
-                    Grid.RowSpan="6"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Margin="0,0,0,-32"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    BackgroundColor="Transparent"
-                    Command="{Binding ExpandHeaderCommand}" />
+                    Margin="16,0,24,80"
+                    IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                    Command="{Binding LoadItemsCommand}">
+                    <ListView
+                        x:Name="ItemsCollectionView2"
+                        ItemsSource="{Binding Items}"
+                        ItemTapped="OnItemSelected"
+                        SelectedItem="{Binding SelectedLocation}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout
+                                        Margin="20,0,40,0"
+                                        Orientation="Horizontal"
+                                        HorizontalOptions="FillAndExpand">
+                                        <Label
+                                            HorizontalOptions="StartAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            Text="{Binding LocationName}"
+                                            FontSize="16"
+                                            TextColor="#011223"
+                                            TextDecorations="Underline" />
+                                        <Label
+                                            HorizontalOptions="End"
+                                            VerticalOptions="CenterAndExpand"
+                                            Text="{Binding CaseCount}"
+                                            FontSize="18"
+                                            TextColor="#011223" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </RefreshView>
             </Grid>
         </Frame>
-
-        <Label
-            Margin="30,10,30,0"
-            HorizontalOptions="StartAndExpand"
-            VerticalOptions="End"
-            Text="Locations:"
-            FontSize="14" />
-
-        <Frame
-            Margin="20,0,20,10"
-            Padding="20,12"
-            CornerRadius="10">
-            <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
-                <ListView
-                    x:Name="ItemsCollectionView"
-                    ItemsSource="{Binding Items}"
-                    ItemTapped="OnItemSelected"
-                    SelectedItem="{Binding SelectedLocation}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout
-                                    Padding="24,0"
-                                    Orientation="Horizontal"
-                                    HorizontalOptions="FillAndExpand">
-                                    <Label
-                                        HorizontalOptions="StartAndExpand"
-                                        VerticalOptions="CenterAndExpand"
-                                        Text="{Binding LocationName}"
-                                        FontSize="16"
-                                        TextColor="#011223"
-                                        TextDecorations="Underline" />
-                                    <Label
-                                        HorizontalOptions="End"
-                                        VerticalOptions="CenterAndExpand"
-                                        Text="{Binding CaseCount}"
-                                        FontSize="18"
-                                        TextColor="#011223" />
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </RefreshView>
-        </Frame>
-    </StackLayout>-->
+    </Grid>
 </ContentPage>
