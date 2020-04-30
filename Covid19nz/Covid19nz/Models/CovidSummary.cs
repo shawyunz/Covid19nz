@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Covid19nz.Models
 {
@@ -7,42 +7,47 @@ namespace Covid19nz.Models
     {
         public CovidSummary(Dictionary<string, int> SummaryData)
         {
-            ConfirmedCasesTotal  = SummaryData["ConfirmedCasesTotal"];
+            ConfirmedCasesTotal = SummaryData["ConfirmedCasesTotal"];
             ConfirmedCasesNew24h = FormatNumber24h(SummaryData["ConfirmedCasesNew24h"]);
 
-            ProbableCasesTotal   = SummaryData["ProbableCasesTotal"];
-            ProbableCasesNew24h  = FormatNumber24h(SummaryData["ProbableCasesNew24h"]);
+            ProbableCasesTotal = SummaryData["ProbableCasesTotal"];
+            ProbableCasesNew24h = FormatNumber24h(SummaryData["ProbableCasesNew24h"]);
 
-            RecoveredCasesTotal  = SummaryData["RecoveredCasesTotal"];
+            RecoveredCasesTotal = SummaryData["RecoveredCasesTotal"];
             RecoveredCasesNew24h = FormatNumber24h(SummaryData["RecoveredCasesNew24h"]);
 
-            HospitalisedCasesTotal  = SummaryData["HospitalisedCasesTotal"];
+            HospitalisedCasesTotal = SummaryData["HospitalisedCasesTotal"];
             HospitalisedCasesNew24h = FormatNumber24h(SummaryData["HospitalisedCasesNew24h"]);
 
-            DeathCasesTotal      = SummaryData["DeathCasesTotal"];
-            DeathCasesNew24h     = FormatNumber24h(SummaryData["DeathCasesNew24h"]);
+            DeathCasesTotal = SummaryData["DeathCasesTotal"];
+            DeathCasesNew24h = FormatNumber24h(SummaryData["DeathCasesNew24h"]);
 
-            CasesAmount          = ConfirmedCasesTotal + ProbableCasesTotal;
-            CasesAmountNew24h    = FormatNumber24h(SummaryData["ConfirmedCasesNew24h"] + SummaryData["ProbableCasesNew24h"]);
+            CasesAmount = ConfirmedCasesTotal + ProbableCasesTotal;
+            CasesAmountNew24h = FormatNumber24h(SummaryData["ConfirmedCasesNew24h"] + SummaryData["ProbableCasesNew24h"]);
         }
+
+        public int CasesAmount { get; set; }
+        public string CasesAmountNew24h { get; set; }
+
+        public string ConfirmedCasesNew24h { get; set; }
+        public int ConfirmedCasesTotal { get; set; }
+
+        public string DeathCasesNew24h { get; set; }
+        public int DeathCasesTotal { get; set; }
+
+        public string HospitalisedCasesNew24h { get; set; }
+        public int HospitalisedCasesTotal { get; set; }
+
+        public string ProbableCasesNew24h { get; set; }
+        public int ProbableCasesTotal { get; set; }
+
+        public string RecoveredCasesNew24h { get; set; }
+        public int RecoveredCasesTotal { get; set; }
 
         private string FormatNumber24h(int number)
         {
             return number > 0 ? $"(+{number})" : $"({number})";
         }
-
-        public int ConfirmedCasesTotal { get; set; }
-        public string ConfirmedCasesNew24h { get; set; }
-        public int ProbableCasesTotal { get; set; }
-        public string ProbableCasesNew24h { get; set; }
-        public int RecoveredCasesTotal { get; set; }
-        public string RecoveredCasesNew24h { get; set; }
-        public int HospitalisedCasesTotal { get; set; }
-        public string HospitalisedCasesNew24h { get; set; }
-        public int DeathCasesTotal { get; set; }
-        public string DeathCasesNew24h { get; set; }
-        public int CasesAmount { get; set; }
-        public string CasesAmountNew24h { get; set; }
     }
 
     public partial class CovidSummary
@@ -63,5 +68,4 @@ namespace Covid19nz.Models
         //  "DeathCasesNew24h": 0
         //}
     }
-
 }

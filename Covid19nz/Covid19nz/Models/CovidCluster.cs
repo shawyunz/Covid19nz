@@ -1,22 +1,21 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Covid19nz.Models
 {
-
     public partial class CovidCluster
     {
-        [JsonProperty("Name")]
-        public string Name { get; set; }
-
-        [JsonProperty("Location")]
-        public string Location { get; set; }
-
         [JsonProperty("Cases")]
         public int Cases { get; set; }
 
         [JsonProperty("CasesNew24h")]
         public int CasesNew24H { get; set; }
+
+        [JsonProperty("Location")]
+        public string Location { get; set; }
+
+        [JsonProperty("Name")]
+        public string Name { get; set; }
     }
 
     public partial class CovidCluster

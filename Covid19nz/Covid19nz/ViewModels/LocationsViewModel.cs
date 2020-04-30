@@ -1,25 +1,14 @@
-﻿using System;
+﻿using Covid19nz.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-
-using Xamarin.Forms;
-
-using Covid19nz.Models;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Covid19nz.ViewModels
 {
     public class LocationsViewModel : BaseViewModel
     {
-        public bool ExpandHeader { get; set; } = true;
-        public CovidLocation SelectedLocation { get; set; }
-        public CovidSummary SummaryData { get; set; }
-        public ObservableCollection<CovidLocation> ListLocation { get; set; }
-        public ObservableCollection<CovidCluster> ListCluster { get; set; }
-
-        public Command ExpandHeaderCommand { get; set; }
-        public Command LoadItemsCommand { get; set; }
-
         public LocationsViewModel()
         {
             Title = "Covid-19 NZ";
@@ -29,6 +18,14 @@ namespace Covid19nz.ViewModels
             //Todo:replace with AsyncCommand from MvvmHelpers
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
         }
+
+        public bool ExpandHeader { get; set; } = true;
+        public Command ExpandHeaderCommand { get; set; }
+        public ObservableCollection<CovidCluster> ListCluster { get; set; }
+        public ObservableCollection<CovidLocation> ListLocation { get; set; }
+        public Command LoadItemsCommand { get; set; }
+        public CovidLocation SelectedLocation { get; set; }
+        public CovidSummary SummaryData { get; set; }
 
         private void ExecuteExpandCommand()
         {

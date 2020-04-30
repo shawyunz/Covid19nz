@@ -1,15 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace Covid19nz.Models
 {
-    class JsonHelper
-    {
-    }
-
     public static class Serialize
     {
         public static string ToJson(this Dictionary<string, CovidLocation> self) => JsonConvert.SerializeObject(self, Converter.Settings);
@@ -27,5 +22,9 @@ namespace Covid19nz.Models
                 new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
             },
         };
+    }
+
+    internal class JsonHelper
+    {
     }
 }

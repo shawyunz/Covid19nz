@@ -1,39 +1,28 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using Xamarin.Forms.Maps;
 
 namespace Covid19nz.Models
 {
+    public enum TypeEnum { Point };
+
     //convert json to csharp class from:
     //https://app.quicktype.io/
     public partial class CovidLocation
     {
-        [JsonProperty("LocationName")]
-        public string LocationName { get; set; }
+        [JsonProperty("CaseCount")]
+        public int CaseCount { get; set; }
 
         [JsonProperty("LocationCentrePoint")]
         public LocationCentrePoint LocationCentrePoint { get; set; }
 
-        [JsonProperty("CaseCount")]
-        public int CaseCount { get; set; }
+        [JsonProperty("LocationName")]
+        public string LocationName { get; set; }
     }
-
-    public partial class LocationCentrePoint
-    {
-        [JsonProperty("type")]
-        public TypeEnum Type { get; set; }
-
-        [JsonProperty("coordinates")]
-        public List<double> Coordinates { get; set; }
-    }
-
-    public enum TypeEnum { Point };
 
     public partial class CovidLocation
     {
-        public static Dictionary<string, CovidLocation> FromJson(string json) => JsonConvert.DeserializeObject<Dictionary<string, CovidLocation>>(json, Converter.Settings);
-
         public Position Coordinate
         {
             get
@@ -44,13 +33,29 @@ namespace Covid19nz.Models
                 return new Position(0, 0);
             }
         }
-        public string CovidType { get; set; }
+
         public int CountConfirmed { get; set; }
+
         public int CountProbable { get; set; }
+
+        public string CovidType { get; set; }
+
+        public static Dictionary<string, CovidLocation> FromJson(string json) => JsonConvert.DeserializeObject<Dictionary<string, CovidLocation>>(json, Converter.Settings);
+    }
+
+    public partial class LocationCentrePoint
+    {
+        [JsonProperty("coordinates")]
+        public List<double> Coordinates { get; set; }
+
+        [JsonProperty("type")]
+        public TypeEnum Type { get; set; }
     }
 
     internal class TypeEnumConverter : JsonConverter
     {
+        public static readonly TypeEnumConverter Singleton = new TypeEnumConverter();
+
         public override bool CanConvert(Type t) => t == typeof(TypeEnum) || t == typeof(TypeEnum?);
 
         public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
@@ -79,7 +84,5 @@ namespace Covid19nz.Models
             }
             throw new Exception("Cannot marshal type TypeEnum");
         }
-
-        public static readonly TypeEnumConverter Singleton = new TypeEnumConverter();
     }
 }

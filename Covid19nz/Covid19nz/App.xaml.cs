@@ -1,25 +1,17 @@
-﻿using Xamarin.Forms;
-using Covid19nz.Models;
-using System.Linq;
-using System.Collections.Generic;
-using System.Net;
-using Xamarin.Essentials;
-using System.Net.Http;
+﻿using Covid19nz.Models;
 using Covid19nz.Utils;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Covid19nz
 {
     public partial class App : Application
     {
-        public new static App Current => Application.Current as App;
-        public static CovidCaseData AppCaseData { get; set; }
-        public static List<CovidCluster> AppClusters { get; set; }
-        public static List<CovidCase> AppCases { get; set; }
-        public static List<CovidLocation> AppLocations { get; set; }
-        public static AlertLevel AppAlertLevel { get; set; }
-        public static CovidSummary AppSummary { get; set; }
-        readonly HttpClient httpClient;
+        private readonly HttpClient httpClient;
 
         public App()
         {
@@ -31,13 +23,20 @@ namespace Covid19nz
             //InitializeDataFromAPI();
         }
 
+        public static AlertLevel AppAlertLevel { get; set; }
+        public static CovidCaseData AppCaseData { get; set; }
+        public static List<CovidCase> AppCases { get; set; }
+        public static List<CovidCluster> AppClusters { get; set; }
+        public static List<CovidLocation> AppLocations { get; set; }
+        public static CovidSummary AppSummary { get; set; }
+        public new static App Current => Application.Current as App;
+
         public async Task InitializeDataFromAPI()
         {
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
                 //run methods in parallel as they are independent
                 await Task.WhenAll(GetSummary(), GetCases(), GetCluster(), GetAlertLevel());
-
             }
             else
             {
@@ -45,7 +44,7 @@ namespace Covid19nz
             }
         }
 
-        protected override void OnStart()
+        protected override void OnResume()
         {
         }
 
@@ -53,7 +52,7 @@ namespace Covid19nz
         {
         }
 
-        protected override void OnResume()
+        protected override void OnStart()
         {
         }
 
