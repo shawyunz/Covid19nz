@@ -19,7 +19,7 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 	<img align="center" src=".\assets\demo_case.gif" width="340"/>
 </p>
 
-### Screenshots (v1.1.5)
+### Screenshots (v1.1.8)
 |                      Summary                      |                       Cases                       |                        Map                        |                       Info                        |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
 | <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > | <img src=".\assets\screenshot4.png" width="240" > |
@@ -142,7 +142,7 @@ Check todo list here **[Covid19nz/project](https://github.com/shawyunz/Covid19nz
 
 ## Versions
 
-​	v1.X	:construction:
+​	v1.X	:construction: Font. Summary card UI. 
 
 ​	v1.1.8	HttpClient by [yurkinh](https://github.com/yurkinh). API update. Summary animation. New case page UI. New splash.
 
