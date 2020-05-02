@@ -14,15 +14,14 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 	<img align="center" src=".\assets\demo_app.gif" width="340" />
 </p>
 
-### Case page details (v1.1.5):
-<p align="center">
-	<img align="center" src=".\assets\demo_case.gif" width="340"/>
-</p>
-
 ### Screenshots (v1.1.8)
-|                      Summary                      |                       Cases                       |                        Map                        |                       Info                        |
-| :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
-| <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > | <img src=".\assets\screenshot3.png" width="240" > | <img src=".\assets\screenshot4.png" width="240" > |
+|                      Splash                       |                       Summary                     |                        Cases                      |
+| :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
+| <img src=".\assets\screenshot0.png" width="240" > | <img src=".\assets\screenshot1.png" width="240" > | <img src=".\assets\screenshot2.png" width="240" > |
+
+|                        Map                        |                       Info                        |
+| :-----------------------------------------------: | :-----------------------------------------------: |
+| <img src=".\assets\screenshot3.png" width="240" > | <img src=".\assets\screenshot4.png" width="240" > |
 
 
 
