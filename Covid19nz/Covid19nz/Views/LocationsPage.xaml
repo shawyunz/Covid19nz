@@ -31,8 +31,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="100" />
-            <RowDefinition Height="100" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
         <StackLayout
@@ -41,7 +41,7 @@
             Grid.RowSpan="3"
             Padding="40"
             BackgroundColor="#f1f5ff">
-            <Grid>
+            <Grid Margin="-20,0,0,0">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TappedSummary" />
                 </Grid.GestureRecognizers>
@@ -56,8 +56,9 @@
                         FontSize="24" />
                 </StackLayout>
             </Grid>
-            <Grid RowSpacing="10" Padding="0,25,0,25">
+            <Grid RowSpacing="14" Padding="0,25,0,25">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -79,6 +80,7 @@
                 <Label
                     Grid.Row="0"
                     Grid.Column="0"
+                    Margin="0,8,0,0"
                     Text="Total Number" />
                 <StackLayout
                     Grid.Row="1"
@@ -101,6 +103,7 @@
                 <Label
                     Grid.Row="0"
                     Grid.Column="1"
+                    Margin="0,8,0,0"
                     Text="Recovered" />
                 <StackLayout
                     Grid.Row="1"
@@ -124,7 +127,7 @@
                     Grid.Row="2"
                     Grid.Column="0"
                     IsVisible="{Binding ExpandHeader}"
-                    Margin="0,10,0,0"
+                    Margin="0,16,0,0"
                     Text="Confirmed"
                     TextColor="LightGray" />
                 <StackLayout
@@ -150,7 +153,7 @@
                     Grid.Row="2"
                     Grid.Column="1"
                     IsVisible="{Binding ExpandHeader}"
-                    Margin="0,10,0,0"
+                    Margin="0,16,0,0"
                     Text="in Hospital"
                     TextColor="LightGray" />
                 <StackLayout
@@ -176,6 +179,7 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     IsVisible="{Binding ExpandHeader}"
+                    Margin="0,8,0,0"
                     Text="Probable"
                     TextColor="LightGray" />
                 <StackLayout
@@ -201,6 +205,7 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     IsVisible="{Binding ExpandHeader}"
+                    Margin="0,8,0,0"
                     Text="Death"
                     TextColor="LightGray" />
                 <StackLayout
@@ -242,8 +247,9 @@
                         <TapGestureRecognizer Tapped="TappedDistrict" />
                     </Grid.GestureRecognizers>
                     <Label
+                        Margin="0"
                         VerticalOptions="FillAndExpand"
-                        CharacterSpacing="1"
+                        CharacterSpacing="0"
                         Text="Districts"
                         FontAttributes="Bold"
                         FontSize="24" />
@@ -304,7 +310,7 @@
                         <TapGestureRecognizer Tapped="TappedCluster" />
                     </Grid.GestureRecognizers>
                     <Label
-                        CharacterSpacing="1"
+                        Margin="0"
                         Text="Clusters"
                         FontAttributes="Bold"
                         FontSize="24" />

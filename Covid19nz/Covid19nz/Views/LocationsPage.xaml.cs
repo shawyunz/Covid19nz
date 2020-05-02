@@ -10,6 +10,8 @@ namespace Covid19nz.Views
     [DesignTimeVisible(false)]
     public partial class LocationsPage : ContentPage
     {
+        private const int CardHeaderHeight = 80;
+        private const int CardMargin = 20;
         private const int TIMESPAN = 250;
         private bool IsClusterExpanded = false;
         private bool IsDistrictExpanded = false;
@@ -43,15 +45,15 @@ namespace Covid19nz.Views
             if (!IsClusterExpanded)
             {
                 IsDistrictExpanded = true;
-                LytDistrict.LayoutTo(new Rectangle(20, 100, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
+                LytDistrict.LayoutTo(new Rectangle(CardMargin, 100, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
 
                 IsClusterExpanded = true;
-                LytCluster.LayoutTo(new Rectangle(40, 200, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
+                LytCluster.LayoutTo(new Rectangle(CardMargin * 2, 200, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
             }
             else
             {
                 IsClusterExpanded = false;
-                LytCluster.LayoutTo(new Rectangle(80, heightSummary - 100, widthSummary, 200), TIMESPAN, Easing.CubicIn);
+                LytCluster.LayoutTo(new Rectangle(CardMargin * 4, heightSummary - CardHeaderHeight, widthSummary, 200), TIMESPAN, Easing.CubicIn);
             }
         }
 
@@ -63,19 +65,19 @@ namespace Covid19nz.Views
             if (!IsDistrictExpanded)
             {
                 IsDistrictExpanded = true;
-                LytDistrict.LayoutTo(new Rectangle(20, 100, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
+                LytDistrict.LayoutTo(new Rectangle(CardMargin, 100, widthSummary, heightSummary), TIMESPAN, Easing.CubicOut);
             }
             else
             {
                 if (IsClusterExpanded)
                 {
                     IsClusterExpanded = false;
-                    LytCluster.LayoutTo(new Rectangle(80, heightSummary - 100, widthSummary, 200), TIMESPAN, Easing.CubicIn);
+                    LytCluster.LayoutTo(new Rectangle(CardMargin * 4, heightSummary - CardHeaderHeight, widthSummary, 200), TIMESPAN, Easing.CubicIn);
                 }
                 else
                 {
                     IsDistrictExpanded = false;
-                    LytDistrict.LayoutTo(new Rectangle(40, heightSummary - 200, widthSummary, 300), TIMESPAN, Easing.CubicIn);
+                    LytDistrict.LayoutTo(new Rectangle(CardMargin * 2, heightSummary - CardHeaderHeight * 2, widthSummary, 300), TIMESPAN, Easing.CubicIn);
                 }
             }
         }
@@ -88,13 +90,13 @@ namespace Covid19nz.Views
             if (IsClusterExpanded)
             {
                 IsClusterExpanded = false;
-                LytCluster.LayoutTo(new Rectangle(80, heightSummary - 100, widthSummary, 200), TIMESPAN, Easing.CubicIn);
+                LytCluster.LayoutTo(new Rectangle(CardMargin * 4, heightSummary - CardHeaderHeight, widthSummary, 200), TIMESPAN, Easing.CubicIn);
             }
 
             if (IsDistrictExpanded)
             {
                 IsDistrictExpanded = false;
-                LytDistrict.LayoutTo(new Rectangle(40, heightSummary - 200, widthSummary, 300), TIMESPAN, Easing.CubicIn);
+                LytDistrict.LayoutTo(new Rectangle(CardMargin * 2, heightSummary - CardHeaderHeight * 2, widthSummary, 300), TIMESPAN, Easing.CubicIn);
             }
         }
     }
