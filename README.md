@@ -9,9 +9,9 @@ Backend API provided by [simeonmiteff](https://github.com/simeonmiteff)/[nzcovid
 
 ## Demo:
 
-### App demo gif (v1.1.5):
+### App demo gif (v1.1.8):
 <p align="center">
-	<img align="center" src=".\assets\demo_app.gif" width="340" />
+	<img align="center" src=".\assets\demo1.1.8.gif" width="340" />
 </p>
 
 ### Screenshots (v1.1.8)
@@ -83,7 +83,7 @@ Check todo list here **[Covid19nz/project](https://github.com/shawyunz/Covid19nz
 
 #### Refresh on April Fools' Day:
 
-- [ ] Color redesign.
+- [x] Color redesign.
 - [ ] Paging cases
 - [x] icon converter for gender and color converter for case type
 - [x] animation for summary page?
@@ -97,7 +97,7 @@ Check todo list here **[Covid19nz/project](https://github.com/shawyunz/Covid19nz
 - [x] New cases page UI
 - [x] Header detail UI
 - [x] Info page UI
-- [ ] cluster information
+- [x] cluster information
 - [x] icons not ready
 
 #### Refresh on March 27th:
