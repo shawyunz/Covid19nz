@@ -6,5 +6,26 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Application.Resources />
+    <Application.Resources>
+        <OnPlatform x:Key="FontBaloo" x:TypeArguments="x:String">
+            <On Platform="Android" Value="Baloo.ttf#Regular" />
+            <On Platform="iOS" Value="Baloo" />
+        </OnPlatform>
+        <OnPlatform x:Key="FontLatoBol" x:TypeArguments="x:String">
+            <On Platform="Android" Value="LatoBol.ttf#LatoB" />
+            <On Platform="iOS" Value="LatoBol" />
+        </OnPlatform>
+        <OnPlatform x:Key="FontLatoLig" x:TypeArguments="x:String">
+            <On Platform="Android" Value="LatoLig.ttf#LatoL" />
+            <On Platform="iOS" Value="LatoLig" />
+        </OnPlatform>
+        <OnPlatform x:Key="FontLatoReg" x:TypeArguments="x:String">
+            <On Platform="Android" Value="LatoReg.ttf#LatoR" />
+            <On Platform="iOS" Value="LatoReg" />
+        </OnPlatform>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource FontLatoBol}" />
+            <Setter Property="Margin" Value="0,8,0,0" />
+        </Style>
+    </Application.Resources>
 </Application>

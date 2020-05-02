@@ -93,6 +93,8 @@
     <Compile Include="SplashScreenActivity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\LatoReg.ttf" />
+    <AndroidAsset Include="Assets\LatoBol.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
