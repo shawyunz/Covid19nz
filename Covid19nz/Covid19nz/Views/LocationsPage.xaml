@@ -260,35 +260,34 @@
                     Margin="16,0,24,180"
                     IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
                     Command="{Binding LoadItemsCommand}">
-                    <ListView
-                        x:Name="ItemsCollectionView"
+                    <CollectionView
+                        x:Name="CollectionLocation"
                         ItemsSource="{Binding ListLocation}"
-                        ItemTapped="OnItemSelected"
-                        SelectedItem="{Binding SelectedLocation}">
-                        <ListView.ItemTemplate>
+                        SelectedItem="{Binding SelectedLocation}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnItemSelected">
+                        <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout
-                                        Margin="20,0,40,0"
-                                        Orientation="Horizontal"
-                                        HorizontalOptions="FillAndExpand">
-                                        <Label
-                                            HorizontalOptions="StartAndExpand"
-                                            VerticalOptions="CenterAndExpand"
-                                            Text="{Binding LocationName}"
-                                            FontSize="16"
-                                            TextColor="#011223" />
-                                        <Label
-                                            HorizontalOptions="End"
-                                            VerticalOptions="CenterAndExpand"
-                                            Text="{Binding CaseCount}"
-                                            FontSize="18"
-                                            TextColor="#011223" />
-                                    </StackLayout>
-                                </ViewCell>
+                                <StackLayout
+                                    Margin="20,0,40,0"
+                                    Orientation="Horizontal"
+                                    HorizontalOptions="FillAndExpand">
+                                    <Label
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Text="{Binding LocationName}"
+                                        FontSize="16"
+                                        TextColor="#011223" />
+                                    <Label
+                                        HorizontalOptions="End"
+                                        VerticalOptions="CenterAndExpand"
+                                        Text="{Binding CaseCount}"
+                                        FontSize="18"
+                                        TextColor="#011223" />
+                                </StackLayout>
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </RefreshView>
             </Grid>
         </Frame>
@@ -321,37 +320,35 @@
                     Margin="16,0,24,180"
                     IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
                     Command="{Binding LoadItemsCommand}">
-                    <ListView x:Name="ItemsCollectionView2" ItemsSource="{Binding ListCluster}">
-                        <ListView.ItemTemplate>
+                    <CollectionView x:Name="CollectionCluster" ItemsSource="{Binding ListCluster}">
+                        <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout
-                                        Margin="20,0,40,0"
-                                        Orientation="Horizontal"
-                                        HorizontalOptions="FillAndExpand">
-                                        <Label
-                                            HorizontalOptions="StartAndExpand"
-                                            VerticalOptions="CenterAndExpand"
-                                            Text="{Binding Name}"
-                                            FontSize="12"
-                                            TextColor="#011223" />
-                                        <Label
-                                            HorizontalOptions="End"
-                                            VerticalOptions="CenterAndExpand"
-                                            Text="{Binding Cases}"
-                                            FontSize="18"
-                                            TextColor="#011223" />
-                                        <Label
-                                            HorizontalOptions="End"
-                                            VerticalOptions="CenterAndExpand"
-                                            Text="{Binding CasesNew24H, StringFormat='({0})'}"
-                                            FontSize="12"
-                                            TextColor="#011223" />
-                                    </StackLayout>
-                                </ViewCell>
+                                <StackLayout
+                                    Margin="20,0,40,0"
+                                    Orientation="Horizontal"
+                                    HorizontalOptions="FillAndExpand">
+                                    <Label
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Text="{Binding Name}"
+                                        FontSize="12"
+                                        TextColor="#011223" />
+                                    <Label
+                                        HorizontalOptions="End"
+                                        VerticalOptions="CenterAndExpand"
+                                        Text="{Binding Cases}"
+                                        FontSize="18"
+                                        TextColor="#011223" />
+                                    <Label
+                                        HorizontalOptions="End"
+                                        VerticalOptions="CenterAndExpand"
+                                        Text="{Binding CasesNew24H, StringFormat='({0})'}"
+                                        FontSize="12"
+                                        TextColor="#011223" />
+                                </StackLayout>
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </RefreshView>
             </Grid>
         </Frame>
